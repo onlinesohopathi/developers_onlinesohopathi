@@ -1,0 +1,153 @@
+<html>
+<head>
+
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#004d40">
+	
+	
+
+	<title>Online Sohopathi</title>
+
+	<!-- Manifest -->
+	<!-- <link rel="manifest"  href="manifest.json"> -->
+
+	<!-- Bootstrap core CSS -->
+	
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="vendor/materialize/css/materialize.min.css" rel="stylesheet">
+    <link href="vendor/flexbin/flexbin.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/materialize-stepper/materialize-stepper.min.css">
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+
+
+</head>
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '179014802653918',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token
+            // and signed request each expire
+            uid = response.authResponse.userID;
+			quesd="none";
+			queslid="none";
+			
+      console.log(uid);
+            var accessToken = response.authResponse.accessToken;
+        } else if (response.status === 'not_authorized') {
+            uid="hiru";
+			quesd="none";
+			queslid="none";
+      // the user is logged in to Facebook,
+            // but has not authenticated your app
+        } else {
+		   uid="hiru";
+		   quesd="none";
+		   queslid="none";
+            console.log("hiru");
+      //setTimeout(function(){
+            //window.location.reload(1);
+            //}, 5000);
+            // the user isn't logged in to Facebook.
+        }
+    });
+  
+  
+  
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+    
+    
+
+
+<!-- Section heading -->
+
+<!-- Section navbar -->
+<nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="index.html"  class="brand-logo" style="text-decoration:none;">Online Sohopathi</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+      </a>
+	</div>
+	
+	<div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a class="active" href="index.html" onclick="redirects()" style="text-decoration:none;">Home</a></li>
+        
+        <li class="tab"><a href="#FAQ" style="text-decoration:none;">FAQ</a></li>
+      </ul>
+      <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" data-toggle="modal" data-target="#myModal">
+        <i class="material-icons">lightbulb_outline</i>
+      </a> -->
+    </div>
+	
+	
+</nav>
+
+
+<div  id="Homes">
+<div class="fb-login-button" style="display: flex;align-items: center; margin-top: 30px; justify-content: center;" data-max-rows="1" data-size="large" onlogin="checkFacebook()"  data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
+</div>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="vendor/materialize/js/materialize.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+<!-- Custom scripts for this template -->
+<script src="js/main.js"></script>
+<script src="js/Frontend.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+/*Navbar Styling*/
+
+.nav-wrapper{
+	background-color: darkslategrey;
+}
+.nav-content{
+	background-color: #045261 !important; 
+}
+
+/*Answer Section styling*/
+.col{
+	padding: 0;
+}
+.row .col{
+	padding: 0;
+}
+
+.carousel .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+.home{
+	height: 100vh;
+	/*width: 100%;*/
+}
+
+.questioncard{
+   margin-bottom: 10px;
+}
+
+/*Add these within media queries*/
+.brand-logo{
+	position: initial !important;
+	display: inline !important;
+}
+
+.ask{
+	bottom: 2px !important;
+}
+
+/*Modal Styling*/
+
+.modal-header {
+    background-color: white ;
+}
+
+.modal-body {
+    background-color: white ;
+
+}
+
+.modal-footer {
+    background-color: white ;
+    padding: 0;
+    border: none;
+}
+
+.submit-box {
+    /*margin-left: 1.8em;*/
+}
+
+.Send-Notifications {
+    margin-left: 1em;
+    margin-top: 0.5em;
+}
+
+textarea {
+    width: 60%;
+    height: 80px;
+    box-sizing: border-box;
+    border: 6px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 12px 20px 12px 10px;
+    resize: none;
+    outline: none;
+}
+
+.modal-content{
+	background: rebeccapurple;
+}
+
+textarea, 
+pre {
+  margin: 0;
+  /*padding: 0;*/
+  outline: 0;
+  border: 0;
+  border-radius: none;
+}
+.expandingAreaactive {
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 2em;
+  background: transparent;
+  margin-bottom: 10px;
+}
+
+.expandingAreaactivr:focus{
+	border: 1px solid white;
+}
+
+
+.expandingAreaactive > textarea,
+.expandingAreaactive > pre {
+  padding: 0.99em;
+  background: transparent;
+  font: 400 13px/16px helvetica, arial, sans-serif;
+  /* Make the text soft-wrap */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.expandingAreaactive > textarea {
+  /* The border-box box model is used to allow
+   * padding whilst still keeping the overall width
+   * at exactly that of the containing element.
+   */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  border-radius: none;
+  /* This height is used when JS is disabled */
+  height: 100px;
+}
+
+.expandingAreaactive > textarea {
+  /* Hide any scrollbars */
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  /* Remove WebKit user-resize widget */
+  resize: none;
+}
+.expandingAreaactive > pre {
+  display: none;
+}
+.expandingAreaactive > pre {
+  display: block;
+  /* Hide the text; just using it for sizing */
+  visibility: hidden;
+}
+
+ul.actions {
+			cursor: default;
+			list-style: none;
+			padding-left: 0;
+		}
+
+			ul.actions li {
+				display: inline-block;
+				padding: 0 1em 0 0;
+				vertical-align: middle;
+			}
+
+				ul.actions li:last-child {
+					padding-right: 0;
+				}
+
+
+/*Timeline*/
+#cd-timeline {
+  position: relative;
+  padding: 2em 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+#cd-timeline::before {
+  /* this is the vertical line */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  width: 4px;
+  background: #d7e4ed;
+}
+
+.conta {
+  max-width: 1024px;
+  width: 100%;
+  /*margin: 0 auto;*/
+  margin-left: 0;
+  padding: 0 !important;
+}
+
+.timeline-item {
+  padding: 3em 2em 2em;
+  position: relative;
+  color: rgba(0, 0, 0, 0.7);
+  border-left: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 70px -20px rgba(0, 0, 0, 0.3);
+}
+.timeline-item p {
+  font-size: 1rem;
+}
+.timeline-item::before {
+  content: attr(date-is);
+  position: absolute;
+  left: 2em;
+  font-weight: bold;
+  top: 1em;
+  color: darkslategrey;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: .785rem;
+}
+.timeline-item::after {
+  width: 10px;
+  height: 10px;
+  display: block;
+  top: 1em;
+  position: absolute;
+  left: -7px;
+  border-radius: 10px;
+  content: '';
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: white;
+}
+.timeline-item:last-child {
+  -o-border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 60%, transparent) 1 100%;
+     border-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 60%, transparent) 1 100%;
+     border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 60%, transparent) 1 100%;
+}
+
+
+/**************************************************/
+.item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1000px;
+  /*margin: 0 auto;*/
+  margin-left: 0;
+  margin-top: 20px;
+}
+.item .image {
+  padding: 1em 2em;
+}
+.item .image > div {
+  position: relative;
+  text-align: center;
+  font-size: 0.8em;
+}
+.item .image > div::after {
+  content: '';
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid #232b50;
+  position: absolute;
+  top: 2.75em;
+  left: 2.5em;
+  z-index: -1;
+}
+.item .image img {
+  border-radius: 50%;
+  height: 5em;
+  border: 0.35em solid #5ed3bf;
+}
+.item .image span {
+  display: block;
+  clear: both;
+  padding: 0.7em;
+  margin: 0.5em 0;
+  border-radius: 30px;
+  background: lightsteelblue;
+}
+.item .details {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.item .details > div {
+  /*border: 1px solid #232b50;*/
+  border-radius: 0.5em;
+  padding: 1.5em;
+  margin: 1em 0;
+box-shadow: 0 10px 90px -2px rgba(0, 0, 0, 0.3);
+}
+.item .details > div h1 {
+  color: #5ed3bf;
+  font-size: 1.4em;
+  margin: 0;
+  padding: 0 0 0.5em 0;
+  letter-spacing: 0.1em;
+}
+.item .details > div p {
+  margin: 0;
+  padding: 0;
+  line-height: 150%;
+}
+.item .details::before {
+  content: '';
+  width: 0;
+  height: 100%;
+  border-left: 2px solid rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: -4.35em;
+  z-index: -1;
+}
+
+.item .details:last-child {
+  -o-border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 60%, transparent) 1 100%;
+     border-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 60%, transparent) 1 100%;
+     border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 60%, transparent) 1 100%;
+}
+
+/*about section*/
+.teamember{
+    padding: 60px 0 0 0;
+}
+.about-title h3{
+    font-size: 80px;
+    font-weight: 500;
+    text-align: center;
+    
+}
+.about1-title{
+    padding-top: 30px;
+}
+
+
+.about1-title h3{
+    font-size: 50px;
+    font-weight: 500;
+    font-family: Lobster;
+    text-align: center;
+    
+}
+.about-title-underline{
+    width: 50px;
+    height: 3px;
+    background-color:darkcyan;
+    margin: 0 auto 40px auto;
+}
+.about-spacing{
+    padding: 20px 20px 20px 20px;
+}
+
+.about-name{
+    font-family: Dancing Script;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.about-details a{
+    align-self: center;
+}
+
+.btn-black{      
+    background-color:darkcyan;
+    color:aliceblue; 
+    margin-bottom: 20px;
+}
+.btn-black:hover, .btn-white:focus{
+    background-color:aliceblue; 
+    color:darkcyan;
+}
+
+/*about finished*/
+@media screen and (max-width: 425px) {
+
+  .btn{
+    padding: 0 1rem !important;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .btn{
+    padding: 0 0.5rem !important;
+  }
+
+}
+
+
+
+
