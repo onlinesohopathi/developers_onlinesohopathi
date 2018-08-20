@@ -266,6 +266,7 @@ function get_me_answered(meid,profilepic) {
 			var fbpic = temp2.url;
             fbpic_for_profile=fbpic;
 			queCount=Obj[0].queCount;
+			parsingAllQuestions(meid, "CollapseBody4");
 
         }
     };
