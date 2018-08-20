@@ -6,7 +6,13 @@
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#004d40">
-	
+	<script type="text/javascript">
+	  
+	   localStorage.setItem("submit","0");
+	   localStorage.removeItem("count");
+	 
+	   
+	</script>
 	
 
 	<title>Online Sohopathi</title>
@@ -39,7 +45,8 @@
 
 </head>
 <body>
-<script>
+<script src="js/redirect.js?v=1003"></script>
+    <script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '179014802653918',
@@ -60,8 +67,8 @@
             uid = response.authResponse.userID;
 			quesd="none";
 			queslid="none";
-			
-      console.log(uid);
+			console.log(uid);
+	        notificationCount(uid);
             var accessToken = response.authResponse.accessToken;
         } else if (response.status === 'not_authorized') {
             uid="hiru";
@@ -94,67 +101,55 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
-    
-    
-    
 
+    <!-- Section heading -->
 
-<!-- Section heading -->
-
-<!-- Section navbar -->
-<nav class="nav-extended">
-    <div class="nav-wrapper">
-      <a href="index.html"  class="brand-logo" style="text-decoration:none;">Online Sohopathi</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+    <!-- Section navbar -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper" >
+      <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;">  অনলাইন সহপাঠী</a>
+      <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+      </a>-->
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" onclick="checkuser()" style="margin-left: 5px;">
+        Ask
       </a>
+
+
+ <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
 	</div>
-	
-	<div class="nav-content">
-      <ul class="tabs tabs-transparent">
-        <li class="tab"><a class="active" href="index.html" onclick="redirects()" style="text-decoration:none;">Home</a></li>
-        
-        <li class="tab"><a href="#FAQ" style="text-decoration:none;">FAQ</a></li>
-      </ul>
-      <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" data-toggle="modal" data-target="#myModal">
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a  href="index.html" onclick="redirectnow()" style="color: white; text-decoration:none;">Home</a></li>
+                <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
+		<li class="tab"><a href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Questions</a></li>
+        <li class="tab"><a class="active" href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
+		
+        <li class="tab"><a  href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
+	    <li class="tab"><a href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li
+            </ul>
+            <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" data-toggle="modal" data-target="#myModal">
         <i class="material-icons">lightbulb_outline</i>
       </a> -->
-    </div>
-
-</nav>
-  <!-- <div class="fixed-action-btn toolbar">
-    <a class="btn-floating btn-large teal darken-4">
-      <i class="large material-icons">filter_list</i>
-    </a>
-    <ul>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">edit</i>English</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">format_quote</i>Physics</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">insert_chart</i>Chemistry</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">attach_file</i>Math</a></li>
-	<li class="waves-effect waves-light">
-		<a href="#!"><i class="material-icons">attach_file</i>Biology</a></li>
-    </ul>
-  </div>
-   -->  
+        </div>
+    </nav>
+  
   <div class="container row">
     <div class="col s12" id="Homes">
       <section>
-        <h4 class="text-center" id="gouf" >Ask a Question</h4>
+        <h4 class="text-center" id="gouf" >তোমার প্রশ্নটি জিজ্ঞাসা কর </h4>
         <div class="row">
         <form class="col s12 l6">
           <div class="">
             <div class="input-field col s12">
-              <textarea id="input_text" type="text" class="materialize-textarea" data-length="120"></textarea>
-              <label for="input_text">Describe your Question...</label>
+              <textarea id="input_text" type="text" class="materialize-textarea" data-length="5000"></textarea>
+              <label for="input_text">তোমার প্রশ্নটি এখানে লিখ ( Describe your Question... )</label>
             </div>
           </div>
           <div class="">
             <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea" data-length="50"></textarea>
-              <label for="textarea1">Subject(e.g.- Math)</label>
+              <textarea id="textarea1" class="materialize-textarea" data-length="120"></textarea>
+              <label for="textarea1">কোন বিষয়ের উপর প্রশ্ন, যেমন- Math (Subject of the Question,e.g.- Math)</label>
             </div>
             <!-- <div class="chips chips-autocomplete"></div> -->
           </div>
@@ -164,14 +159,12 @@
             <option value="SSC" style="color: black; background: rgba(255,255,255, 255);">Ssc</option>
           </select>
     
-          <!-- <div class="chips"></div>
-          <div class="chips chips-initial"></div>
-          <div class="chips chips-placeholder"></div> -->
+          
           
                       
           <div class="Send-Notifications" id="anonymous" >
             <input type="checkbox" class="filled-in" id="filled-in-box"  />
-            <label for="filled-in-box" style="margin-top: 15px; margin-left: 5px;">Remain anonymous</label>
+            <label for="filled-in-box" style="margin-top: 15px; margin-left: 5px;">নাম পরিচয় গোপন রাখতে চাই (Remain anonymous)</label>
           </div>
           <div class="preview" id="img-grid"  style="display: inline-block;">
           <!-- <img src="" id="image-preview" > -->
@@ -208,50 +201,7 @@
   </div>
 </div>
 
-<div class="modal fade"  id="myModalss" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body" style="height: 400px; width: 300px;">
-          <!-- <button class="btn">Facebook</button> -->
-          <div class="fb-login-button" 
-   data-max-rows="1" data-size="large" onlogin="checkFacebookLogin(document.getElementById('myModalss'))"  data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
 
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade"  id="myModalm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body" style="height: 400px; width: 300px;">
-          <!-- <button class="btn">Facebook</button> -->
-          <div class="fb-login-button" 
-   data-max-rows="1" data-size="large" onlogin="checkFacebookLogin(document.getElementById('myModalm'))"  data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
-
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-<script type="text/javascript">
-  // $('.chips-autocomplete').material_chip({
-  //   autocompleteOptions: {
-  //     data: {
-  //       'Apple': null,
-  //       'Microsoft': null,
-  //       'Google': null
-  //     },
-  //     limit: Infinity,
-  //     minLength: 1
-  //   }
-  // });
-</script>
     
 
 <!-- Bootstrap core JavaScript -->
@@ -265,10 +215,10 @@
 <script src="vendor/materialize/js/materialize.min.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="js/main.js"></script>
-<script src="js/postanswer.js"></script>
-<script src="js/Frontend.js"></script>
-<script src="js/backend.js"></script>
+<script src="js/main.js?<?php echo filemtime('js/main.js') ?>"></script>
+<script src="js/postanswer.js?<?php echo filemtime('js/postanswer.js') ?>"></script>
+<script src="js/Frontend.js?<?php echo filemtime('js/Frontend.js') ?>"></script>
+<script src="js/backend.js?<?php echo filemtime('js/backend.js') ?>"></script>
 
 
 </body>

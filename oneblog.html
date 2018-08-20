@@ -1,6 +1,26 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
+
+
+ 
+
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+
+   
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112046710-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112046710-1');
+</script>
+
+
+    <title>"শরতের ফুরফুরে বাতাসে ওড়া সাদা এপ্রোনটাকে!
+ সেই এপ্রোন যে আমার নয়…"</title>
+	<meta name="description" content=" আচ্ছা, কেমন আছো তুমি? জানি, তোমার নতুন বন্ধুদের নিয়ে ভালোই আছো। তোমার সাথে আমার পরিচয়টা কিন্তু অল্পদিনের নয়।" >
 
 	<meta charset="UTF-8">
 	<meta name="fragment" content="!">
@@ -46,10 +66,12 @@
 
     <!-- Custom styles for this template -->
     <link href="css/styles.css" rel="stylesheet">
+	<link href="css/aboutus.css" rel="stylesheet">
 
 
 </head>
 <body>
+<script src="js/redirect.js?v=1001"></script>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -71,7 +93,8 @@
             uid = response.authResponse.userID;
 			quesd="none";
 			queslid="none";
-      console.log(uid);
+			console.log(uid);
+	        notificationCount(uid);
             var accessToken = response.authResponse.accessToken;
         } else if (response.status === 'not_authorized') {
             uid="hiru";
@@ -104,63 +127,41 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
     
-  <nav>
-    <div class="nav-wrapper">
-      <form>
-        <div class="input-field">
-          <input id="search" placeholder="Search" style="color: #78909c; font-size: 24px;" type="search" autocomplete="off" required>
-          <label class="label-icon" for="search" style="top: -0.6rem;"><i class="material-icons large">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
-  </nav>
+  
 
 
 <!-- Section heading -->
 
-<!-- Section navbar -->
 <nav class="nav-extended">
-    <div class="nav-wrapper">
-      <a href="http://www.onlinesohopathi.com" class="brand-logo" style="text-decoration:none; margin-left: 10px;">  Online Sohopathi</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+    <div class="nav-wrapper" >
+      <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;">  অনলাইন সহপাঠী</a>
+      <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+      </a>-->
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" onclick="checkuser()" style="margin-left: 5px;">
+        Ask
       </a>
-      <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" data-toggle="modal" data-target="#myModal">
-        <i class="material-icons">lightbulb_outline</i>
-      </a>
- -->
-</nav>    
+
 
  <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
 	</div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
-        <li class="tab"><a class="active" href="#Home" onclick="redirectnow()" style="text-decoration:none;">Home</a></li>
+        <li class="tab"><a class="active" href="#Home" onclick="loadhome()" style="color: white; text-decoration:none;">Home</a></li>
         
-        <li class="tab"><a href="#FAQ" style="text-decoration:none;">FAQ</a></li>
-      </ul>
-       
+        <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
+		<li class="tab"><a href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Questions</a></li>
+        <li class="tab"><a href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
+		
+        <li class="tab"><a href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
+	    <li class="tab"><a href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li> 
+	  </ul>
+
+
+
+
     </div>
-	
-  
- <!--  <div class="fixed-action-btn toolbar">
-    <a class="btn-floating btn-large teal darken-4">
-      <i class="large material-icons">filter_list</i>
-    </a>
-    <ul>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">edit</i>English</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">format_quote</i>Physics</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">insert_chart</i>Chemistry</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">attach_file</i>Math</a></li>
-	<li class="waves-effect waves-light">
-		<a href="#!"><i class="material-icons">attach_file</i>Biology</a></li>
-    </ul>
-  </div>
- -->    
+  </nav>
     
 <div class="container" style="margin-top: 30px;">
   
@@ -289,6 +290,71 @@
     </div>
   </div>
 </div>-->
+
+<footer>
+        <div id="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="join-us">
+                            <p>
+                            <img src="v1/webus.jpg" class="img-responsive">
+                                ONLINE SOHOPATHI<br><br>
+                            
+                            Keep Asking, Enjoy Learning</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="visit-us">
+                        <p> Connect with us </p>
+                        
+                            <ul>
+							
+							    <li>
+                                    <a href="http://www.onlinesohopathi.com/privacypolicy.html" role="button">Privacy Policy</a>
+                                
+                                </li>
+								
+								
+								<li>
+                                    <a href="http://www.onlinesohopathi.com/aboutus.html" role="button">Meet Our Team</a>
+                                
+                                </li>
+                               
+                                <li>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgrGl6IF-JC6CBlwlGoZNCTNEaBayz9b5KUDJhtn7a1WocvQ/viewform" role="button">Join Our Team</a>
+                                
+                                </li>
+                                 <li>
+                            <a href="https://www.facebook.com/groups/566012513741654/" role="button">Facebook Group</a>
+                                </li>
+                            
+                            <!--not working-->
+                                
+                                <li>
+                            <a href="https://www.facebook.com/onlinesohopathi/" role="button">Facebook Page</a>
+                                    </li>
+                                
+                                <li>
+                            <a href="https://www.linkedin.com/in/online-sohopathi-354708157/" role="button">LinkedIn page</a>
+                                    </li>
+                                </ul>
+                            
+                            
+                            
+                        
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    
+    </footer>
 
 <div class="modal fade"  id="myModalss" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">

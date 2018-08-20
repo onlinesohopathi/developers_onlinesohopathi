@@ -2,12 +2,23 @@
 <html>
 <head>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112046710-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112046710-1');
+</script>
+
+
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#004d40">
 	<meta property="og:url" content="http://www.onlinesohopathi.com/onequestion.html"/>
-	<meta property="og:image" content="http://www.onlinesohopathi.com/v1/questionpic.png">
+	<meta property="og:image" content="http://www.onlinesohopathi.com/v1/questionpic.jpg">
 	
 	
 
@@ -23,8 +34,10 @@
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -39,8 +52,57 @@
     <link href="css/styles.css" rel="stylesheet">
 
 
+<style type="text/css">
+
+.txtboxxx{
+         
+        display: block;
+        float: left;
+        height: 32px;
+        width: 100px;
+    }
+
+    .btncls{
+        
+        
+            font-size: 14px;
+            border: 0;           
+            height: 34px;
+            margin: 0;
+			color: 
+    }
+
+
+#box1, #box2{
+	display:inline-block;
+	height:35px;
+	margin:5px;
+	
+	border-radius: 10px;
+}
+
+#box1 {
+	background:#bfe59c;
+}
+
+#box2 {
+	background:#ff0;
+}
+
+h2, p  {
+	padding:5px;
+}
+
+#box1 p, #box2 p {
+	white-space:pre;
+	font-size:smaller;
+	font-family:monospace;
+}
+</style>	
+	
 </head>
 <body>
+<script src="js/redirect.js?v=1003"></script>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -64,16 +126,19 @@
 			queslid="none";
       console.log(uid);
             var accessToken = response.authResponse.accessToken;
+            loadhome(uid);
         } else if (response.status === 'not_authorized') {
             uid="hiru";
 			quesd="none";
 			queslid="none";
+			loadhome(uid);
       // the user is logged in to Facebook,
             // but has not authenticated your app
         } else {
 		   uid="hiru";
 		   quesd="none";
 		   queslid="none";
+		   loadhome(uid);
             console.log("hiru");
       //setTimeout(function(){
             //window.location.reload(1);
@@ -95,17 +160,7 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
     
-    <nav>
-    <div class="nav-wrapper">
-      <form>
-        <div class="input-field">
-          <input id="search" placeholder="Search" style="color: #78909c; font-size: 24px;" type="search" autocomplete="off" required>
-          <label class="label-icon" for="search" style="top: -0.6rem;"><i class="material-icons large">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
-  </nav>
+    
 
 
 <!-- Section heading -->
@@ -113,7 +168,7 @@
 <!-- Section navbar -->
 <nav class="nav-extended">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;"> Online Sohopathi</a>
+      <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;"> অনলাইন সহপাঠী</a>
       <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
       </a>-->
       <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" onclick="checkuser()" style="margin-left: 5px;">
@@ -125,32 +180,19 @@
 	</div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
-        <li class="tab"><a class="active" href="index.html" onclick="redirectnow()" style="text-decoration:none;">Home</a></li>
+        <li class="tab"><a class="active" href="index.html" onclick="redirectnow()" style="color: white; text-decoration:none;">Home</a></li>
         
-        <li class="tab"><a href="#FAQ" style="text-decoration:none;">FAQ</a></li>
-      </ul>
-      <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" data-toggle="modal" data-target="#myModal">
-        <i class="material-icons">lightbulb_outline</i>
-      </a> -->
+        <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
+		<li class="tab"><a href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Questions</a></li>
+        <li class="tab"><a href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
+		
+        <li class="tab"><a href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
+	    <li class="tab"><a href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li> 
+	  </ul>
     </div>
   </nav>
-  <!--<div class="fixed-action-btn toolbar">
-    <a class="btn-floating btn-large teal darken-4">
-      <i class="large material-icons">filter_list</i>
-    </a>
-    <ul>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">edit</i>English</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">format_quote</i>Physics</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">insert_chart</i>Chemistry</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">attach_file</i>Math</a></li>
-	<li class="waves-effect waves-light">
-		<a href="#!"><i class="material-icons">attach_file</i>Biology</a></li>
-    </ul>
-  </div> -->
+  
     
     
 <div class="row">
@@ -158,6 +200,10 @@
 
 <div id="Home" class="col s12 m8 l9 home">
   	<!-- Section Question Answer -->
+	<div id="box1">
+	<p><b>এইচএসসি পরীক্ষার সকল সাজেশন দেখতে চলে যাও <a href="https://www.onlinesohopathi.com/allsuggestions.html" >এই লিঙ্কে। </a> </b></p>
+	
+	</div>
 	
 	<ul class="collapsible popout" id="CollapseBody" data-collapsible="accordion">
     
@@ -296,10 +342,10 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="js/main.js"></script>
-<script src="js/postanswer.js"></script>
-<script src="js/onequefront.js"></script>
-<script src="js/onequeback.js"></script>
+<script src="js/main.js??v=1001"></script>
+<script src="js/postanswer.js?v=1001"></script>
+<script src="js/onequefront.js?v=1023"></script>
+<script src="js/onequeback.js?v=1001"></script>
 
 
 
