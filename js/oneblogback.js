@@ -122,7 +122,12 @@ function uploadanswersme(quesids,profinf) {
 }
 
 function redir(quesidss)
-{ var str="http://198.211.96.87/oneblog.html?filter=";
+{ 
+  var str="";
+  if(quesidss=="17")
+   str="https://www.onlinesohopathi.com/oneblog.html?filter=";
+  else
+	  str="https://www.onlinesohopathi.com/blog"+quesidss+".html?filter=";
   str=str.concat(quesidss);
  window.location.replace(str);
 
@@ -147,7 +152,7 @@ $("#Home").ready(function (event) {
 function parsingoneBlog(filt){
     //alert("hr");
     var getFromDb="v1/index.php/viewoneblog";
-
+    var loader=0;
     var PageToSendTo = "v1/index.php/viewonequestion?";
 	
    var Obj;
@@ -165,10 +170,11 @@ function parsingoneBlog(filt){
      if (this.readyState == 4 && this.status == 201) {
           //Obj = this.responseText;
           Obj = JSON.parse(this.responseText);
-
-          //alert(this.responseText);
-          loadoneblog(this.responseText);
-           
+         if(loader==0)
+            loadoneblog(this.responseText);
+         else
+          loadoneblogcomments(this.responseText);			 
+		
           console.log("Printing response...");
           
      }

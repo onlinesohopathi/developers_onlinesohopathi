@@ -50,7 +50,8 @@ function uploadanswers(quesids,valdiva,profinf) {
 	var answer =  document .getElementById(txtall.concat(quesids)).value;
 	var notifications,imagelink,bol="'",question;
 	//alert(profinfs.name);
-	var profinfs=profinf;	
+	var profinfs=profinf;
+    	
 //	
 //	if(notification=='true')
 //	  notifications=1;
@@ -151,7 +152,10 @@ function uploadanswersme(quesids,profinf) {
 	var answer =  document .getElementById(txtall).value;
 	var notifications,imagelink,bol="'",question;
 	//alert(profinfs.name);
-	var profinfs=profinf;	
+	var profinfs=profinf;
+    var urls=window.location.href;
+    var res = urls.split("=");
+    var tru="submit".concat(res[1]); 
 //	
 //	if(notification=='true')
 //	  notifications=1;
@@ -228,13 +232,18 @@ function uploadanswersme(quesids,profinf) {
     
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status != 404) {
+            if (this.readyState == 4 && this.status == 201) {
                 
+				localStorage.setItem(tru,"0");
 				//alert(this.responseText);
 				redir(question_id);
                       
                 
             }
+			else if(this.readyState==4)
+			{  alert(this.status);
+			   localStorage.setItem(tru,"0");
+			}
         };
 		xmlhttp.open("POST", uploadtoDb, true); 
 			
@@ -249,7 +258,9 @@ function uploadanswersme(quesids,profinf) {
 function redir(quesidss)
 { var str="http://www.onlinesohopathi.com/onequestion.html?question=";
   str=str.concat(quesidss);
+  
  window.location.replace(str);
+ 
 
 }
 

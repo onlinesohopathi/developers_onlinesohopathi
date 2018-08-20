@@ -1,6 +1,6 @@
 function validate(){
   
-  var strngs="http://198.211.96.87/v1/";
+  var strngs="https://www.onlinesohopathi.com/v1/";
 	   var urls=window.location.href;
        var res = urls.split("=");
        res[1]=res[1].concat(".jpg");
@@ -23,10 +23,10 @@ function checkuser()
 	
 	if(uid!="hiru")
 	{
-		location.href="http://www.onlinesohopathi.com/myquestion.html";
+		location.href="https://www.onlinesohopathi.com/myquestion.html";
 	}
 	else
-		location.href="http://www.onlinesohopathi.com/fblogin.html";
+		location.href="https://www.onlinesohopathi.com/fblogin.html";
 }
 
 $(document).ready(function(){
@@ -51,7 +51,7 @@ function checklog()
 
 function redirectnow()
 {
-	var str="http://www.onlinesohopathi.com/index.html";
+	var str="https://www.onlinesohopathi.com/index.html";
   //str=str.concat(quesidss);
  window.location.replace(str);
 
@@ -261,15 +261,23 @@ function loadoneblog(myObjs) {
   { 
     if(myObj[i].id=="17")
 	{
-    var strn="http://198.211.96.87/v1/".concat(myObj[i].userid);
+    var strn="https://www.onlinesohopathi.com/v1/".concat(myObj[i].userid);
     strn=strn.concat(".jpg");
 	}
 	else
 	{
-	var strn="http://198.211.96.87/v1/blog".concat(myObj[i].id);
+	var strn="https://www.onlinesohopathi.com/v1/blog".concat(myObj[i].id);
     strn=strn.concat(".jpg");  
 	
 	}
+	/*if(myObj[i].id=="34")
+	{
+	 var meta = document.createElement('meta');
+meta.setAttribute("property", "og:image");
+meta.content = "https://www.onlinesohopathi.com/v1/blog34.jpg";
+document.getElementsByTagName('head')[0].appendChild(meta);
+	
+	}*/
     	
 	
     	
@@ -284,9 +292,199 @@ function loadoneblog(myObjs) {
 	//alert(strn);
 	document.getElementById("blgpic").src=strn;
 	var contents=document.getElementById("contents");
+	var contpra=document.createElement("p");
 	
-	contents.textContent=myObj[i].content;
-	contents.style.cssText="white-space: pre-wrap; text-align: justify; font-size:18px; ";
+	contpra.innerHTML=myObj[i].content;
+	contpra.style.cssText="white-space: pre-wrap; text-align: justify; font-size:18px; ";
+	contents.appendChild(contpra);
+        
+  
+    var listItem = document.createElement("li");
+    CollapseBody.appendChild(listItem); 
+    
+    var Description = document.createElement("div");
+	Description.id="b".concat(myObj[i].id);  
+    
+	
+	var ansdiv=document.createElement("div");
+	ansdiv.classList.add('conta');
+	var acount=document.createElement('h5');
+	
+	
+	//Answer starts loading here
+	
+	var anss=myObj[i].comments;
+	acount.textContent=anss.length+" comments";
+	ansdiv.appendChild(acount);
+	Description.appendChild(ansdiv);
+	
+	for(k=0;k < anss.length;k++)
+	{
+	
+	var timediv= document.createElement("div");
+	timediv.classList.add('timeline-item');
+	var subdiv= document.createElement("div");
+	subdiv.classList.add('cd-timeline-img');
+	var anspro=document.createElement('img');
+	anspro.src=anss[k].fbpic;
+	anspro.style.cssText = 'border-radius: 50%;width: 40px; height: 40px; margin-right:10px;';
+	subdiv.appendChild(anspro);
+	var ansname=document.createElement('strong');
+	ansname.textContent=anss[k].username;
+	subdiv.appendChild(ansname);
+	timediv.appendChild(subdiv);
+	var anspara= document.createElement("p");
+	anspara.textContent= anss[k].content;
+	timediv.appendChild(anspara);
+	
+	Description.appendChild(timediv);
+	
+	
+	
+	var strs=anss[k].image;
+    var imagess=strs.split(",");
+	var urlss;
+	for(l=0;l<imagess.length;l++)
+	{
+	
+	
+	if(imagess[l].length==0)continue;
+	var qimgdivs=document.createElement("div");
+	var matdivs= document.createElement("div");
+	urlss='https://www.onlinesohopathi.com/v1/'.concat(imagess[l]);
+	
+    qimgdivs.classList.add('flexbin');
+    qimgdivs.classList.add('flexbin-margin');
+	matdivs.classList.add('material-placeholder');
+	
+	var qimgs=document.createElement('img');
+	qimgs.classList.add('materialboxed');
+	qimgs.classList.add('initialized');
+	qimgs.style.cssText=' height: 130%; width: 100%; ';
+	
+	qimgs.src=urlss;
+	matdivs.appendChild(qimgs);
+	qimgdivs.appendChild(matdivs);
+	timediv.appendChild(qimgdivs);
+	}
+	var likediv=document.createElement("div");
+	likediv.style.cssText=" margin: 4px; padding: 1px; position: absolute; ";
+	var ViewsSpan = document.createElement("span");
+    
+	ViewsSpan.setAttribute("data-badge-caption" , " Upvotes");
+	ViewsSpan.classList.add('new');
+    ViewsSpan.classList.add('badge');
+    ViewsSpan.textContent = "0";
+    	likediv.appendChild(ViewsSpan);
+
+	var AnsSpan = document.createElement("span");
+	AnsSpan.setAttribute("data-badge-caption" , " Downvotes");
+    AnsSpan.classList.add('new');
+    AnsSpan.classList.add('badge');
+    AnsSpan.classList.add('grey');
+    AnsSpan.textContent = "0";
+    	likediv.appendChild(AnsSpan);
+	Description.appendChild(likediv);
+
+    }	
+		
+		
+	var timedivs= document.createElement("div");
+	timedivs.classList.add('timeline-item');
+	var myimg= document.createElement('div');
+	myimg.style.cssText="margin-top:15 px;";
+	myimg.classList.add('cd-timeline-img');
+	var proimgs= document.createElement('img');
+    proimgs.src= "img/account_circle.svg";
+	var strngme= document.createElement('strong');
+	strngme.textContent="Myself";
+    myimg.appendChild(proimgs);
+    myimg.appendChild(strngme);
+	timedivs.appendChild(myimg);
+    
+	
+	var ansbox= document.createElement('div');
+	var txtbox= document.createElement('textarea');
+	txtbox.classList.add('materialize-textarea');
+	txtbox.id= "ansboxx".concat(myObj[i].id);
+	txtbox.type="text";
+	txtbox.placeholder="New Comment";
+	ansbox.appendChild(txtbox);
+	timedivs.appendChild(ansbox);
+	var imganbt= document.createElement("button");
+	imganbt.classList.add('waves-effect');
+	imganbt.classList.add('waves-light');
+	imganbt.classList.add('btn');
+	var imgandbt= document.createElement("input");
+	imgandbt.setAttribute("type", "file");
+    imgandbt.accept = "image/*";
+	imgandbt.id="image-picker".concat(myObj[i].id);
+	imgandbt.style.cssText="visibility: hidden; display: none;";
+	var imgpick= "document.getElementById('image-picker').click()";
+	imganbt.id="anssub".concat(myObj[i].id);
+	var valuess= (myObj[i].id);
+	var icn= document.createElement("i");
+	
+	icn.classList.add('fa');
+	icn.classList.add('fa-camera');
+	imganbt.appendChild(icn);
+	var content = document.createTextNode("Image");
+	imganbt.appendChild(content);
+	imganbt.appendChild(imgandbt);
+	
+	
+	
+	
+	timedivs.appendChild(imganbt);
+	var subbt= document.createElement("button");
+	subbt.classList.add('waves-effect');
+    subbt.classList.add('waves-light');
+	subbt.classList.add('btn');
+	subbt.id="submit".concat(myObj[i].id);
+	subbt.style.cssText="margin-left: 10px;";
+	var buttonanswer="submit".concat(myObj[i].id);
+	var icns= document.createElement("i");
+	
+	icns.classList.add('fa');
+	icns.classList.add('fa-paper-plane');
+	subbt.appendChild(icns);
+	var contents = document.createTextNode("Submit");
+	subbt.appendChild(contents);
+	timedivs.appendChild(subbt);
+	
+	
+	
+	
+	
+	
+	
+	Description.appendChild(timedivs);
+	
+		
+	listItem.appendChild(Description);
+	
+	imagedisplay(valuess);
+	imagepreview(valuess);
+	submitbuttonforanswer(buttonanswer);
+	
+	
+	
+  }
+	
+	
+
+
+}
+
+
+function loadoneblogcomments(myObjs) {
+	// body...
+	var myObj=JSON.parse(myObjs);
+	var i,j,k,l,m;
+	
+  for(i=0;i<myObj.length;i++)
+  { 
+    
 	
         
   
@@ -342,7 +540,7 @@ function loadoneblog(myObjs) {
 	if(imagess[l].length==0)continue;
 	var qimgdivs=document.createElement("div");
 	var matdivs= document.createElement("div");
-	urlss='http://198.211.96.87/v1/'.concat(imagess[l]);
+	urlss='https://www.onlinesohopathi.com/v1/'.concat(imagess[l]);
 	
     qimgdivs.classList.add('flexbin');
     qimgdivs.classList.add('flexbin-margin');
@@ -468,6 +666,7 @@ function loadoneblog(myObjs) {
 
 
 }
+
 function imagedisplay(objs)
 {
 

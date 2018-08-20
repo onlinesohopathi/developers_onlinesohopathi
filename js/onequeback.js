@@ -1,15 +1,21 @@
 
 
+var myuid="";
 
-
-$("#Home").ready(function (event) {
+function loadhome(uidme) {
   /* for(var i=1;i<=30;i++)
     localStorage.removeItem(i);
-*/
+*/ myuid=uidme;
   var urls=window.location.href;
    var res = urls.split("=");
+   var stri="submit".concat(res[1]);
+   localStorage.setItem(stri,"0");
+   for (var i = 1; i <= 30; i++)
+        localStorage.removeItem(i);
+
+    localStorage.removeItem("count");
    parsingoneQuestion(res[1]);
-});
+}
 
 
 function loadallprofiles(ids)
@@ -135,6 +141,32 @@ function myLoader() {
 }
 
 
+function deleteanswer(delanswer){
+    
+    var getFromDb="v1/index.php/deleteanswerfromdatabase";
+    
+
+	
+   var Obj;
+   var data=new FormData();
+   data.append('delanswer',delanswer);
+   xmlhttp = new XMLHttpRequest();
+   xmlhttp.onreadystatechange = function() {
+     if (this.readyState == 4 && this.status == 201) {
+          //Obj = this.responseText;
+          Obj = JSON.parse(this.responseText);
+         
+          console.log("Printing response...");
+          
+     }
+   };
+   xmlhttp.open("POST", getFromDb, true);
+   xmlhttp.send(data);
+    
+    
+ 
+    
+ }
 
 function parsingoneQuestion(url){
     
@@ -158,7 +190,7 @@ function parsingoneQuestion(url){
           Obj = JSON.parse(this.responseText);
 
           
-          loadonequestion(this.responseText);
+          loadonequestion(this.responseText,myuid);
            
           console.log("Printing response...");
           
@@ -172,3 +204,100 @@ function parsingoneQuestion(url){
     
  }
 
+
+
+
+
+function upvote(ansid, uid_for_upvote,flag) {
+
+    var getFromDb = "v1/index.php/answerUpVotefaz";
+
+
+    //console.log(ansid);
+    var Obj;
+    var data = new FormData();
+    data.append('ansid', ansid);
+    data.append('upvote_uid', uid_for_upvote);
+    data.append('flag',flag);
+    //   alert(ansid+uid_for_upvote );
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 201) {
+            //   Obj = JSON.parse(this.responseText);
+            //  alert("clicked");
+            //return Obj;
+
+        }
+    };
+    xmlhttp.open("POST", getFromDb, true);
+    xmlhttp.send(data);
+
+
+
+
+}
+
+function checkexist(uid, ansskanswer_id, viewspanid,flag) {
+
+    var getFromDb = "v1/index.php/checkexistencefaz";
+
+
+
+    var Obj;
+    var data = new FormData();
+    data.append('ansid', ansskanswer_id);
+    data.append('upvote_uid', uid);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 201) {
+            Obj = this.responseText;
+            //  alert("clickedevent"+Obj);
+//            if (Obj != "\"[]\"") {
+//                //console.log(Obj);
+//            } else {
+
+                // alert(viewspanid +"  "+ ansskanswer_id);
+            if(flag==1){      
+               upvotebackend2(viewspanid, ansskanswer_id,Obj);
+        }
+            else{
+                downvotebackend2(viewspanid, ansskanswer_id,Obj);
+            }
+            // }
+        }
+    };
+    xmlhttp.open("POST", getFromDb, true);
+    xmlhttp.send(data);
+
+
+}
+
+function downvote(ansid, uid_for_upvote,flag) {
+
+    var getFromDb = "v1/index.php/answerDownVotefaz";
+
+
+     var Obj;
+    var data = new FormData();
+    data.append('ansid', ansid);
+    data.append('upvote_uid', uid_for_upvote);
+    data.append('flag',flag);
+    //   alert(ansid+uid_for_upvote );
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 201) {
+            //   Obj = JSON.parse(this.responseText);
+            //  alert("clicked");
+            //return Obj;
+
+        }
+    };
+    xmlhttp.open("POST", getFromDb, true);
+    xmlhttp.send(data);
+
+
+
+}
+
+
+//faiza-end

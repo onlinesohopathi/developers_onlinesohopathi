@@ -328,6 +328,9 @@ function searchshow(myObjs)
 	var i,j,k,l,m;
     
     alert(myObj.length);
+	while (CollapseBody.firstChild) {
+    CollapseBody.removeChild(CollapseBody.firstChild);
+}
   for(i=0;i<myObj.length;i++)
   {
 	     
@@ -348,7 +351,11 @@ function searchshow(myObjs)
    		listItem.append(QuestionTitle);
   
     var Profilepic = document.createElement("img");
-    Profilepic.src = "img/account_circle.svg";
+    if (myObj[i].notification == "0")
+            Profilepic.src = myObj[i].fbpics;
+		
+	else
+	 Profilepic.src = "img/account_circle.svg";
     Profilepic.style.cssText = 'border-radius: 50%;width: 40px; height: 40px; margin-right:10px;';
         QuestionTitle.append(Profilepic);
 

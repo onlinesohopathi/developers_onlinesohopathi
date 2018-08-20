@@ -1,11 +1,186 @@
-var unidiv = "CollapseBody";
+﻿var unidiv = "CollapseBody";
 var ourdiv = "None";
 var flag = "0";
 var vlu = 0;
-var uidtrue="";
+var uidtrue = "";
+var me_answered,queCount,rank_for_profile,like_for_profile, dislike_for_profile,points_for_profile;
+var fbpic_for_profile;
 
-function loadus() { //alert("0");
+function checkLog() {
+
+    if (uid != "hiru" && localStorage.getItem("submit") == "0") {
+        localStorage.setItem("submit", "1");
+        loadallprofiles(uid);
+    }
+}
+
+function checkuser() {
+
+    if (uid != "hiru") {
+        location.href = "https://www.onlinesohopathi.com/myquestion.html";
+    } else
+        location.href = "https://www.onlinesohopathi.com/fblogin.html";
+}
+
+function checkFacebook() {
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            location.href = "https://www.onlinesohopathi.com/myquestion.html";
+
+        } else {
+
+        }
+    });
+
+}
+
+function proCheckForNot(){
+
+parsingAllNotis(uid);
+}
+
+function profileCheckForNotification(){
+    if (uid == "hiru"){
+            $('#myModalss').modal('show');
+      //alert(uid);
+         
+    }
+    else{
+        
+        parsingAllNotis(uid);
+    }
+
+            
+        
+}
+
+function myquestionsList(){
+    if (uid == "hiru"){
+            $('#myModalss').modal('show');
+     // alert("if"+uid);
+    //    location.reload();
+         
+    }
+    else{
+      //  alert("else"+uid);
+         //   get_me_answered(uid);
+          //  parsingAllQuestions(uid, "CollapseBody4");
+    }
+
+            
+        
+}
+
+
+
+$("#myModals").on('show.bs.modal', function () {
+
+
+    if (uid != "hiru") {
+
+        $('#myModals').modal('hide');
+
+        loadallprofiles(uid);
+    }
+
+
+});
+
+function checkFacebookLogin(alldiv) {
+    $("#myModalss").modal("hide");
+    $("#myModals").modal("hide");
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            fetchUserDetail(alldiv);
+
+        } else {
+
+        }
+    });
+
+}
+
+function fetchUserDetail(alldivss) {
+    FB.api('/me', function (response) {
+        uid = response.id;
+
+        if (alldivss.id == "myModals")
+            logger(response.id);
+
+        else if (alldivss.id == "myModalm") {
+            uid = response.id;
+            $("#myModalm").modal("hide");
+          
+
+        } else {
+            
+            loadallprofiless(quesd, unidiv, response.id);
+                 //get_me_answered(uid);
+		    
+            loadprofilepicture(response.id);
+			parsingAllQuestions(response.id, "CollapseBody4");
+            parsingAllNotis(uid);
+           // location.reload();
+
+        }
+
+
+
+    });
+
+
+}
+
+
+
+
+function logger(pqs) {
+    uid = pqs;
+    if (uid != "hiru") {
+
+        $("#myModals").modal("hide");
+    }
+
+    loadallprofiles(uid);
+
+
+
+
+}
+
+function loggers(pqs) {
+    uid = pqs;
+
+    uploadanswers(quesd);
+
+
+    if (uid != "hiru") {
+        $("#myModalss").modal("hide");
+
+    }
+
+}
+
+function loadus() {
     window.location.href = "aboutus.html";
+}
+
+function loadblogsNEWhtml() {
+    window.location.href = "blogload.html";
+}
+
+function loadNotificationNEWhtml() {
+    window.location.href = "notification.html";
+}
+
+
+function loadMyquestionNEWhtml() {
+    window.location.href = "myquestionsload.html";
+}
+
+
+function loadlibrary() {
+    window.location.href = "library.html";
 }
 
 function getBrowserSize() {
@@ -14,7 +189,7 @@ function getBrowserSize() {
     if (typeof window.innerWidth != 'undefined') {
         w = window.innerWidth; //other browsers
         h = window.innerHeight;
-    } else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+    } else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth !== 0) {
         w = document.documentElement.clientWidth; //IE
         h = document.documentElement.clientHeight;
     } else {
@@ -32,7 +207,7 @@ $(window).on("scroll", function () {
     var scrollHeight = $(document).height();
     var scrollPosition = $(window).height() + $(window).scrollTop();
     // alert(scrollHeight);
-    if (scrollPosition >= scrollHeight - 100 && vlu == 0) {
+    if (scrollPosition >= scrollHeight - 100 && vlu === 0) {
         //alert("misu");
         vlu = 1;
         if (unidiv == "CollapseBody")
@@ -41,194 +216,40 @@ $(window).on("scroll", function () {
             parsingAllQuestions("hscs", unidiv);
         else if (unidiv == "CollapseBody2")
             parsingAllQuestions("sscs", unidiv);
-        else if (unidiv == "CollapseBody4")
-            parsingAllQuestions(uid, unidiv);
+        else if (unidiv == "CollapseBody4") {
+            //loadprofilepicture(uid);
+            get_me_answered(uid);
+			parsingAllQuestions(uid, unidiv);
+        }
         localStorage.setItem(unidiv.concat("scroll"), 1);
 
         // when scroll to bottom of the page
     } else if (scrollPosition < scrollHeight - 100) {
         vlu = 0;
     }
-})
+});
 
 
-
-
-
-
-/*$(window).on('scroll', function(){
-
-    //get the viewport height. i.e. this is the viewable browser window height
-    var clientHeight = document.body.clientHeight,
-        //height of the window/document. $(window).height() and $(document).height() also return this value.
-        windowHeight = $(this).outerHeight(),
-        //current top position of the window scroll. Seems this *only* works when bound inside of a scoll event.
-        scrollY = $(this).scrollTop();
-
-    if( windowHeight - clientHeight === scrollY )
-		{
-	    //alert("miss");
-		if(unidiv=="CollapseBody")
-		  parsingAllQuestions("1",unidiv);
-	    else if(unidiv=="CollapseBody1")
-		  parsingAllQuestions("hscs",unidiv);
-        else if(unidiv=="CollapseBody2")
-		  parsingAllQuestions("sscs",unidiv);
-	    else if(unidiv=="CollapseBody4")
-		  parsingAllQuestions(uid,unidiv);
-        localStorage.setItem(unidiv.concat("scroll"),1);  	  
-			
-		// when scroll to bottom of the page
-	}
-	
-	});
-
-/*$(window).on("scroll", function() {
-	var scrollHeight = $(document).height();
-	var scrollPosition = $(window).height() + $(window).scrollTop();
-	if($(window).scrollTop() + $(window).height() == $(document).height()) 
-});*/
 
 function redirects() {
-    var str = "http://www.onlinesohopathi.com/index.html";
+    var str = "https://www.onlinesohopathi.com/index.html";
     //str=str.concat(quesidss);
     window.location.replace(str);
 
 }
 
-
-function checkLog() {
-
-    if (uid != "hiru") {
-        loadallprofiles(uid);
-    }
-}
-
-function checkuser() {
-
-    if (uid != "hiru") {
-        location.href = "http://www.onlinesohopathi.com/myquestion.html";
-    } else
-        location.href = "http://www.onlinesohopathi.com/fblogin.html";
-}
-
-function checkFacebook() {
-    FB.getLoginStatus(function (response) {
-        if (response.status === 'connected') {
-            location.href = "http://www.onlinesohopathi.com/myquestion.html";
-
-        } else {
-
-        }
-    });
+function redirectnow() {
+    var str = "https://www.onlinesohopathi.com/index.html";
+    //str=str.concat(quesidss);
+    window.location.replace(str);
 
 }
 
-$("#myModals").on('show.bs.modal', function () {
-
-
-    if (uid != "hiru") {
-
-        $('#myModals').modal('hide');
-
-        loadallprofiles(uid);
-    }
-
-
-});
-
-function fetchUserDetail(alldivss) {
-    FB.api('/me', function (response) {
-        uid = response.id;
-        //alert("Name: "+ response.name + "\nFirst name: "+ response.first_name + "ID: "+response.id);
-        if (alldivss.id == "myModals")
-            logger(response.id);
-
-        else if (alldivss.id == "myModalm") {
-            uid = response.id;
-            $("#myModalm").modal("hide");
-            parsingAllQuestions(response.id, "CollapseBody4");
-
-        } else {
-            loadallprofiless(quesd, unidiv, response.id);
-
-        }
-
-
-
-    });
-
+function redirects() {
+    var str = "https://www.onlinesohopathi.com/notification.html";
+ 
 
 }
-
-function checkFacebookLogin(alldiv) {
-    $("#myModalss").modal("hide");
-    $("#myModals").modal("hide");
-    FB.getLoginStatus(function (response) {
-        if (response.status === 'connected') {
-            fetchUserDetail(alldiv);
-
-        } else {
-
-        }
-    });
-
-}
-
-
-function logger(pqs) {
-    uid = pqs;
-    if (uid != "hiru") {
-
-        $("#myModals").modal("hide");
-    }
-    //alert("HOG");
-    loadallprofiles(uid);
-
-
-
-
-}
-
-function loggers(pqs) {
-    uid = pqs;
-    //alert("HOG");
-    uploadanswers(quesd);
-
-
-    if (uid != "hiru") {
-        $("#myModalss").modal("hide");
-
-    }
-
-}
-
-
-
-
-
-/*$(".dropdown-content li a").click(function(){
-      console.log( $(this).text());
-      var link=document.getElementById('category-sel');	  
-      console.log( link.innerHTML);
-	  var stry=$(this).text();
-	  if(stry.charAt(0)=='p')
-		  stry="Physics";
-	  else if(stry.charAt(0)=='a')
-		  stry="Chemistry";
-	  else if(stry.charAt(0)=='f')
-		  stry="Biology";
-	  else if(stry.charAt(0)=='i')
-		  stry="Math";
-	  else if(stry.charAt(0)=='e')
-		  stry="English";
-	  
-	  link.innerHTML=stry;
-      //$(".dropdown-button btn:first-child").val($(this).text());
-
-   });*/
-
-
 
 $("#image-picker").change(function (event) {
     console.log("Clicked");
@@ -243,6 +264,7 @@ function readURLs(input, imgdiv) {
     var b64string = "hello!@1";
     var q = 0,
         start;
+	var p=0;
 
     console.log(curFiles);
 
@@ -255,7 +277,7 @@ function readURLs(input, imgdiv) {
         for (var i = 0; i < curFiles.length; i++) {
             var listItem = document.createElement("li");
             var bstring;
-            listItem.style.cssText = 'display: inline-block; vertical-align: top;'
+            listItem.style.cssText = 'display: inline-block; vertical-align: top;';
 
             var para = document.createElement("p");
             l = 2;
@@ -263,34 +285,45 @@ function readURLs(input, imgdiv) {
             para.textContent = "File name " + curFiles[i].name + ".";
             var image = document.createElement("img");
 
-            //image.src = window.URL.createObjectURL(curFiles[i]);
+            image.src = window.URL.createObjectURL(curFiles[i]);
             if (localStorage.getItem("count") === null) {
                 q = 1;
             } else {
                 q = Number(localStorage.getItem("count")) + 1;
             }
 
-            var FR = new FileReader();
-            FR.addEventListener("load", function (e) {
-                image.src = e.target.result;
-                bstring = e.target.result;
-                //alert(bstring);
-                localStorage.setItem(q, bstring);
-                l = 1;
-            });
+            //var FR= new FileReader();
+            var reader = new FileReader();
+            reader.readAsArrayBuffer(input.files[i]);
 
-            FR.readAsDataURL(input.files[i]);
+            reader.onload = function (event) {
+                // blob stuff
+                var blob = new Blob([event.target.result]); // create blob...
+                window.URL = window.URL || window.webkitURL;
+                var blobURL = window.URL.createObjectURL(blob); // and get it's URL
+
+                // helper Image object
+                var image = new Image();
+                image.src = blobURL;
+
+                image.onload = function () {
+                    // have to wait till it's loaded
+                    var resized = resizeMe(image, imgdiv); // send it to canvas
+                    localStorage.setItem(q, resized);
+
+                }
+            };
+
 
 
             image.id = "shadman".concat(i);
 
             localStorage.setItem("count", q);
+            var urls = window.location.href;
+            var res = urls.split("=");
 
-            //localStorage.setItem("start",start);
 
-            //localStorage.setItem(q,b64string);
-            //document.getElementById("paras").innerHTML="File name " + curFiles[i].name + ".";
-            image.style.cssText = 'max-height:300px; width:auto';
+            image.style.cssText = 'height:300px; width:200px';
             listItem.appendChild(image);
             listItem.appendChild(para);
 
@@ -301,47 +334,84 @@ function readURLs(input, imgdiv) {
     }
 }
 
-$('#search').keypress(function (e) {
-    if (e.which == 13) {
-        e.preventDefault();
-        //alert("HO");
-        ourdiv = "yes";
-        if (unidiv != "CollapseBody3")
-            searchanswer(this.value, unidiv);
-        else
-            parsingAllBlogs(document.getElementById("search").value, "CollapseBody3");
+function resizeMe(img, imgdiv) {
 
-        //do something   
+    var canvas = document.createElement('canvas');
+
+    var width = img.width;
+    var height = img.height;
+    var max_height = 1500;
+    var max_width = 1500;
+
+    //calculate the width and height, constraining the proportions
+    if (width > height) {
+        if (width > max_width) {
+            //height *= max_width / width;
+            height = Math.round(height *= max_width / width);
+            width = max_width;
+        }
+    } else {
+        if (height > max_height) {
+            //width *= max_height / height;
+            width = Math.round(width *= max_height / height);
+            height = max_height;
+        }
     }
+
+    //resize the canvas and draw the image data into it
+    canvas.width = width;
+    canvas.height = height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0, width, height);
+
+
+    return canvas.toDataURL("image/jpeg", 0.7); // get the data from canvas as 70% JPG (can be also PNG, etc.)
+
+}
+
+
+
+$('#searches').click(function (e) {
+
+
+    ourdiv = "yes";
+    if (unidiv != "CollapseBody3")
+        searchanswer(document.getElementById("comment").value, unidiv);
+    else
+        parsingAllBlogs(document.getElementById("comment").value, "CollapseBody3");
+
+
+
 });
 
 function loadhome(uidme) {
     queslid = "none";
-    if (parseInt(getBrowserSize().width) < 1026) {
-        //alert("ohl");
-        document.getElementById("blogsCollapseBody1").style.visibility = "hidden";
-        document.getElementById("blogsCollapseBody1").style.position = "absolute";
-        document.getElementById("blogsCollapseBody1").style.left = "-9999px";
+    
+
+    if (parseInt(getBrowserSize().width) < 500) {
+
+        
         document.getElementById("blogsCollapseBody").style.visibility = "hidden";
         document.getElementById("blogsCollapseBody").style.position = "absolute";
         document.getElementById("blogsCollapseBody").style.left = "-9999px";
-        document.getElementById("blogsCollapseBody2").style.visibility = "hidden";
-        document.getElementById("blogsCollapseBody2").style.position = "absolute";
-        document.getElementById("blogsCollapseBody2").style.left = "-9999px";
+        
     }
-	uidtrue=uidme;
-    //alert("ok");
+    uidtrue = uidme;
+
     for (var i = 1; i <= 30; i++)
         localStorage.removeItem(i);
 
     localStorage.removeItem("count");
+    localStorage.setItem("delete", "0");
     localStorage.setItem("CollapseBody".concat("scroll"), 0);
 
     parsingAllQuestions("0", "CollapseBody");
 
 
 
-};
+}
+
+
 
 $(".Homes").ready(function () {
     queslid = "none";
@@ -353,7 +423,7 @@ $(".Homes").ready(function () {
     localStorage.setItem("CollapseBody1".concat("scroll"), 0);
     localStorage.setItem("CollapseBody2".concat("scroll"), 0);
 
-    //parsingAllQuestions("0", "CollapseBody");
+
 
 
 
@@ -366,31 +436,29 @@ function loadhsc(uidme) {
 
     localStorage.removeItem("count");
     localStorage.setItem("CollapseBody1".concat("scroll"), 0);
-	uidtrue=uidme;
+    uidtrue = uidme;
 
     parsingAllQuestions("hsc", "CollapseBody1");
-    //parsingAllBlogs("CollapseBody1");
-    //LoadBlog();
 
 
-};
+
+}
 
 function loadssc(uidme) {
     queslid = "none";
     for (var i = 1; i <= 30; i++)
         localStorage.removeItem(i);
-    uidtrue=uidme;
+    uidtrue = uidme;
     localStorage.removeItem("count");
     localStorage.setItem("CollapseBody2".concat("scroll"), 0);
 
     parsingAllQuestions("ssc", "CollapseBody2");
-    //parsingAllBlogs("CollapseBody2");
-
-    //LoadBlog();
 
 
-};
 
+}
+
+/*
 $(".BLOGS").ready(function () {
     queslid = "none";
 
@@ -401,14 +469,15 @@ $(".BLOGS").ready(function () {
 
     localStorage.removeItem("count");
 
-    //parsingAllQuestions("ssc","CollapseBody2");
-    //alert(parseInt(getBrowserSize().width));
+
     parsingAllBlogs("0", "CollapseBody3");
 
-    //LoadBlog();
+
 
 
 });
+
+*/
 
 $(".Notification").ready(function () {
 
@@ -417,22 +486,6 @@ $(".Notification").ready(function () {
 
     localStorage.removeItem("count");
 
-    /*FB.getLoginStatus(function(response) {
-          if (response.status === 'connected') {
-            uid=response.id;
-			parsingAllNotis(uid);
-			
-			
-          } 
-          else 
-          {
-            alert("To view notifications: 1. Login to Facebook. 2. Reload this page. ");
-          }
-         });*/
-
-
-
-    //LoadBlog();
 
 
 });
@@ -441,32 +494,34 @@ function loadmyquestions(uidme) {
     queslid = "none";
     for (var i = 1; i <= 30; i++)
         localStorage.removeItem(i);
-    uidtrue=uidme;
+    uidtrue = uidme;
     localStorage.removeItem("count");
     localStorage.setItem("CollapseBody4".concat("scroll"), 0);
 
-    //parsingAllQuestions("ssc","CollapseBody2");
 
+}
 
+function loadsuggestionblogs(uidme) {
+    parsingAllSuggestionBlogs("0", "suggestionCollapseBody");
 
-    //LoadBlog();
-
-
-};
+}
 
 
 var blogs = document.getElementById('blogs'); // Inside html div class="conta"
 
 function loadAllNotis(uides, myobb, divgg) {
     var myObjn = JSON.parse(myobb);
-    //savedivs=coldiv;
+
     var CollapseBodys = document.getElementById(divgg);
 
-    //alert(coldiv);
+
     var i, j, k, l, m;
+   
     console.log(myObjn.length);
-    var Nots = document.getElementById("Nott");
-    Nots.textContent = "Notifications" + "(" + myObjn.length + ")";
+       console.log(uid);
+  //  var Nots = document.getElementById("Nott");
+//     Nots.textContent="Not";
+  //  Nots.textContent = "Notifications" + "(" + myObjn.length + ")";
     for (i = 0; i < myObjn.length; i++) {
 
 
@@ -483,7 +538,7 @@ function loadAllNotis(uides, myobb, divgg) {
         listItems.appendChild(QuestionTitles);
 
         var Profilepics = document.createElement("img");
-        //alert(myObj[i].anonymous);
+
 
         Profilepics.src = "img/notification.svg";
         Profilepics.style.cssText = 'border-radius: 50%;width: 40px; height: 40px; margin-right:10px;';
@@ -501,28 +556,38 @@ function loadAllNotis(uides, myobb, divgg) {
 }
 
 function LoadBlog(myObjss, divg) {
-    //alert("blg");
+
+    var blogs = document.createElement("div");
+    blogs.id = "containBLOGS";
+
     var allr = 'blogs'.concat(divg);
     var myNode = document.getElementById(allr);
-    //<h3 class="text-lighten-4"><strong >Blog Posts</strong></h3>
-    var head = document.createElement("h3");
+
+    var head = document.createElement("h4");
     head.classList.add = "text-lighten-4";
     var header = document.createElement("strong");
-    header.textContent = "Blog Posts";
+    if (divg != "suggestionCollapseBody")
+        header.textContent = "Blog Posts";
+    else
+        header.textContent = "এইচএসসি বিষয়ভিত্তিক সাজেশন";
     head.appendChild(header);
 
-    if (divg == "CollapseBody3") {
-        while (myNode.firstChild)
-            myNode.removeChild(myNode.firstChild);
-    }
+
+  
     myNode.appendChild(head);
     var myObjr = JSON.parse(myObjss);
+
+
+    myNode.appendChild(blogs);
+
+
+
     for (var it = 0; it < myObjr.length; it++) {
-        var alls = 'blogs'.concat(divg);
+        // var alls = 'blogs'.concat(divg);
         if (it == myObjr.length - 1)
             localStorage.setItem("bloglast", myObjr[it].id);
-        var blogs = document.getElementById(alls);
-        //if(it==0)alert(myObjr[it].username);
+
+
         var blogContainer = document.createElement("div");
         blogContainer.style.cssText = 'cursor: pointer;';
         vals = divg.concat("blog");
@@ -544,9 +609,9 @@ function LoadBlog(myObjss, divg) {
         blogProfilePic.appendChild(writer);
         var img = document.createElement("img");
         if (myObjr[it].id == "17")
-            img.src = "http://198.211.96.87/v1/" + myObjr[it].userid + ".jpg";
+            img.src = "https://www.onlinesohopathi.com/v1/" + myObjr[it].userid + ".jpg";
         else
-            img.src = "http://198.211.96.87/v1/blog" + myObjr[it].id + ".jpg";
+            img.src = "https://www.onlinesohopathi.com/v1/blog" + myObjr[it].id + ".jpg";
         img.style.cssText = "height: 50%; width: 100%;";
         blogContainer.appendChild(img);
         var blogtitle = document.createElement("h5");
@@ -558,11 +623,7 @@ function LoadBlog(myObjss, divg) {
         blogContainer.appendChild(blogtitle);
         blogContainer.appendChild(blogProfilePic);
 
-        /*<div style="margin: 4px; margin-top: 15px; padding: 1px; position: absolute;">
-          <span class="new badge red" data-badge-caption="Downvote">1</span>
-          <span class="new badge teal" data-badge-caption="Upvote">2</span>
-          <span class="new badge blue darken-4" data-badge-caption="Likes">4</span>
-        </div>*/
+
 
         var blogextras = document.createElement("div");
         blogextras.style.cssText = "margin: 4px; margin-top: 15px; padding: 1px; position: absolute;";
@@ -579,8 +640,6 @@ function LoadBlog(myObjss, divg) {
         upvote.classList.add('teal');
         upvote.textContent = "2 upvote";
         blogextras.appendChild(upvote);
-        //blogContainer.appendChild(blogextras);
-
 
 
         blogs.appendChild(blogContainer);
@@ -593,6 +652,246 @@ function LoadBlog(myObjss, divg) {
 
 
 }
+
+function loadBlogsinNEWfile(myObjss) {
+
+   
+
+//
+//    if (divg == "CollapseBody3") {
+//        while (myNode.firstChild)
+//            myNode.removeChild(myNode.firstChild);
+//    }
+//    myNode.appendChild(head);
+    
+    var blogs = document.createElement("div");
+    blogs.id = "containBLOGS";
+    
+    var myNode = document.getElementById("blogsCollapseBody3");
+    
+    var myObjr = JSON.parse(myObjss);
+
+    var category_container = document.createElement("div");
+    //category_container.classList.add('row-fluid');
+    category_container.style.cssText = 'display:table;margin:10px auto;border-spacing: 10px;';
+    myNode.appendChild(category_container);
+
+    var category_list = ["suggestion", "knowledge", "admission er dinguli", "critical question"]; //use SQL query here for generating category of blogs
+
+        for (var it = 0; it < category_list.length; it++) {
+
+            var category = document.createElement("button");
+            category.style.cssText = 'margin: 10px ;';
+
+            category.id = "cat".concat(it).concat(category_list[it]);
+            category.classList.add('waves-effect');
+            category.classList.add('waves-light');
+            category.classList.add('btn');
+
+
+            // subbt.id="submit".concat(myObj[i].id);
+            category.style.cssText = "margin-left: 10px;";
+            // var buttonanswer="submit".concat(myObj[i].id);
+            var category_icon = document.createElement("i");
+
+            category_icon.classList.add('fa');
+            if (it == 0) {
+
+                //    category.style.cssText = 'background-color:#3498DB;';
+                category_icon.classList.add('fa-lightbulb-o');
+                var contents = document.createTextNode("  HSC suggestion");
+            } else if (it == 2) {
+                // category.style.cssText = 'background-color:#9C27B0;';
+
+                category_icon.classList.add('fa-graduation-cap');
+                var contents = document.createTextNode("  এডমিশনের দিনগুলি");
+
+            } else if (it == 3) {
+                // category.style.cssText = 'background-color:#E9EBEE;';
+
+                category_icon.classList.add('fa-question-circle');
+                var contents = document.createTextNode("  " + category_list[it]);
+            } else if (it == 1) {
+                //  category.style.cssText = 'background-color:#ED7D31;';
+
+                category_icon.classList.add('fa-book');
+                var contents = document.createTextNode("  " + category_list[it]);
+            }
+
+            category_icon.classList.add('fa-1.5x');
+            category.appendChild(category_icon);
+            category.appendChild(contents);
+            category_container.appendChild(category);
+
+        }
+
+    
+    myNode.appendChild(blogs);
+
+var divg="CollapseBody3";
+    for (var it = 0; it < myObjr.length; it++) {
+        // var alls = 'blogs'.concat(divg);
+        if (it == myObjr.length - 1)
+            localStorage.setItem("bloglast", myObjr[it].id);
+
+
+        var blogContainer = document.createElement("div");
+        blogContainer.style.cssText = 'cursor: pointer;';
+        vals = divg.concat("blog");
+        var rest = vals.concat(myObjr[it].id);
+        blogContainer.id = vals.concat(myObjr[it].id); // Need to be assigned
+        blogContainer.classList.add('timeline-item');
+
+
+        var blogProfilePic = document.createElement("div");
+        blogProfilePic.classList.add('cd-timeline-img');
+
+
+        var blogimg = document.createElement("img");
+        blogimg.src = "img/account_circle.svg";
+        blogProfilePic.appendChild(blogimg);
+
+        var writer = document.createElement("strong");
+        writer.textContent = myObjr[it].username;
+        blogProfilePic.appendChild(writer);
+        var img = document.createElement("img");
+        if (myObjr[it].id == "17")
+            img.src = "https://www.onlinesohopathi.com/v1/" + myObjr[it].userid + ".jpg";
+        else
+            img.src = "https://www.onlinesohopathi.com/v1/blog" + myObjr[it].id + ".jpg";
+        img.style.cssText = "height: 60%; width: 80%;";
+        blogContainer.appendChild(img);
+        var blogtitle = document.createElement("h5");
+        var bold = document.createElement("b");
+        bold.textContent = myObjr[it].title;
+        bold.style.cssText = " color : #000000;";
+        blogtitle.appendChild(bold);
+        //blogtitle.textContent = 
+        blogContainer.appendChild(blogtitle);
+        blogContainer.appendChild(blogProfilePic);
+
+
+
+        var blogextras = document.createElement("div");
+        blogextras.style.cssText = "margin: 4px; margin-top: 15px; padding: 1px; position: absolute;";
+        var downvote = document.createElement("span");
+        downvote.classList.add('new');
+        downvote.classList.add('badge');
+        downvote.classList.add('red');
+        downvote.textContent = "1 comment";
+        blogextras.appendChild(downvote);
+
+        var upvote = document.createElement("upvote");
+        upvote.classList.add('new');
+        upvote.classList.add('badge');
+        upvote.classList.add('teal');
+        upvote.textContent = "2 upvote";
+        blogextras.appendChild(upvote);
+
+
+        blogs.appendChild(blogContainer);
+
+        blogclick(rest, divg);
+
+
+
+    }
+    
+        for (var it = 0; it < category_list.length; it++) {
+            cat_id = "cat".concat(it).concat(category_list[it]);
+            category_click(cat_id, blogs.id, category_list[it], myObjr, divg);
+        }
+
+
+
+}
+
+function category_click(category_id, main_id, cat_name, myObjr, divg) {
+
+    var blogs = document.getElementById(main_id);
+    document.getElementById(category_id).addEventListener("click", function (event) {
+        console.log(cat_name);
+        while (blogs.firstChild)
+            blogs.removeChild(blogs.firstChild);
+        //  load_specific_category(cat_name);
+
+        for (var it = 0; it < myObjr.length; it++) {
+
+
+            if (myObjr[it].type == cat_name) {
+                var blogContainer = document.createElement("div");
+                blogContainer.style.cssText = 'cursor: pointer;';
+                var vals = divg.concat("blog");
+                var rest = vals.concat(myObjr[it].id);
+                blogContainer.id = vals.concat(myObjr[it].id); // Need to be assigned
+                blogContainer.classList.add('timeline-item');
+
+
+                var blogProfilePic = document.createElement("div");
+                blogProfilePic.classList.add('cd-timeline-img');
+
+
+                var blogimg = document.createElement("img");
+                blogimg.src = "img/account_circle.svg";
+                blogProfilePic.appendChild(blogimg);
+
+                var writer = document.createElement("strong");
+                writer.textContent = myObjr[it].username;
+                blogProfilePic.appendChild(writer);
+                var img = document.createElement("img");
+                if (myObjr[it].id == "17")
+                    img.src = "https://www.onlinesohopathi.com/v1/" + myObjr[it].userid + ".jpg";
+                else
+                    img.src = "https://www.onlinesohopathi.com/v1/blog" + myObjr[it].id + ".jpg";
+                img.style.cssText = "height: 50%; width: 100%;";
+                blogContainer.appendChild(img);
+                var blogtitle = document.createElement("h5");
+                var bold = document.createElement("b");
+                bold.textContent = myObjr[it].title;
+                bold.style.cssText = " color : #000000;";
+                blogtitle.appendChild(bold);
+                //blogtitle.textContent = 
+                blogContainer.appendChild(blogtitle);
+                blogContainer.appendChild(blogProfilePic);
+
+
+
+                var blogextras = document.createElement("div");
+                blogextras.style.cssText = "margin: 4px; margin-top: 15px; padding: 1px; position: absolute;";
+                var downvote = document.createElement("span");
+                downvote.classList.add('new');
+                downvote.classList.add('badge');
+                downvote.classList.add('red');
+                downvote.textContent = "1 comment";
+                blogextras.appendChild(downvote);
+
+                var upvote = document.createElement("upvote");
+                upvote.classList.add('new');
+                upvote.classList.add('badge');
+                upvote.classList.add('teal');
+                upvote.textContent = "2 upvote";
+                blogextras.appendChild(upvote);
+                //blogContainer.appendChild(blogextras);
+
+
+
+                blogs.appendChild(blogContainer);
+
+                blogclick(rest, divg);
+
+            }
+
+        }
+
+
+
+
+
+    });
+
+
+}
+
 
 
 function savediv(divid) {
@@ -610,7 +909,9 @@ function savediv(divid) {
             parsingAllBlogs("0", unidiv);
 
         } else if (unidiv == "CollapseBody4") {
+            get_me_answered(uid);
             parsingAllQuestions(uid, "CollapseBody4");
+
         }
 
     } else {
@@ -621,18 +922,16 @@ function savediv(divid) {
                 $('#myModalm').modal('show');
             } else if (flag == "0") {
                 flag = "1";
+                get_me_answered(uid);
                 parsingAllQuestions(uid, "CollapseBody4");
             }
         } else if (divid == "Notifydiv") {
-            /*if(uid=="hiru")
-		 alert("To view notifications: 1. Login to Facebook. 2. Reload this page. ");
-	 else
-		 parsingAllNotis(uid);*/
+
 
         }
     }
     unidiv = divid;
-    document.getElementById("search").value = "";
+    document.getElementById("comment  ").value = "";
     ourdiv = "None";
     //alert(unidiv);
 
@@ -642,23 +941,59 @@ function savediv(divid) {
 
 
 function loadallquestions(myObjs, coldiv) {
-    // body...
-    // alert(coldiv);
+
     var myObj = JSON.parse(myObjs);
-    //savedivs=coldiv;
+
     var CollapseBody = document.getElementById(coldiv);
 
-    //alert(CollapseBody.id);
+
+
+    if (coldiv == "CollapseBody4") {
+        /*
+        var spandiv = document.createElement("div");
+        spandiv.style.cssText = 'display:table;margin:10px auto;border-spacing: 10px;';
+        CollapseBody.appendChild(spandiv);
+
+        var askedspan = document.createElement("span");
+        askedspan.style.cssText = 'display:inline-block;background-color:#4bbcb1;margin-right: 20px;border: 2px solid #01321F;padding: 10px;border-radius: 25px;';
+        askedspan.textContent = "    Asked Questions : ".concat(queCount);
+        spandiv.appendChild(askedspan);
+
+        var answeredspan = document.createElement("span");
+        answeredspan.textContent = "Answered  Questions : ".concat(me_answered);
+        answeredspan.style.cssText = 'display:inline-block;background-color:#4bbcb1;border: 2px solid #01321F;padding: 10px;border-radius: 25px;';
+        spandiv.appendChild(answeredspan);
+        */
+
+        var rankspan = document.getElementById('rank');
+        rankspan.innerHTML = rank_for_profile;
+        var usernamediv = document.getElementById('userName');
+        usernamediv.innerHTML = myObj[0].username;
+        // var fbpicdiv = document.getElementById('fbpic');
+        //fbpicdiv.src =fbpic_for_profile;
+        // fbpicdiv.src ="http://graph.facebook.com/".concat(myObj[0].userid)."/picture?type=large&redirect=true&width=250&height=250";
+        console.log(fbpic_for_profile);
+        document.getElementById('fbpic').src=fbpic_for_profile;
+        document.getElementById('likeCount').innerHTML=like_for_profile;
+        document.getElementById('queCount').innerHTML=queCount;
+        document.getElementById('ansCount').innerHTML=me_answered;
+		
+    }
+
+
     var i, j, k, l, m;
     console.log(myObj.length);
 
     for (i = 0; i < myObj.length; i++) {
-
+        if (coldiv == "CollapseBody4")
+            myObj[i].anonymous = "0";
         if (i == myObj.length - 1) {
             queslid = "OK";
             localStorage.setItem(coldiv, myObj[i].id);
         }
         var listItem = document.createElement("li");
+        listItem.id = "questions" + coldiv + myObj[i].id;
+        questionids = "questions" + coldiv + myObj[i].id;
         CollapseBody.appendChild(listItem);
 
         var QuestionTitle = document.createElement("div");
@@ -669,29 +1004,118 @@ function loadallquestions(myObjs, coldiv) {
 
         var Profilepic = document.createElement("img");
         //alert(myObj[i].anonymous);
-        if (myObj[i].notification == "0")
-            Profilepic.src = myObj[i].fbpics;
-        else
+        if (myObj[i].anonymous == "0")
+		{
+		  if(i%4==1)	
+			Profilepic.src = "https://onlinesohopathi.com/img/images1.jpg";
+		  else if(i%4==2)
+			 Profilepic.src = "https://onlinesohopathi.com/img/images2.jpg";
+		  else if(i%4==3)
+			 Profilepic.src = "https://onlinesohopathi.com/img/images3.jpg";
+		  else if(i%4==0)
+			 Profilepic.src = "https://onlinesohopathi.com/img/images4.jpg";
+          		 
+			
+		}
+        
+		
+		else
             Profilepic.src = "img/account_circle.svg";
-        Profilepic.style.cssText = 'border-radius: 50%;width: 40px; height: 40px; margin-right:10px;';
+        Profilepic.style.cssText = 'border-radius: 50%;width: 50px; height: 50px; margin-right:5px;';
         QuestionTitle.appendChild(Profilepic);
 
         var creadiv = document.createElement("div");
 
-        if (myObj[i].notification == "0")
+
+        if (myObj[i].anonymous == "0")
             creadiv.textContent = "Q" + myObj[i].id + "." + (myObj[i].username) + " asked: ";
         else
             creadiv.textContent = "Q" + myObj[i].id + "." + "Somebody" + " asked: ";
 
         var creatitl = document.createElement("p");
-        creatitl.textContent = "     ".concat(myObj[i].title);
-        creatitl.style.cssText = "font-weight: bold;";
-        creadiv.appendChild(creatitl);
+        var titles = myObj[i].title;
+        var cat = myObj[i].question;
+        if (cat.substring(0, 5) != "OSMT_") {
+            if (titles.length === 0)
+                titles = "নিচের ছবিতে দেওয়া প্রশ্নগুলোর সমাধান করে দিন। Topic: ".concat(myObj[i].question);
+            creatitl.textContent = "     ".concat(titles);
+            creatitl.style.cssText = "font-weight: bold;  ";
+
+            creadiv.appendChild(creatitl);
+        }
+		else
+		{
+		   if(titles.length!=0)
+		   {
+			creatitl.textContent = "     ".concat(titles);
+            creatitl.style.cssText = "font-weight: bold;  ";
+
+            creadiv.appendChild(creatitl);   
+		   }
+		}
+
+        var str = myObj[i].image;
+
+        str = myObj[i].image;
+
+        var images = str.split(",");
+        var urls;
+        if (cat.substring(0, 5) == "OSMT_") {
+            console.log("YYY");
+            for (j = 0; j < images.length; j++)
+
+            {
+                if (images[j].length == 0) continue;
+
+                urls = 'https://www.onlinesohopathi.com/v1/'.concat(images[j]);
+
+
+                var qimgdiv = document.createElement("div");
+                qimgdiv.style.cssText = 'margin-top: 25px;';
+                qimgdiv.classList.add('flexbin');
+                qimgdiv.classList.add('flexbin-margin');
+                var qimg = document.createElement('img');
+
+                //qimg.style.cssText=' display: block;overflow: auto';
+                var wide = listItem.offsetWidth;
+
+
+
+                qimg.src = urls;
+                qimg.style.cssText = "max-width: 100%; max-height: 400px; height: auto; width: auto; ";
+
+
+
+                qimgdiv.id = images[j].concat("CollapseBody");
+                qimgdiv.appendChild(qimg);
+                creadiv.appendChild(qimgdiv);
+
+            }
+
+
+
+
+        }
 
 
         var ViewsDiv = document.createElement("div");
         ViewsDiv.style.cssText = 'margin: 4px; margin-top: 15px; padding: 1px; position: absolute;';
         creadiv.appendChild(ViewsDiv);
+
+
+        if (uid == myObj[i].userid) {
+            var del = document.createElement("span");
+            del.setAttribute("data-badge-caption", "");
+            del.classList.add('new');
+            del.classList.add('badge');
+            del.classList.add('red');
+            del.textContent = " Delete";
+            var vl = "del".concat(coldiv);
+            del.id = vl.concat(myObj[i].id);
+            // del.type = "button";
+            ViewsDiv.appendChild(del);
+           // console.log(uid);
+        }
 
         var ViewsSpan = document.createElement("span");
         ViewsSpan.setAttribute("data-badge-caption", "");
@@ -713,299 +1137,106 @@ function loadallquestions(myObjs, coldiv) {
         SubSpan.setAttribute("data-badge-caption", "");
         SubSpan.classList.add('new');
         SubSpan.classList.add('badge');
-        SubSpan.classList.add('red');
+        SubSpan.classList.add('baby-blue');
         var ands = myObj[i].question;
         SubSpan.textContent = ands;
         ViewsDiv.appendChild(SubSpan);
+
+
 
         QuestionTitle.appendChild(creadiv);
 
 
 
 
-        var Description = document.createElement("div");
-
-        var des = "q".concat(coldiv);
-        Description.id = des.concat(myObj[i].id);
-        Description.classList.add('collapsible-body');
-        listItem.appendChild(Description);
-
-        var DescText = document.createElement("span");
-        DescText.textContent = "Subject: ".concat(myObj[i].question);
-        Description.appendChild(DescText);
-        str = myObj[i].image;
-
-        var images = str.split(",");
-
-        var urls;
-        for (j = 0; j < images.length; j++) {
-            if (images[j].length == 0) continue;
-
-            urls = 'http://198.211.96.87/v1/'.concat(images[j]);
 
 
-            var qimgdiv = document.createElement("div");
-            qimgdiv.classList.add('flexbin');
-            qimgdiv.classList.add('flexbin-margin');
-            var qimg = document.createElement('img');
-            qimg.style.cssText = 'max-width: 100%; max-height: 400px; height:auto; width:auto;  ';
-            qimg.src = urls;
-            $('.materialboxed').materialbox();
-            qimg.classList.add('materialboxed');
-            qimgdiv.id = images[j].concat(coldiv);
-            dividss = images[j];
-            //loadimgques(dividss,coldiv);
-            qimgdiv.appendChild(qimg);
-            Description.appendChild(qimgdiv);
-
+        if (uid == myObj[i].userid) {
+            delqueid(del.id, myObj[i].id, listItem.id);
         }
 
-        var ansdiv = document.createElement("div");
-        ansdiv.classList.add('conta');
-        var acount = document.createElement('h5');
-
-        //Answer starts loading here
-
-        var anss = myObj[i].answers;
-        acount.textContent = anss.length + " answers";
-        ansdiv.appendChild(acount);
-        Description.appendChild(ansdiv);
-
-        for (k = 0; k < anss.length; k++) {
-
-            //var profs=loadallprofiles(anss[k].answer_id);
-            var timediv = document.createElement("div");
-            timediv.classList.add('timeline-item');
-			var vl = "time".concat(k);
-            vl = vl.concat(coldiv);
-            timediv.id = vl.concat(myObj[i].id);
-            var subdiv = document.createElement("div");
-            subdiv.classList.add('cd-timeline-img');
-            var anspro = document.createElement('img');
-            anspro.src = anss[k].fbimg;
-            anspro.style.cssText = 'border-radius: 50%;width: 40px; height: 40px; margin-right:10px;';
-            subdiv.appendChild(anspro);
-            var ansname = document.createElement('strong');
-            ansname.textContent = (anss[k].username).concat(" replied: ");
-            subdiv.appendChild(ansname);
-            timediv.appendChild(subdiv);
-            var anspara = document.createElement("p");
-            anspara.textContent = anss[k].string;
-            timediv.appendChild(anspara);
-
-
-            Description.appendChild(timediv);
-
-
-
-            var strs = anss[k].image;
-            var imagess = strs.split(",");
-            var urlss;
-            for (l = 0; l < imagess.length; l++) {
-
-
-                if (imagess[l].length == 0) continue;
-                var qimgdivs = document.createElement("div");
-                var matdivs = document.createElement("div");
-                urlss = 'http://198.211.96.87/v1/'.concat(imagess[l]);
-
-                qimgdivs.classList.add('flexbin');
-                qimgdivs.classList.add('flexbin-margin');
-                matdivs.classList.add('material-placeholder');
-
-                var qimgs = document.createElement('img');
-
-                qimgs.style.cssText = 'max-width: 100%; max-height: 400px; height:auto; width:auto;   ';
-
-
-
-                qimgs.src = urlss;
-                $('.materialboxed').materialbox();
-                qimgs.classList.add('materialboxed');
-                qimgdivs.id = imagess[l].concat(coldiv);
-                dividsss = imagess[l];
-                //loadimgans(dividsss,coldiv);
-                matdivs.appendChild(qimgs);
-                qimgdivs.appendChild(matdivs);
-                timediv.appendChild(qimgdivs);
-            }
-            var likediv = document.createElement("div");
-			var vl = "like".concat(k);
-            vl = vl.concat(coldiv);
-            likediv.id = vl.concat(myObj[i].id);
-          //  likediv.style.cssText = " margin: 4px; padding: 1px; position: absolute; ";
-            var ViewsSpan = document.createElement("span");
-            ViewsSpan.setAttribute("data-badge-caption", " Upvotes");
-            ViewsSpan.classList.add('new');
-            ViewsSpan.classList.add('badge');
-            ViewsSpan.textContent = "0";
-            likediv.appendChild(ViewsSpan);
-
-            var AnsSpan = document.createElement("span");
-            AnsSpan.setAttribute("data-badge-caption", " Downvotes");
-            AnsSpan.classList.add('new');
-            AnsSpan.classList.add('badge');
-            AnsSpan.classList.add('grey');
-            AnsSpan.textContent = "0";
-            likediv.appendChild(AnsSpan);
-
-            if(uid==anss[k].userid){
-            var del = document.createElement("span");
-            del.setAttribute("data-badge-caption", " Delete");
-            del.classList.add('new');
-            //   del.classList.add('badge');
-            del.classList.add('red');
-            del.textContent = "  Delete  ";
-            var vl = "del".concat(k);
-            vl = vl.concat(coldiv);
-            del.id = vl.concat(myObj[i].id);
-            likediv.append(del);
-            }
-            Description.appendChild(likediv);
-			if(uid==anss[k].userid){
-			 //alert(timediv.id);	
-             delansid(del.id, timediv.id, likediv.id, anss[k].answer_id);
-            }
-            
-        }
-
-
-        var timedivs = document.createElement("div");
-        timedivs.classList.add('timeline-item');
-        var myimg = document.createElement('div');
-        myimg.style.cssText = "margin-top:15 px;";
-        myimg.classList.add('cd-timeline-img');
-        var proimgs = document.createElement('img');
-        proimgs.src = "img/account_circle.svg";
-        proimgs.style.cssText = 'border-radius: 50%;width: 40px; height: 40px; margin-right:10px;';
-        var strngme = document.createElement('strong');
-        strngme.textContent = "Myself";
-        myimg.appendChild(proimgs);
-        myimg.appendChild(strngme);
-        timedivs.appendChild(myimg);
-
-
-        var ansbox = document.createElement('div');
-        var txtbox = document.createElement('textarea');
-        txtbox.classList.add('materialize-textarea');
-        var txtids = "ansboxx".concat(coldiv);
-        txtbox.id = txtids.concat(myObj[i].id);
-        txtbox.type = "text";
-        txtbox.placeholder = "New Comment";
-        ansbox.appendChild(txtbox);
-        timedivs.appendChild(ansbox);
-        var imganbt = document.createElement("button");
-        imganbt.classList.add('waves-effect');
-        imganbt.classList.add('waves-light');
-        imganbt.classList.add('btn');
-        var imgandbt = document.createElement("input");
-        imgandbt.setAttribute("type", "file");
-        imgandbt.accept = "image/*";
-        var vll = "image-picker".concat(coldiv);
-        imgandbt.id = vll.concat(myObj[i].id);
-        imgandbt.style.cssText = "visibility: hidden; display: none;";
-        var imgpick = "document.getElementById('image-picker').click()";
-        var vlls = "anssub".concat(coldiv);
-        imganbt.id = vlls.concat(myObj[i].id);
-        var valuess = (myObj[i].id);
-        var icn = document.createElement("i");
-
-        icn.classList.add('fa');
-        icn.classList.add('fa-camera');
-        imganbt.appendChild(icn);
-        var content = document.createTextNode("Image");
-        imganbt.appendChild(content);
-        imganbt.appendChild(imgandbt);
-
-
-
-
-        timedivs.appendChild(imganbt);
-        var subbt = document.createElement("button");
-        subbt.classList.add('waves-effect');
-        subbt.classList.add('waves-light');
-        subbt.classList.add('btn');
-        var vl = "submit".concat(coldiv);
-        subbt.id = vl.concat(myObj[i].id);
-        subbt.style.cssText = "margin-left: 10px;";
-        subbt.type = "button";
-
-        var buttonanswer = vl.concat(myObj[i].id);
-
-        var icns = document.createElement("i");
-
-        icns.classList.add('fa');
-        icns.classList.add('fa-paper-plane');
-        subbt.appendChild(icns);
-        var contents = document.createTextNode("Submit");
-        subbt.appendChild(contents);
-        timedivs.appendChild(subbt);
-
-
-
-
-        //document.add( '<button class=\"waves-effect waves-light btn\"><i class=\"fa fa-camera\"></i>Image</button>' );
-
-        //button for answer image and submit goes here
-
-
-        Description.appendChild(timedivs);
-
-        //var mis=loadallprofiles(myObj[i].id);
-
-
-
-
-        imagedisplay(valuess, coldiv);
-        imagepreview(valuess, coldiv);
-
-
-
-        submitbuttonforanswer(buttonanswer, coldiv);
-
-
-
-
-
+        questiondisplay(questionids, coldiv);
     }
-
-    if (ourdiv != "yes" && localStorage.getItem(coldiv.concat("scroll")) != 1 && parseInt(getBrowserSize().width) >= 1026)
+    console.log(parseInt(getBrowserSize().width));
+    if (ourdiv != "yes" && localStorage.getItem(coldiv.concat("scroll")) != 1 && parseInt(getBrowserSize().width) >= 500)
         parsingAllBlogs("0", coldiv);
+
+
 
 
 }
 
+function questiondisplay(ideas, coldir) {
+
+    document.getElementById(ideas).addEventListener("click", function (event) {
+        var strn = ideas;
+        var rep = "questions" + coldir;
+        strn = strn.replace(rep, "");
 
 
+        var btr = "https://www.onlinesohopathi.com/onequestion.html?question=".concat(strn);
 
+        if (localStorage.getItem("delete") == "0") {
+            var win = window.open(btr, '_blank');
+            win.focus();
+        }
+
+    });
+
+}
 
 function delansid(delid, timedivid, likedivid, ansskanswer_id) {
 
 
     var el = document.getElementById(delid);
-   // document.addEventListener('DOMContentLoaded', function () {
-    
-    
-    el.onclick = function() {
-              var answer = confirm("Delete  Answer?")
-if (answer) {
-    var elem1 = document.getElementById(timedivid);
+    // document.addEventListener('DOMContentLoaded', function () {
+
+
+    el.onclick = function () {
+        var answer = confirm("Delete  Answer?");
+        if (answer) {
+            var elem1 = document.getElementById(timedivid);
             elem1.parentElement.removeChild(elem1);
             var elem2 = document.getElementById(likedivid);
             elem2.parentElement.removeChild(elem2);
             //  call a function of backend for deleting the specified answer by id from database
 
-           deleteanswer(ansskanswer_id);
+            deleteanswer(ansskanswer_id);
+        } else {
+            //some code
+        }
+
+    };
+
 }
-else {
-    //some code
-}
+
+
+function delqueid(delid, queid, listItemid) {
+
+
+    var el = document.getElementById(delid);
+    // document.addEventListener('DOMContentLoaded', function () {
+
+
+    el.onclick = function () {
+        localStorage.setItem("delete", 1);
+        var question = confirm("Delete  Question?")
+        if (question) {
+            var elem1 = document.getElementById(listItemid);
+            elem1.parentElement.removeChild(elem1);
+
+            deletequestion(queid);
+
+        } else {
+
+            window.location.reload();
+            //some code
+        }
 
     }
-    
+
+
 }
-
-
 
 
 function imagedisplay(objs, savedivs) {
@@ -1032,7 +1263,7 @@ function imagepreview(objss, savedivs) {
 
     var objc = objss;
     var orb = "image-picker".concat(savedivs);
-    var orb = orb.concat(objc);
+    orb = orb.concat(objc);
 
     document.getElementById(orb).addEventListener("change", function (event) {
         // image preview
@@ -1054,14 +1285,15 @@ function blogclick(buttons, savdivs) {
 
     document.getElementById(buttons).addEventListener("click", function (event) {
         var strn = buttons;
+        var btr = "";
         strn = strn.replace(savdivs.concat("blog"), "");
         // alert(strn);
         // body...
         if (strn == 17)
-            var btr = "oneblog.html?filter=".concat(strn);
+            btr = "oneblog.html?filter=".concat(strn);
         else {
             var files = "blog" + strn + ".html";
-            var btr = files + "?filter=" + strn;
+            btr = files + "?filter=" + strn;
         }
 
         location.href = btr;
@@ -1078,7 +1310,7 @@ function viewnotifiedquestion(uidess, ideas) {
         // alert(strn);
         // body...
 
-        var btr = "http://www.onlinesohopathi.com/onequestion.html?question=".concat(strn);
+        var btr = "https://www.onlinesohopathi.com/onequestion.html?question=".concat(strn);
         updatenotifystate(uidess, strn);
 
         //location.href = btr;
@@ -1115,22 +1347,20 @@ function submitbuttonforanswer(objl, savedivs) {
 }
 
 function loadimgques(objl, savedivs) {
-    alg = objl.concat(savedivs);
+    var alg = objl.concat(savedivs);
 
     document.getElementById(alg).addEventListener("click", function () {
         // Uploading Comment
         var algs = alg;
         algs = algs.replace(savedivs, '');
-        algs = "http://198.211.96.87/v1".concat(algs);
+        algs = "https://www.onlinesohopathi.com/v1".concat(algs);
 
         var stt = "#".concat(objl);
         if (uid == "hiru")
             $('#myModalss').modal('show');
         else
             loadallprofiless(quesd, savedivs, uid);
-        //document.getElementById("myModalss").showModal(); 
 
-        //uploadanswers(qid);
 
     });
 

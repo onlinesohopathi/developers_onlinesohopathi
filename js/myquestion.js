@@ -403,7 +403,7 @@ function myquestionshow(myObjs)
     for (j = 0; j < images.length; j++) {	
     if(images[j].length==0)continue;
 	
-	urls='http://198.211.96.87/v1/'.concat(images[j]);
+	urls='https://198.211.96.87/v1/'.concat(images[j]);
 	
 	
 	var qimgdiv=document.createElement("div");
@@ -461,7 +461,7 @@ function myquestionshow(myObjs)
 	if(imagess[l].length==0)continue;
 	var qimgdivs=document.createElement("div");
 	var matdivs= document.createElement("div");
-	urlss='http://198.211.96.87/v1/'.concat(imagess[l]);
+	urlss='https://198.211.96.87/v1/'.concat(imagess[l]);
 	if(i==0)
 		// alert(urlss);
     qimgdivs.classList.add('flexbin');
