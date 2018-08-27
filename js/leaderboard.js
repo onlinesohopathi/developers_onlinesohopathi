@@ -8,8 +8,9 @@ $(document).ready(function(){
 
 
 
-function full_leaderboard_load(myObj)
+function full_leaderboard_load(myObjs)
 {
+	var myObj=JSON.parse(myObjs);
 console.log(myObj.length);
 var wrapper=document.createElement('div');
 wrapper.classList.add('wrapper');
@@ -41,14 +42,16 @@ wrapper.appendChild(wrapper_content);
 var leaderboardlist=document.createElement("ul");
 leaderboardlist.id="leaderboard-list";
 wrapper_content.appendChild(leaderboardlist);
-for (i = 0; i < 200; i++) {
+for (i = 0; i < 16; i++) {
 
   var listItem = document.createElement("li");
   listItem.id = "Leader".concat(i+1);
   leaderboardlist.appendChild(listItem);
   var imgdiv=document.createElement('div');
+  imgdiv.id="Badge".concat(i+1);
   imgdiv.classList.add('graphic');
   var imgview=document.createElement('img');
+  imgview.id="Leaderbadge".concat(i+1);
   imgview.src="img/images1.jpg";
   imgdiv.appendChild(imgview);
   listItem.appendChild(imgdiv);
