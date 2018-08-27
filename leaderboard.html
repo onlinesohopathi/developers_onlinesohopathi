@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+</script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6893106278680691",
+    enable_page_level_ads: true
+  });
+</script>
+-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112046710-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112046710-1');
+</script>
+
+
+
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#004d40">
+	<meta property="og:title" content="Online Sohopathi"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="http://www.onlinesohopathi.com"/>
+	<meta property="og:image" content="http://www.onlinesohopathi.com/v1/webtrue.jpg">
+	<meta property="og:site_name" content="Online Sohopathi"/>
+	<meta property="fb:app_id" content="179014802653918"/>
+
+	<meta property="og:description" content="A free-of-cost educational platform for all students of Bangladesh. They can post about any problems related to their academic subjects(i.e.- Math, Physics, Chemistry, ICT). The platform is open for all."/>
+	<meta name="description" content="A free-of-cost educational platform for all students of Bangladesh. They can post about any problems related to their academic subjects(i.e.- Math, Physics, Chemistry, ICT).">
+	<meta name="keywords" content="Result, education board, BUET, Admission, Medical, Hospital, University, Student, Bikroy, Sell, Exam, Question, Answer">
+
+
+
+	<title>Online Sohopathi-Keep Asking, Enjoy Learning with our network </title>
+
+
+
+	<!-- Bootstrap core CSS -->
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120-precomposed.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152-precomposed.png" />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <!-- <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet"> -->
+    <link href="vendor/materialize/css/materialize.min.css" rel="stylesheet">
+    <link href="vendor/flexbin/flexbin.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="vendor/materialize-stepper/materialize-stepper.min.css"> -->
+
+
+    <!-- Custom styles for this template -->
+	<!--<link href="css/aboutus.css" rel="stylesheet">-->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/leaderboard.css" rel="stylesheet">
+	
+
+
+
+
+<style type="text/css">
+.wrapper {
+  max-width: 300px;
+  position: relative;
+  top: 10%;
+  left: 50% !important;
+  transform: translate(-40%, 10%);
+}
+
+.txtboxxx{
+
+        display: block;
+        float: left;
+        height: 32px;
+        width: 100px;
+    }
+
+    .btncls{
+
+
+            font-size: 14px;
+            border: 0;
+            height: 34px;
+            margin: 0;
+			color:
+    }
+
+
+#box1, #box2{
+	display:inline-block;
+	height:35px;
+	margin:5px;
+
+	border-radius: 10px;
+}
+
+#box1 {
+	background:#bfe59c;
+}
+
+#box2 {
+	background:#ff0;
+}
+
+h2, p  {
+	padding:5px;
+}
+
+#box1 p, #box2 p {
+	white-space:pre;
+	font-size:smaller;
+	font-family:monospace;
+}
+</style>
+
+</head>
+<body>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '179014802653918',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+
+    FB.AppEvents.logPageView();
+
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token
+            // and signed request each expire
+            uid = response.authResponse.userID;
+
+
+			quesd="none";
+			queslid="none";
+			//loadhome(uid);
+			//leaderboard_backend('full')
+
+			//loadmyquestions(uid);
+			//parsingAllNotis(uid);
+            notificationCount(uid);
+
+
+      console.log(uid);
+            var accessToken = response.authResponse.accessToken;
+        } else if (response.status === 'not_authorized') {
+            uid="hiru";
+			quesd="none";
+			queslid="none";
+			//leaderboard_backend('full')
+			//loadhome(uid);
+
+			//loadmyquestions(uid);
+
+        } else {
+		   uid="hiru";
+		   //alert("To view notifications: 1. Login to Facebook. 2. Reload this page. ");
+		   quesd="none";
+		   queslid="none";
+            console.log("hiru");
+			//leaderboard_backend('full')
+			//loadhome(uid);
+
+			//loadmyquestions(uid);
+      //setTimeout(function(){
+            //window.location.reload(1);
+            //}, 5000);
+            // the user isn't logged in to Facebook.
+        }
+    });
+
+
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div id="flux" >
+<!-- Section searchbar  -->
+
+<!-- Section heading -->
+
+<!-- Section navbar -->
+<nav class="nav-extended">
+    <div class="nav-wrapper" >
+      <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;">  অনলাইন সহপাঠী</a>
+      <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+      </a>-->
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" onclick="checkuser()" style="margin-left: 5px;">
+        Ask
+      </a>
+
+
+ <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
+	</div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a class="active" href="#Home" onclick="savediv('CollapseBody')" style="color: white; text-decoration:none;">Home</a></li>
+
+        <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
+		<li class="tab"><a href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Profile</a></li>
+        <li class="tab"><a href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li>
+        <li class="tab"><a href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
+        <li class="tab"><a href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
+	  </ul>
+
+
+
+
+    </div>
+  </nav>
+
+
+<div class="row" >
+
+
+	<div class="col s12 m8 l9" id="leadertable">
+   
+
+
+  </div>
+
+      <!--<div class="container col  m4 l3" style="height: 100vh; ">
+
+
+
+    <div class="conta" id="blogsCollapseBody">
+
+
+  </div>-->
+</div>
+
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+<script src="vendor/jquery/jquery.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="vendor/materialize/js/materialize.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript">
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.carousel');
+//   var instances = M.Carousel.init(elems, options);
+// });
+
+// Or with jQuery
+
+
+
+
+</script>
+
+
+<!-- Custom scripts for this template -->
+
+<script src="js/backend.js"></script>
+<script src="js/leaderboard.js"></script>
+
+
+
+</body>
+</html>
