@@ -62,20 +62,28 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet"> -->
     <link href="vendor/materialize/css/materialize.min.css" rel="stylesheet">
     <link href="vendor/flexbin/flexbin.css" rel="stylesheet">
-    <link rel="stylesheet" href="vendor/materialize-stepper/materialize-stepper.min.css">
+    <!-- <link rel="stylesheet" href="vendor/materialize-stepper/materialize-stepper.min.css"> -->
 
 
     <!-- Custom styles for this template -->
 	<!--<link href="css/aboutus.css" rel="stylesheet">-->
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/leaderboard.css" rel="stylesheet">
 
 
 
 
 <style type="text/css">
+.wrapper {
+  max-width: 300px;
+  position: relative;
+  top: 10%;
+  left: 50% !important;
+  transform: translate(-40%, 10%);
+}
 
 .txtboxxx{
 
@@ -145,12 +153,12 @@ h2, p  {
             // request, and the time the access token
             // and signed request each expire
             uid = response.authResponse.userID;
-			
+
 
 			quesd="none";
 			queslid="none";
 			loadhome(uid);
-			
+
 			loadmyquestions(uid);
 			//parsingAllNotis(uid);
             notificationCount(uid);
@@ -163,7 +171,7 @@ h2, p  {
 			quesd="none";
 			queslid="none";
 			loadhome(uid);
-			
+
 			loadmyquestions(uid);
 
         } else {
@@ -173,7 +181,7 @@ h2, p  {
 		   queslid="none";
             console.log("hiru");
 			loadhome(uid);
-			
+
 			loadmyquestions(uid);
       //setTimeout(function(){
             //window.location.reload(1);
@@ -215,10 +223,10 @@ h2, p  {
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
         <li class="tab"><a class="active" href="#Home" onclick="savediv('CollapseBody')" style="color: white; text-decoration:none;">Home</a></li>
-        
+
         <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
 		<li class="tab"><a href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
-		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Questions</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Profile</a></li>
         <li class="tab"><a href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li>
         <li class="tab"><a href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
         <li class="tab"><a href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
@@ -237,16 +245,65 @@ h2, p  {
 
 <div id="Home" class="col home" >
   	<!-- Section Question Answer -->
+	
+	<div class="container col s12  m3 l3" >
+    <div class="wrapper" style="margin-left: -30px; ">
+      <div class="wrapper__header">
+        <div class="b_logo"><img src="https://images.vexels.com/media/users/3/135313/isolated/lists/9c44517fa04da541c35888362bce2d1b-award-trophy-icon.png" width="40" alt=""/></div>
+        <div class="b_caption">
+          <p>Leaderboard <span></span></p>
+        </div>
+      </div>
+      <div class="wrapper__content">
+        <ul>
+          <li>
+            <div class="graphic"><img src="img/account_circle.svg" alt=""/></div>
+            <div class="name"><span class="header" id="Leader_rank1"></span><span class="stat" id="Leader_rank1_points"></span><span class="sub"></span></div>
+          </li>
+		    
+          <li>
+            <div class="graphic"><img src="img/account_circle.svg" alt=""/></div>
+            <div class="name"><span class="header" id="Leader_rank2"></span><span class="stat" id="Leader_rank2_points"></span><span class="sub"></span></div>
+          </li>
 
-	<div class="col s12 m8 l9">
-   <div id="box1">
+          <li>
+            <div class="graphic"><img src="img/account_circle.svg" alt=""/></div>
+            <div class="name"><span class="header" id="Leader_rank3"></span><span class="stat" id="Leader_rank3_points"></span><span class="sub"></span></div>
+          </li>
+
+          <li>
+            <div class="graphic"><img src="img/account_circle.svg" alt=""/></div>
+            <div class="name"><span class="header" id="Leader_rank4"></span><span class="stat" id="Leader_rank4_points"></span><span class="sub"></span></div>
+          </li>
+
+          <li>
+            <div class="graphic"><img src="img/account_circle.svg" alt=""/></div>
+            <div class="name"><span class="header" id="Leader_rank5"></span><span class="stat" id="Leader_rank5_points"></span><span class="sub"></span></div>
+          </li>
+		  
+		  
+
+         
+		  
+		  
+		  
+		  
+
+
+ 		  </ul>
+      </div>
+    </div>
+  </div>
+
+	<div class="col s12 m4 l5" style="margin-left: 20px;">
+   <div id="box1" >
 	<p><b>এডমিশনের ফ্রি মডেল টেস্টগুলো দিতে চলে যাও <a href="https://www.onlinesohopathi.com/online_exam_links.html" >এই লিঙ্কে। </a> </b></p>
 
 	</div>
+	
+	
 
 		<br>
-		<br>
-
 
 		<ul>
 		<li class="col s8" ><input type="textarea" cols="30" id="comment" style="margin-left: 5px;  width: 99%; height: 35px;" placeholder=" প্রশ্নের উত্তর খুঁজতে লিখে সার্চ করো... ">
@@ -255,18 +312,25 @@ h2, p  {
 		<li style="margin-top: 10px; "><button class="waves-effect waves-light btn " style="margin-left: 7px;" id="searches"><i class="fa fa-search"></i>Search</button>
 		</li>
 		</ul>
-		<br>
-		<br>
+		
+	<div id="adbox1" >
+	<p><img src="https://www.onlinesohopathi.com/img/joykoly_01.jpg" id="joykoly_01" onclick="uploadadcounter('joykoly_01')" style="width:100%; height: 150px;"></p>
+     
+	 </div>
+	
 
 
-<ul  id="CollapseBody" data-collapsible="accordion">
+    <ul class="collapsible" id="CollapseBody" data-collapsible="accordion">
 
 
   </ul>
 
 
     </div>
-      <div class="container col  m4 l3" style="height: 100vh; ">
+      
+
+      <div class="container col  m3 l3" style="margin-left: 10px; margin-top: 40px; height: 100vh; ">
+
 
 
     <div class="conta" id="blogsCollapseBody">
@@ -277,95 +341,6 @@ h2, p  {
 
 
 </div>
-
- <!-- <div id="HSC_Vaiya" class="col s8" >
-  <div class="col s12 m8 l9">
-
-
-
-
-<ul class="collapsible" id="CollapseBody1" data-collapsible="accordion">
-
-
-
-  </ul>
-  </div>
-
-  <div class="container col  m4 l3" style="height: 100vh; ">
-
-
-    <div class="conta" id="blogsCollapseBody1">
-
-	</div>
-	</div>
-
-
-  </div>
-
-  <div id="SSC_Vaiya" class="col s8" >
-  <div class="col s12 m8 l9">
-
-
-
-
-<ul class="collapsible" id="CollapseBody2" data-collapsible="accordion">
-
-
-
-  </ul>
-  </div>
-  <div class="container col  m4 l3" style="height: 100vh; ">
-
-
-    <div class="conta" id="blogsCollapseBody2">
-
-	</div>
-	</div>
-
-  </div>
-  -->
-     <!--
-  <div id="Notification" class="col s8" >
-   <div class="col  s12 m8 l9" >
-	  <ul class="collapsible popout" id="Notifydiv" data-collapsible="accordion">
-
-  </ul>
-	</div>
-  </div>
-    -->
-    
-  <!--
-  <div id="BLOGS" class="col s8" >
-    <div class="col  s12 m8 l9" style="height: 100vh; ">
-	  <div class="conta" id="blogsCollapseBody3">
-	</div>
-	</div>
-
-  </div>
-  -->
-<!--
-  <div id="MYQUESTION" class="col s8" >
-     
-    <div class="col  s12 m8 l9" >
-
-
-	  <ul class="collapsible popout" id="CollapseBody4" data-collapsible="accordion">
-
-
-
-  </ul>
-	</div>
-
-
-	<div  style="height: 100vh; ">
-
-
-    <div class="conta" id="blogsCollapseBody4">
-
-	</div>
-	</div>
-	</div>
-    -->
 
   </div>
 
@@ -446,14 +421,29 @@ h2, p  {
 <script src="vendor/materialize/js/materialize.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+<script type="text/javascript">
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.carousel');
+//   var instances = M.Carousel.init(elems, options);
+// });
 
+// Or with jQuery
+
+$(document).ready(function(){
+  $('.carousel').carousel();
+  console.log("Loaded leaderboard");
+});
+
+
+</script>
 
 
 <!-- Custom scripts for this template -->
-<script src="js/main.js?v=1001"></script>
+<script src="js/main.js"></script>
 
-<script src="js/Frontend.js?v=1058"></script>
-<script src="js/backend.js?v=1002"></script>
+<script src="js/Frontend.js"></script>
+<script src="js/backend.js"></script>
+<script src="js/adcounter.js"></script>
 
 
 
