@@ -996,6 +996,7 @@ function loadallquestions(myObjs, coldiv) {
         questionids = "questions" + coldiv + myObj[i].id;
 
         listItem.classList.add('collapsible');  // Adding card shape to each question
+        listItem.style.cssText = 'margin:12px;';
 
         CollapseBody.appendChild(listItem);
 
