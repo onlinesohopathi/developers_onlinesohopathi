@@ -994,6 +994,9 @@ function loadallquestions(myObjs, coldiv) {
         var listItem = document.createElement("li");
         listItem.id = "questions" + coldiv + myObj[i].id;
         questionids = "questions" + coldiv + myObj[i].id;
+
+        listItem.classList.add('collapsible');  // Adding card shape to each question
+
         CollapseBody.appendChild(listItem);
 
         var QuestionTitle = document.createElement("div");
@@ -1099,7 +1102,7 @@ function loadallquestions(myObjs, coldiv) {
 
 
         var ViewsDiv = document.createElement("div");
-        ViewsDiv.style.cssText = 'margin: 4px; margin-top: 15px; padding: 1px; position: absolute;';
+        ViewsDiv.style.cssText = 'margin: 4px; margin-top: 1px; padding: 1px; position: absolute;';
         creadiv.appendChild(ViewsDiv);
 
 
