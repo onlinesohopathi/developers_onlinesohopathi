@@ -1,10 +1,10 @@
 /*Navbar Styling*/
 
 .nav-wrapper{
-	background-color: darkslategrey;
+	background-color: #01321F;
 }
 .nav-content{
-	background-color: #045261 !important; 
+	background-color: #01321F; 
 }
 
 /*Answer Section styling*/
@@ -366,7 +366,7 @@ box-shadow: 0 10px 90px -2px rgba(0, 0, 0, 0.3);
 }
 
 #footer-bottom{
-    background-color:darkslategrey;
+    background-color:#01321F;
     padding: 30px 0;
     margin-top: 60px;
 }

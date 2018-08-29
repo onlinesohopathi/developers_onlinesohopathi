@@ -1,12 +1,11 @@
 /*Navbar Styling*/
 
 .nav-wrapper{
-	background-color: #01321F  ;
+	background-color: #01321F;
 }
 .nav-content{
-	background-color: #01321F ; 
+	background-color: #01321F; 
 }
-
 
 /*Answer Section styling*/
 .col{
@@ -314,8 +313,11 @@ box-shadow: 0 10px 90px -2px rgba(0, 0, 0, 0.3);
 }
 
 /*about section*/
+
+
 .teamember{
-    padding: 60px 0 0 0;
+    
+    padding: 0px 0 0 0;
 }
 .about-title h3{
     font-size: 80px;
@@ -339,10 +341,28 @@ box-shadow: 0 10px 90px -2px rgba(0, 0, 0, 0.3);
     width: 50px;
     height: 3px;
     background-color:darkcyan;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 160px auto;
 }
 .about-spacing{
-    padding: 20px 20px 20px 20px;
+   padding: 20px 20px 20px 20px;
+    background: #01321F;
+}
+.profie-image{
+    margin-top: -150px;
+    align-self: center;
+    margin-left: 5%;
+}
+
+.rank-label-container {
+    margin-top: -35px;
+    /* z-index: 1000; */
+    text-align: center;
+}
+
+.label.label-default.rank-label {
+    background-color: darkcyan;
+    padding: 8px 10px 8px 10px;
+    border-radius: 27px;
 }
 
 .about-name{
@@ -350,7 +370,17 @@ box-shadow: 0 10px 90px -2px rgba(0, 0, 0, 0.3);
     font-size: 20px;
     font-weight: 700;
     text-align: center;
+    color: aliceblue;
+    
 }
+.about-details{
+    color: aliceblue;
+}
+
+.profile-details{
+    color: darkcyan;
+}
+
 
 .about-details a{
     align-self: center;
@@ -364,6 +394,48 @@ box-shadow: 0 10px 90px -2px rgba(0, 0, 0, 0.3);
 .btn-black:hover, .btn-white:focus{
     background-color:aliceblue; 
     color:darkcyan;
+}
+
+#footer-bottom{
+    background-color:#01321F;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+.join-us{
+    margin: 0;
+}
+.join-us p{
+    font-family: Vidaloka;
+    color: white;
+    font-size: 20px;
+}
+
+.join-us a{
+    font-size: 20px;
+    color: white;
+    font-family:Vidaloka; 
+}
+.visit-us{
+    margin: 0;
+    font-family: Vidaloka;
+    /*margin: 10px;*/
+    color: white;
+    font-size: 20px;
+    
+}
+.visit-us p{
+    font-weight: 600;
+}
+
+
+
+
+
+.visit-us a{
+    margin: 0 0 0 0px;
+    font-size: 16px;
+    color: white;
+    
 }
 
 /*about finished*/
