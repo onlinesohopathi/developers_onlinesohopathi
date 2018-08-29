@@ -582,3 +582,22 @@ function notificationCount(mydiv){
     
 }
 
+function leaderboard_backend(pagename) {
+    var getFromDb = "v1/index.php/viewleaderboard";
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status != 404) {
+         console.log(pagename);
+		 if(pagename=="home")
+            leaderboard_load(this.responseText);
+         else if(pagename=="full")
+            full_leaderboard_load(this.responseText);	 
+        }
+    };
+    xmlhttp.open("GET", getFromDb, true);
+    xmlhttp.send();
+
+
+
+
+}

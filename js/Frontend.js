@@ -406,7 +406,8 @@ function loadhome(uidme) {
     localStorage.setItem("CollapseBody".concat("scroll"), 0);
 
     parsingAllQuestions("0", "CollapseBody");
-
+    leaderboard_backend("home");
+ 
 
 
 }
@@ -1369,3 +1370,23 @@ function loadimgques(objl, savedivs) {
     });
 
 }
+
+function leaderboard_load(myObjs) {
+
+    var myObj = JSON.parse(myObjs);
+    var username_id;
+    var points_id;
+
+     for (i = 0; i <5; i++) {
+        username_id="Leader_rank".concat(i+1);
+        points_id="Leader_rank".concat(i+1);
+        points_id+="_points";
+        document.getElementById(username_id).innerHTML=myObj[i].username;
+        document.getElementById(points_id).innerHTML=myObj[i].points;
+     }
+
+
+}
+
+
+
