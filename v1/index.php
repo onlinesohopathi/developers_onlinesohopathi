@@ -132,18 +132,22 @@ $app->post('/viewanswerscount', function() use ($app)  {
      $meid = $app->request->post('meid');
   $conn = new mysqli("localhost", "root", "aquarium201", "online_sohopathi");
   
-$strings="SELECT count(*),IFNULL((SELECT SUM(B.upvote) FROM answers A JOIN answer_vote B ON B.answer_id=A.answer_id group by A.userid HAVING L.userid=A.userid),0) As likeno,IFNULL((SELECT SUM(B.downvote) FROM answers A JOIN answer_vote B ON B.answer_id=A.answer_id group by A.userid HAVING L.userid=A.userid),0) As dislikeno ,(SELECT FIND_IN_SET( points,(SELECT GROUP_CONCAT( points ORDER BY points DESC ) FROM LeaderBoard ) ) FROM LeaderBoard WHERE userid=L.userid)AS rank ,(SELECT points FROM LeaderBoard where userid=L.userid)As pnts from answers L where userid=". "'".$meid."'";        
+$strings="SELECT count(*),IFNULL((SELECT SUM(B.upvote) FROM answers A JOIN answer_vote B ON B.answer_id=A.answer_id group by A.userid HAVING L.userid=A.userid),0) As likeno,IFNULL((SELECT SUM(B.downvote) FROM answers A JOIN answer_vote B ON B.answer_id=A.answer_id group by A.userid HAVING L.userid=A.userid),0) As dislikeno ,(SELECT FIND_IN_SET( points,(SELECT GROUP_CONCAT( points ORDER BY points DESC ) FROM LeaderBoard ) ) FROM LeaderBoard WHERE userid=L.userid)AS rank ,(SELECT points FROM LeaderBoard where userid=L.userid)As pnts, (SELECT userpic FROM `questions` WHERE userid=". "'".$meid."'"."ORDER by id DESC LIMIT 1
+) As fbpic, (SELECT count(*) from questions  WHERE userid=". "'".$meid."'".")As queCount from answers L where userid=". "'".$meid."'";        
       $result = $conn->prepare($strings);
   $result->execute();
-  $result->bind_result($count,$likeno,$dislikeno,$rank,$points);
+  $result->bind_result($ansCount,$likeno,$dislikeno,$rank,$points,$fbpic,$queCount);
   $posts = array();
   while($result->fetch()) {       
       $tmp = array();
-          $tmp["count"] = $count;
+          $tmp["ansCount"] = $ansCount;
             $tmp["likeno"] = $likeno;
       $tmp["dislikeno"] = $dislikeno;
       $tmp["rank"] = $rank;
       $tmp["points"] = $points;
+      $tmp["fbpic"] = $fbpic;
+      $tmp["queCount"] = $queCount;
+      
           array_push($posts, $tmp); 
            
        }
@@ -1425,11 +1429,7 @@ $conn = new mysqli("localhost", "root", "aquarium201", "online_sohopathi");
  
 
 $app->post('/loadsignupinfo', function() use ($app)  {
-    
-  
-  
- 
-  
+
     $phn=$app->request->post('phn');
     $pass = $app->request->post('pass');
  $username = $app->request->post('username');
@@ -1565,6 +1565,36 @@ $conn = new mysqli("localhost", "root", "aquarium201", "online_sohopathi");
 	
 	
 });
+
+
+
+$app->post('/logininfocheck', function() use ($app)  {
+    $phn=$app->request->post('phn');
+    $pass = $app->request->post('pass');
+    $conn = new mysqli("localhost", "root", "aquarium201", "online_sohopathi");
+
+ $strings="SELECT  phone_num, username FROM signupinfo where phone_num="."'".$phn."'"."and password="."'".$pass."'"."";
+  $result = $conn->prepare($strings);
+  $result->execute();
+  $result->bind_result($phn,$username);
+  $posts = array();
+  
+  while($result->fetch()) {
+           
+           $tmp = array();
+           $tmp["phone_num"] = $phn;
+           $tmp["username"] = $username;
+           array_push($posts, $tmp);
+  }
+
+     $result->close();    
+  echoRespnse(201,$posts);  
+  
+  
+});
+
+
+
 
 function echoRespnse($status_code, $response)
 {
