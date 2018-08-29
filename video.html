@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112046710-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-112046710-1');
+
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#004d40">
+    <meta property="og:url" content="http://www.onlinesohopathi.com/video.html" />
+    <meta property="og:image" content="http://www.onlinesohopathi.com/v1/eee.jpg">
+
+
+
+    <title id="title">Online Sohopathi Videos</title>
+
+    <!-- Manifest -->
+    <!-- <link rel="manifest"  href="manifest.json"> -->
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="vendor/materialize/css/materialize.min.css" rel="stylesheet">
+    <link href="vendor/flexbin/flexbin.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/materialize-stepper/materialize-stepper.min.css">
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/aboutus.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+<script src="js/redirect.js?v=1002"></script>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '179014802653918',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token
+            // and signed request each expire
+            uid = response.authResponse.userID;
+			quesd="none";
+			queslid="none";
+			console.log(uid);
+	        notificationCount(uid);
+            var accessToken = response.authResponse.accessToken;
+        } else if (response.status === 'not_authorized') {
+            uid="hiru";
+			quesd="none";
+			queslid="none";
+      // the user is logged in to Facebook,
+            // but has not authenticated your app
+        } else {
+		   uid="hiru";
+		   quesd="none";
+		   queslid="none";
+            console.log("hiru");
+      //setTimeout(function(){
+            //window.location.reload(1);
+            //}, 5000);
+            // the user isn't logged in to Facebook.
+        }
+    });
+  
+  
+  
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+    <!-- Section heading -->
+
+    <!-- Section navbar -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper" >
+      <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;">  অনলাইন সহপাঠী</a>
+      <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+      </a>-->
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" onclick="checkuser()" style="margin-left: 5px;">
+        Ask
+      </a>
+
+
+ <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
+	</div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a  href="index.html" onclick="redirectnow()" style="color: white; text-decoration:none;">Home</a></li>
+                <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
+		<li class="tab"><a href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Questions</a></li>
+        <li class="tab"><a href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
+		
+        <li class="tab"><a class="active" href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
+	    <li class="tab"><a  href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li
+            </ul>
+            <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" data-toggle="modal" data-target="#myModal">
+        <i class="material-icons">lightbulb_outline</i>
+      </a> -->
+        </div>
+    </nav>
+
+    <div class="row">
+
+
+        <div id="Home">
+            <!-- Section Question Answer -->
+
+            <ul class="collapsible popout" id="CollapseBody" data-collapsible="accordion">
+
+
+
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="ABOUTUS" class="col s8">
+        <div class="col s12 m8 l9">
+
+
+            <ul class="collapsible popout" id="CollapseBody1" data-collapsible="accordion">
+
+                <div class="teammember">
+
+                    <div class="about-title">
+                        <h3>Videos</h3>
+                        <div class="about-title-underline"></div>
+                    </div>
+
+                    <div class="container">
+                        
+                        
+                        <div class="about-title">
+                            <h5>অনলাইন সহপাঠী</h5>
+
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/468154243622573/">Online Sohopathi Promo</a></li>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/478445435926787/">Be an Online Sohopathi</a></li>
+
+                        </ol>
+                       <br>
+                        <!---admins-->
+                        <div class="about-title">
+                            <h5>কি করি ? কেন করি ? জানতে চাই !!!</h5>
+
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/456638291440835/">ভাইয়া আমার HSC পরীক্ষা খুব খারাপ হয়েছে। এখন আমার কি ইঞ্জিনিয়ারিং এর জন্য প্রস্তুতি নেওয়া উচিত নাকি ভার্সিটির জন্য??</a></li>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/457073874730610/">ভাইয়া একই সাথে Engineering আর Medical এর প্রস্তুতি নেওয়া কত টা যুক্তিযুক্ত হবে??</a></li>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/457986244639373/">এডমিশন টেস্টে ভালো করতে মূল বইয়ের পাশাপাশি কি কি বই পড়া উচিত?</a></li>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/459011707870160/">বিভিন্ন ভার্সিটির এডমিশন টেস্টে অবজেক্টিভ আসে, অবজেক্টিভের প্রিপারেশন কিভাবে নেব?</a></li>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/461408384297159/">এডমিশন টেস্টে  কোন তিনটি বিষয় সবচেয়ে বেশি differnece তৈরী করে?</a></li>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/461347534303244/">এডমিশন টেস্টের জন্য আগের বছরের বই গুলো পড়ব কি?</a></li>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/459575751147089/">এডমিশন টেস্টে দিনে কত ঘন্টা পড়া উচিত?</a></li>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/461867054251292/">পড়ার রুটিন কেমন হওয়া উচিত?</a></li>
+
+                        </ol>
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5>কলেজ এডমিশন টিপস</h5>
+
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/460050974432900/">নটরডেম কলেজে এডমিশনের জন্য কি করব?</a></li>
+
+                        </ol>
+                       <br>
+                        
+                        <div class="about-title">
+                            <h5>University এডমিশন</h5>
+
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://www.facebook.com/onlinesohopathi/videos/501399663631364/">Admission Test Details All Universities-2018</a></li>
+
+                        </ol>
+                       <br>
+
+                    </div>
+
+
+
+
+                </div>
+
+            </ul>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div id="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="join-us">
+                            <p>
+                                <img src="v1/webus.jpg" class="img-responsive"> ONLINE SOHOPATHI<br><br> Keep Asking, Enjoy Learning</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="visit-us">
+                            <p> Connect with us </p>
+
+                            <ul>
+
+                                <li>
+                                    <a href="http://www.onlinesohopathi.com/privacypolicy.html" role="button">Privacy Policy</a>
+
+                                </li>
+
+
+                                <li>
+                                    <a href="http://www.onlinesohopathi.com/aboutus.html" role="button">Meet Our Team</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgrGl6IF-JC6CBlwlGoZNCTNEaBayz9b5KUDJhtn7a1WocvQ/viewform" role="button">Join Our Team</a>
+
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/groups/566012513741654/" role="button">Facebook Group</a>
+                                </li>
+
+                                <!--not working-->
+
+                                <li>
+                                    <a href="https://www.facebook.com/onlinesohopathi/" role="button">Facebook Page</a>
+                                </li>
+
+                                <li>
+                                    <a href="https://www.linkedin.com/in/online-sohopathi-354708157/" role="button">LinkedIn page</a>
+                                </li>
+                            </ul>
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+
+    <div class="modal fade col s12" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <section>
+                        <h4 class="text-center" id="gouf">Ask a Question</h4>
+                        <div class="row">
+                            <form class="col s12 l6">
+                                <div class="">
+                                    <div class="input-field col s12">
+                                        <textarea id="input_text" type="text" class="materialize-textarea" data-length="120"></textarea>
+                                        <label for="input_text">Title</label>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="input-field col s12">
+                                        <textarea id="textarea1" class="materialize-textarea" data-length="500"></textarea>
+                                        <label for="textarea1">Describe your Question...</label>
+                                    </div>
+                                </div>
+                                <!--    </form>
+    </div> -->
+
+                                <!-- Dropdown Trigger -->
+                                <select class="btn" name="demo-category" id="category-sel">
+                            <option value="None" style="color: black; background: rgba(255,255,255, 255);">- Category </option>
+                            <option value="Physics" style="color: black; background: rgba(255,255,255, 255);">Physics</option>
+                            <option value="Chemistry" style="color: black; background: rgba(255,255,255, 255);">Chemistry</option>
+                            <option value="Math" style="color: black; background: rgba(255,255,255, 255);">Math</option>
+                            <option value="Biology" style="color: black; background: rgba(255,255,255, 255);">Biology</option>
+                            <option value="ICT" style="background: rgba(255,255,255, 255); color: black;">ICT</option>
+                            <option value="Others" style="color: black; background: rgba(255,255,255, 255);">Others</option>
+                        </select>
+
+                                <!-- Dropdown Structure -->
+
+
+
+
+                                <!-- <div class="chips"></div>
+  <div class="chips chips-initial"></div>
+  <div class="chips chips-placeholder"></div> -->
+                                <div id="alltags" class="chips chips-placeholder chips-autocompleter">
+
+                                    <div class="chip">
+                                        Tag
+
+                                        <i class="close material-icons">close</i>
+
+                                    </div>
+                                </div>
+
+                                <div class="Send-Notifications">
+                                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                                    <label for="filled-in-box">Send Notifications</label>
+                                </div>
+                                <div class="preview" id="img-grid" style="display: inline-block;">
+                                    <!-- <img src="" id="image-preview" > -->
+                                </div>
+                                <div class="submit-box">
+                                    <ul class="actions">
+                                        <li>
+                                            <button onclick="return document.getElementById('image-picker').click();" type="button" class="btn"><i class="material-icons">publish</i>Image<input type="file" id="image-picker" name="question"  accept="image/*" style="visibility: hidden; display:none;"  multiple>
+          	    </button>
+                                        </li>
+                                        <li><button href="#" onclick=" window.location.reload()" type="reset" value="Reset" data-dismiss="modal" class="btn">Cancel</button></li>
+                                        <li><button id="git" class="btn" onclick="checklog()" type="button">Submit</button></li>
+                                    </ul>
+                                </div>
+
+                            </form>
+                    </section>
+
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body" style="height: 400px; width: 300px;">
+                        <!-- <button class="btn">Facebook</button> -->
+                        <div class="fb-login-button" data-max-rows="1" data-size="large" onlogin="checkFacebookLogin(document.getElementById('myModals'))" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModalss" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body" style="height: 400px; width: 300px;">
+                        <!-- <button class="btn">Facebook</button> -->
+                        <div class="fb-login-button" data-max-rows="1" data-size="large" onlogin="checkFacebookLogin(document.getElementById('myModalss'))" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+
+
+        <!-- Plugin JavaScript -->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+        <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="vendor/materialize/js/materialize.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="js/main.js"></script>
+        <script src="js/postanswer.js"></script>
+        <script src="js/onequefront.js"></script>
+        <script src="js/onequeback.js"></script>
+
+
+
+</body>
+
+</html>

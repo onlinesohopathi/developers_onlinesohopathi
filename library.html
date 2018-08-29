@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112046710-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-112046710-1');
+
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#004d40">
+    <meta property="og:url" content="http://www.onlinesohopathi.com/library.html" />
+    <meta property="og:image" content="http://www.onlinesohopathi.com/v1/eee.jpg">
+
+
+
+    <title id="title">Online Sohopathi Library</title>
+
+    <!-- Manifest -->
+    <!-- <link rel="manifest"  href="manifest.json"> -->
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="vendor/materialize/css/materialize.min.css" rel="stylesheet">
+    <link href="vendor/flexbin/flexbin.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/materialize-stepper/materialize-stepper.min.css">
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/aboutus.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <script src="js/redirect.js?v=1001"></script>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '179014802653918',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token
+            // and signed request each expire
+            uid = response.authResponse.userID;
+			quesd="none";
+			queslid="none";
+			console.log(uid);
+	        notificationCount(uid);
+            var accessToken = response.authResponse.accessToken;
+        } else if (response.status === 'not_authorized') {
+            uid="hiru";
+			quesd="none";
+			queslid="none";
+      // the user is logged in to Facebook,
+            // but has not authenticated your app
+        } else {
+		   uid="hiru";
+		   quesd="none";
+		   queslid="none";
+            console.log("hiru");
+      //setTimeout(function(){
+            //window.location.reload(1);
+            //}, 5000);
+            // the user isn't logged in to Facebook.
+        }
+    });
+  
+  
+  
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+    <!-- Section heading -->
+
+    <!-- Section navbar -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper" >
+      <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;">  অনলাইন সহপাঠী</a>
+      <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+      </a>-->
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" onclick="checkuser()" style="margin-left: 5px;">
+        Ask
+      </a>
+
+
+ <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
+	</div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a  href="index.html" onclick="redirectnow()" style="color: white; text-decoration:none;">Home</a></li>
+                <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
+		<li class="tab"><a href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Questions</a></li>
+        <li class="tab"><a class="active" href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
+		
+        <li class="tab"><a  href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
+	    <li class="tab"><a href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li
+            </ul>
+            <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" data-toggle="modal" data-target="#myModal">
+        <i class="material-icons">lightbulb_outline</i>
+      </a> -->
+        </div>
+    </nav>
+
+
+    <div class="row">
+
+
+        <div id="Home">
+            <!-- Section Question Answer -->
+
+            <ul class="collapsible popout" id="CollapseBody" data-collapsible="accordion">
+
+
+
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="ABOUTUS" class="col s8">
+        <div class="col s12 m8 l9">
+
+
+            <ul class="collapsible popout" id="CollapseBody1" data-collapsible="accordion">
+
+                <div class="teammember">
+
+                    <div class="about-title">
+                        <h3>Online Library</h3>
+                        <div class="about-title-underline"></div>
+                    </div>
+
+                    <div class="container">
+                        <!---admins-->
+                        <div class="about-title">
+                            <h5>Computer Science and Engineering(CSE)</h5>
+
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1Q_aLTIizcYidzEobdpromm-poBv9AXh_/view?usp=sharing">Data Structures and Algorithms in Java, 6th Edition-Goodrich,Tamasia</a></li>
+                            <li><a href="https://drive.google.com/file/d/1d7Qmj3qXx1EVLCOrnxN0uWarO13us1E8/view?usp=sharing">Digital Design, 5th Edition- Morris Mano</a></li>
+                            <li><a href="https://drive.google.com/file/d/1bpjt6qOq2PwqmvYA9YooLfCUTFZfFlrZ/view?usp=sharing">Discrete Mathematics and Its Applications,7thEdition-Rosen</a></li>
+                            <li><a href="https://drive.google.com/file/d/1YFrHZt5wD1Aw3l3Ak93liNNkUllyTDoq/view?usp=sharing">Introduction to the Theory of Computation,3rd Edition-Sipser</a></li>
+                            <li><a href="https://drive.google.com/file/d/1VkHeFmTkeH-QMAWtFGD4ViESW_jo4goQ/view?usp=sharing">Introduction to Algorithms,3rd Edition-Cormen</a></li>
+
+                        </ol>
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5>Programming Related Resources</h5>
+
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1olIxkkNf70fZV4xrivytk53zMmwj1osG/view?usp=sharing">C++ The Complete Reference 4th Edition-Herbert Schildt</a></li>
+                            <li><a href="https://drive.google.com/file/d/1KxeR2YtWPXeDm27jkn72GwUNdUB145Xc/view?usp=sharing">Esho Programming Shikhi-Tamim Shahriar Shubeen</a></li>
+                            <li><a href="https://drive.google.com/file/d/1nrpmV3NFCgxgj8N1RWnHGpcJzKat9P54/view?usp=sharing">Sams Teach Yourself C in 21 Days 6th Edition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1n54mHOLAfWUq9F2k5VrsbDJ2D8D0dqwc/view?usp=sharing">Sams Teach Yourself C++ in 21 Days 6th Edition</a></li>
+                            <li><a href="https://drive.google.com/file/d/18jJK4qDnovG2KUnFTlcQVX2KJXQNDH5t/view?usp=sharing">Schaum's Programming With C++</a></li>
+                            <li><a href="https://drive.google.com/file/d/1MNZC4RvXQH_dGw_MjLDT8C4hhosFKmc6/view?usp=sharing">The C programming Language 2nd Edition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1IBypnrKWL3_SgJP3eoM4u9vRrzOuhxT-/view?usp=sharing">Java The Complete Reference 9th Edition -Herbert Schildt</a></li>
+                            <li><a href="https://drive.google.com/drive/folders/1aV0EnuxJOskpjrBguGMwJZBkjdpg2iRo?usp=sharing">Some Solved And Unsolved Problems</a></li>
+
+                        </ol>
+                        <br>
+                        
+                        
+
+
+                        <!---admins-->
+                        <div class="about-title">
+                            <h5>Electrical and Electronics Engineering(EEE)</h5>
+
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/12EBeCvKkX8oisD1zsfbf3Daq8cyFdcWY/view?usp=sharing">Fundamentals of Electric Circuits,5th edition- Sadiku</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Q2ozo3LKjy22ABvuef4Ysnqv3wAT4fTw/view?usp=sharing">Fundamentals of Electric Circuits,5th edition Solutions- Sadiku</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Nc7BshAFPH0iOTf1BXjxui05u__b8Ul9/view?usp=sharing">Introductory Circuit Analysis,10th Edition-Boylestad</a></li>
+                            <li><a href="https://drive.google.com/file/d/1hHMSx5-7LUQHxguZu72y5lFq6q4IYmCB/view?usp=sharing">Electric Machinery Fundamentals,4th Edition - Stephen J. Chapman</a></li>
+                            <li><a href="https://drive.google.com/file/d/1n1NEQLdMSlvKBqVMv4hjGLgHrLZVW6QB/view?usp=sharing">Microelectronic Circuits,6th Edition - Sedra & Smith</a></li>
+
+
+                        </ol>
+
+                        <br>
+
+
+                        <!---admins-->
+                        <div class="about-title">
+                            <h5>Mathematics</h5>
+
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1-E5I2z6Ug3AMdn2yhLhz9kC5m9WUghqi/view?usp=sharing">A First Course in Differential Equations with Modeling Applications,9th edition-Dennis G. Zill</a></li>
+                            <li><a href="https://drive.google.com/file/d/1tOD6fKtu_d_5GRQwcEXzdXo6bRsa-zAT/view?usp=sharing">Complex Variable and Applications,7th Edition- Brown and Churcill</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Hdr-eYhbA1_IGaMIxey5mt1XdmWDfIpG/view?usp=sharing">Elementary Linear Algebra,9th edition-Howard Anton</a></li>
+                            <li><a href="https://drive.google.com/file/d/14DcswkWwVrYg2UDQMrs4xDZjDo4aPh8l/view?usp=sharing">Calculus,7th edition-James Stewart</a></li>
+                            <li><a href="https://drive.google.com/file/d/1pWM-rLPgny1grNXAcNSvy5394wS5ez5f/view?usp=sharing">Probabilty and Statistics,8th edition-Walpole & Myers</a></li>
+                            <li><a href="https://drive.google.com/file/d/1lV_Qv1qjS3R_gPOM0UqWT_c467yu94vU/view?usp=sharing">Schaum's Outline of Differential Equations,3rd edition- Bronson & Costa</a></li>
+
+                        </ol>
+
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5>Statistics</h5>
+                        </div>
+
+
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="hhttps://drive.google.com/file/d/1tHGoIjr03joGKg5m4OkN86qGn-2YkNtg/view?usp=sharing">Scientific Programming Simulation using R-1</a></li>
+                            <li><a href="https://drive.google.com/file/d/1yeZ3emHlyS6e8hDtzj2UMD3CyYO0S1u3/view?usp=sharing">Introduction to R</a></li>
+                            <li><a href="https://drive.google.com/file/d/1rAlRk-A4YNNF0DHlCV6focGK8jtn-BjV/view?usp=sharing">[Douglas_C._Montgomery] Introduction to statistics </a></li>
+                            <li><a href="https://drive.google.com/file/d/1WPVBLzlLkl4EATwX95_lWwo2pL-P1397/view?usp=sharing">[Michael_H_Kutner,_Christopher_J._Nachtsheim,_John]Applied Linear Statistics Model </a></li>
+                            <li><a href="https://drive.google.com/file/d/1pC1bRhhAywFQ2u5e53XDmlHkDftNqe_k/view?usp=sharing">Applied Multivariate Statistical Analysis</a></li>
+                            <li><a href="https://drive.google.com/file/d/1gM0VEmy3Hq1nweeOhEaqiVRrp6s_Ts-p/view?usp=sharing">2002-Brockwell-Introduction Time Series and Forecasting</a></li>
+                            
+                            <li><a href="https://drive.google.com/file/d/10XRKe9p3d-iBNb9Z7lxQKBrA1CeoNYAu/view?usp=sharing">A_course_in_mathematical_statistics_George_G._Roussas</a></li>
+                            <li><a href="https://drive.google.com/file/d/1-E3I-9XnRQwh8fs4tG8HwNZFVxwrRVDO/view?usp=sharing">A_primer_on_Statistical_Distributions-Balakrishnan.Nevzorov</a></li>
+                            <li><a href="https://drive.google.com/file/d/1tknvCagm8XzxBTaFtX961BADcgvBjxlh/view?usp=sharing">Basic_Econometrics_5th_Edition_by_Damoda</a></li>
+                            <li><a href="https://drive.google.com/file/d/1NLDm9aR9xa5evRXOsYVx_seWG8Ulf66j/view?usp=sharing">Bayesian_Data_Analysis_Third_Edition_Gel</a></li>
+                            <li><a href="https://drive.google.com/file/d/1qKK_lqOazzfDLbQHjFuBb7SprtNfoSWk/view?usp=sharing">Design_and_Analysis_of_Experiments-Dean.Voss</a></li>
+                            <li><a href="https://drive.google.com/file/d/17DZi5A_OTHrKvp61-l4Q2MzTVmyLSuUh/view?usp=sharing">Design_and_Analysis_of_Experiments-Montgomery_5thEdition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1fSdM5W7vPFhjltIk4vAeyG6xPzfik9J2/view?usp=sharing">Fundamentals-of-Actuarial-Mathematics</a></li>
+                            <li><a href="https://drive.google.com/file/d/1eFzLexriaRXI5MnPiBDFBV8EcbHmrmk6/view?usp=sharing">Handbook_of_statistical_distributions_with_applications-K.Krishnamorthy</a></li>
+                            <li><a href="https://drive.google.com/file/d/1yrvIqNy0xOCzeOd9ZyIUr3U32a0mq3eN/view?usp=sharing">Introduction to Operations Research</a></li>
+                            <li><a href="https://drive.google.com/file/d/19BYSxakq31PP-DHRCbp4f3FQ6qZBY1P6/view?usp=sharing">Introduction to R</a></li>
+                            <li><a href="https://drive.google.com/file/d/1sowo3OgL4mEu1NV8xBz2PpRS3zc9D5-l/view?usp=sharing">Introduction_to_Mathematical_Statistics-HOGG.CRAIG_(4th Edition)</a></li>
+                            <li><a href="https://drive.google.com/file/d/1spk1pc2pKc6US3JFciZ7az-OHYcH8wFK/view?usp=sharing">Introduction_to_Probability_Models_Ross</a></li>
+                            <li><a href="https://drive.google.com/file/d/1eIy2Rjp07ioiNZx96DNFP97NZWyX7cS9/view?usp=sharing">Introduction_to_the_theory_of_Statistics-Mood.Graybill.Boes</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Bc4bMoQcwRFVp20qGqZP1jF_91_uGhBB/view?usp=sharing">Introduction-to-real-analysis-4th-ed-r-bartle-d-sherbert-wiley-2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/1dZT5FcEwy-5NPzKLAQe5psUCHSV3V1WT/view?usp=sharing">Introduction-to-research-methods</a></li>
+                            <li><a href="https://drive.google.com/file/d/1u_LCdIbBToW11zqQbsdQn8rJZPEXPX_2/view?usp=sharing">Introductory_Methods_of_Numerical_Analysis-S.S. Sastry_4thEdition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Ltbz5HtXrZ2-I3QTHkU6WAj1Kh_X4v4A/view?usp=sharing">Laplace Transforms</a></li>
+                            <li><a href="https://drive.google.com/file/d/110feTSy9tCgCb0SmWVwiVUph05hWFh8B/view?usp=sharing">MLG An Introduction to Generalized Linear Models</a></li>
+                            <li><a href="https://drive.google.com/file/d/1CUl-x3v-pxtKlaFka0rz0yeNA3QkPZRv/view?usp=sharing">Peter J. Brockwell, Richard A. Davis-Time Series_ ...Springer Series in Statistics)-Springer (2009)</a></li>
+                            <li><a href="https://drive.google.com/file/d/14XxQgYuDr__fuuzrQHjQFWBd75NBWCDc/view?usp=sharing">Ranjit_Kumar-Research_Methodology_A_Step-by-Step_G</a></li>
+                            <li><a href="https://drive.google.com/file/d/10CUIEZrTJZbMS_3HG1Cwj579XXv22jns/view?usp=sharing">Sampling-Thompon</a></li>
+                            <li><a href="https://drive.google.com/file/d/1lGU4vk2L0gUR0EyButM3DsH0kfM3IywC/view?usp=sharing">Scientific Programming _ Simulation using R (1)</a></li>
+                            <li><a href="https://drive.google.com/file/d/1L6sJSogTCOEe_MIleyHEvCVXhVyuwRC6/view?usp=sharing">Scientific_Computing_with_Matlab_and_Octave-2ndEdition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1E7eMdwoHdqUAO93enXviCX-FOTE-fj2E/view?usp=sharing">Statistical_Inference-Casella.Berger_2ndEdition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1e8bXnF2uMYVioTGtVOWTw4UC2rRMm-8Z/view?usp=sharing">The theory of interest</a></li>
+                            <li><a href="https://drive.google.com/file/d/1IUaPsCvGRaIHf1NijcvGUQjrtDUvBt7j/view?usp=sharing">The_Methods_and_Materials_of_Demography-Siegel,Shryock_Vol.1</a></li>
+                            <li><a href="https://drive.google.com/file/d/1w0uuHxfoeiywqEjGiytxEL7VECLhXGbd/view?usp=sharing">The_Methods_and_Materials_of_Demography-Siegel,Shryock_Vol.2</a></li>
+                            <li><a href="https://drive.google.com/file/d/1l2K06GpSgNRmrO1-oux_qKnq_Ny0qPIS/view?usp=sharing">Timeseries[Time Series Analysis Univariate and Multivariate Methods 2nd Edition William W S Wei]</a></li>
+                            
+                            
+
+                            
+                        </ol>
+
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5>Numerical</h5>
+
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1UMvyPd6WVKOSSuevjlwccxolypcYOpV8/view?usp=sharing">Chapra</a></li>
+                            <li><a href="https://drive.google.com/file/d/1QMnm6tdAm-k04WaiW1gGqvXuGT5zWFTo/view?usp=sharing">Numerical Solutions-Chapra</a></li>
+                            <li><a href="https://drive.google.com/file/d/1SbFs2kw3VM3rVsez99BbVIovY3j26IiY/view?usp=sharing">Sastree</a></li>
+
+                        </ol>
+
+                        <br>
+
+
+                        <!---admins-->
+
+                        <div class="about-title">
+                            <h5>Bio Medical Engineering (BME)</h5>
+                        </div>
+
+
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/18osWuwYm6OZIS2-ARSzpVt-t_5sIJoyi/view?usp=sharing">BIOFLUID MECHANICS - 
+            SECOND EDITION</a></li>
+                            <li><a href="https://drive.google.com/file/d/1_aWJzVcSPy_gwpvwsZglZaG70xl-Y4ke/view?usp=sharing">Introductory Biomechanics (From Cells to Organisms, C ROSS ETHIER and Craig A Simmons</a></li>
+                            <li><a href="https://drive.google.com/file/d/1OD0AdqBMJi7_OdrCsO9BY_Ys9-eQKckK/view?usp=sharing">BIOMECHANICS
+Principles and Practices, Donald R.Peterson & Joseph D.Bronzino</a></li>
+                            <li><a href="https://drive.google.com/file/d/1DFCTSbCJoqdIslFrs3g6e-v8bO4XdGck/view?usp=sharing">Fluid Mechanics, seventh edition, Frank M.White</a></li>
+                            <li><a href="https://drive.google.com/file/d/1HP9WjZTq2Rrn0pBvRLyGZejdIUoM4A_Z/view?usp=sharing">Advanced Manufacturing Technology for Medical Applications, Ian Gibson</a></li>
+                            <li><a href="https://drive.google.com/file/d/1gEGBCL23TD_PzFS1X1GICXhyzm7ngTJT/view?usp=sharing">Bridging Medicine and Technology</a></li>
+
+                        </ol>
+
+                        <br>
+
+
+
+
+                        <div class="about-title">
+                            <h5>Civil Engineering (CE) </h5>
+                        </div>
+
+
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1rmQVXgPkEyjgxnVmn-TaAy0KJRo9Ggsd/view?usp=sharing">Building Materials (Third Revised Edition) , S.K. Duggal</a></li>
+                            <li><a href="https://drive.google.com/file/d/1fhdng1RyDqrIbNsTR2oO5J7UJq1mvkO0/view?usp=sharing">Concrete Technology (Theory and Practice ),M.S. Shetty</a></li>
+                            <li><a href="https://drive.google.com/file/d/1ksoImgVgHFLMpnET4AzOfFL-TAl5Y5l4/view?usp=sharing">Concrete Technology , A.M. Neville & J.J. Brooks</a></li>
+
+                        </ol>
+
+                        <br>
+
+
+
+                        <div class="about-title">
+                            <h5>Mechanical Engineering (ME) </h5>
+                        </div>
+
+
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/19HprCsCiEDRc4GvhNXM_yTUiSN1ayUTo/view?usp=sharing">A Textbook of Theory of Machines,[R.S.KHURMI] </a></li>
+                            <li><a href="https://drive.google.com/file/d/1JaVEuvwYJmu-V0Bvl51h0BUUr8i_v6vq/view?usp=sharing">Beer - SOLUTIONS Dynamics 9th edition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1WvhyXYdazmn8Pqa4Xw1DDAAetETobVVE/view?usp=sharing">Fundamentals of Thermodynamics 8th Ed Borgnakke Sonntag</a></li>
+                            <li><a href="https://drive.google.com/file/d/1uL7cLSKxKEylqvbTuewvjbY4iMwwCAIH/view?usp=sharing">Hibbeler - Engineering Mechanics Dynamic (Fourteenth Edition) </a></li>
+                             <li><a href="https://drive.google.com/file/d/1TGAavMybP30S-nKCWfOqzIQIY59Thotp/view?usp=sharing">Thermodynamics an Engineering Approach 5th edition By Cengel</a></li>
+                             <li><a href="https://drive.google.com/file/d/1YWttK3EBLhj1OXTGJLPMsIiNm47loA4o/view?usp=sharing">Vector Mechanics for Engineers Statics and Dynamics 10th Edition Text book </a></li>
+
+                        </ol>
+
+                        <br>
+                        
+                        
+                        
+                        
+                        
+                         <div class="about-title">
+                            <h5>Physics </h5>
+                        </div>
+
+
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1DTzIgKq0LYcnbDqWQarnit85dhagwXno/view?usp=sharing">(4th Edition) Physics (Volume-1) - David Halliday, Robert Resnick, Kenneth S. Krane </a></li>
+                            <li><a href="https://drive.google.com/file/d/1nL-LP6t5Zrvsb1OXDOALWEnwN1eNWr5c/view?usp=sharing">[Halliday-Resnick-Walker] Fundamentals of Physics</a></li>
+                            <li><a href="https://drive.google.com/file/d/1DfGN7rDfKcORwQMNkUnPEvrnfMlS3T22/view?usp=sharing">Fundamentals of Physics - [Halliday-Resnick-Walker] - 8th Edition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1NA0TBRSbqoJPz22Mn5qOPZ89z5zTqDbc/view?usp=sharing">fundamentals of physics textbook </a></li>
+                             <li><a href="https://drive.google.com/file/d/1WJKxuqEvMQGGZXx1KzlPqX-t8N8cDul2/view?usp=sharing">Introduction to Special Relativity (1968) - Robert Resnick</a></li>
+                             <li><a href="https://drive.google.com/file/d/1CDK6uOBKIJkB00IxfWwwRvvqmwpARLQv/view?usp=sharing">Radiation , Chris Long & Naser Sayma </a></li>
+
+                        </ol>
+
+                        <br>
+                        
+                        
+                        
+                        <div class="about-title">
+                            <h5>Chemistry</h5>
+                        </div>
+
+
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/11pp3cn5hdR6_JXn8Pi2XSmO53bQAXEZk/view?usp=sharing">Essentials Of Physical Chemistry -Arun Bahl,B.S Bhal, G.D Tuli</a></li>
+                            <li><a href="https://drive.google.com/file/d/1t1o8yZ_OO27Up0k3NyotBc46Exi-Hp3C/view?usp=sharing">Chemistry the central science 12th ed</a></li>
+                            
+                        </ol>
+
+                        <br>
+
+                        
+                        <div class="about-title">
+                            <h5>Accounting</h5>
+                        </div>
+
+
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/18jCSMsj8NP2dytiBPiViIaj7R-wORrz1/view?usp=sharing">Accounting Principles 10th Edition -Weygandt Kimmel Kieso</a></li>
+                            <li><a href="https://drive.google.com/file/d/1h9uJErjngRKNrUrPBNePxW-Tee_bg4FI/view?usp=sharing">Accounting Priciple(Solve)</a></li>
+                            <li><a href="https://drive.google.com/file/d/1LXH2XErOgejk8SQnt3TbFCmob1b2Hx-W/view?usp=sharing">Managerial Accounting 14th Edition -Garrison Noreen Brewer </a></li>
+                            
+
+                            
+                        </ol>
+
+                        <br>
+
+                        
+                        
+
+
+
+                        <div class="about-title">
+                            <h5>Medical(1st Professional Exam)</h5>
+
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1J05MVzDX6OxZLvDiXoMQhjk-ampqoMnj/view?usp=sharing">Clinical Neuroanatomy,7th Edition-Richard S.Snell </a></li>
+                            <li><a href="https://drive.google.com/file/d/1gdTHDkbnWpjQcw9Aq7RsKKCE6r94eMbM/view?usp=sharing">Appleton & Lange Review of Anatomy, 6th Edition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1bT2Y3cnwu83ZWaGhtAlri0mqUa-CMtuF/view?usp=sharing">Human Anatomy-Head,Neck and Brain(Volume 3)- BD Chaurasia</a></li>
+                            <li><a href="https://drive.google.com/file/d/14QU6HJ-6RKAGE912uISFIkQxhro60kNS/view?usp=sharing">BRS Biochemistry, Molecular Biology,and Genetics,5th edition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1i5uDEOEXKFFF_UB8sh8uENRtsEKjm1nO/view?usp=sharing">BRS Gross Anatomy,7th Edition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1qC4AAixsWf4-FPf6ahlo1Mze98d9ghLN/view?usp=sharing">BRS Physiology Cases and Problems</a></li>
+                            <li><a href="https://drive.google.com/file/d/1iL2RVZC5p-Mo1YAIBXNDFP4gc2AAQBqD/view?usp=sharing">Biochemistry-Elsevier India (2013),Dr. U. Satyanarayana, U Chakrapani</a></li>
+                            <li><a href="https://drive.google.com/file/d/1CUfgix6mC5FjYnpK6mdB1JVqA1dcyUsT/view?usp=sharing">Essentials of Medical Physiology, 6th Edition-Sembulingam</a></li>
+                            <li><a href="https://drive.google.com/file/d/1UWovwiawPB2-WpL9uxjTA-jd_CIkwjN4/view?usp=sharing">Harper's Illustrated Biochemistry,26th Edition, 2003-Murray, McGraw-Hill Medical</a></li>
+                            <li><a href="https://drive.google.com/file/d/1jkvbS415H2eJfRReg7rQC_jUGVAeW0kj/view?usp=sharing">Junqueira's Basic Histology Text & Atlas, 12th Edition</a></li>
+                            <li><a href="https://drive.google.com/file/d/1JlrhYN5dBybPlqP11xyn4No9lfzntXMF/view?usp=sharing">Medical Physiology-Ganong</a></li>
+                            <li><a href="https://drive.google.com/file/d/1sJQHbLxbGPyOd_4J_PHMcFiZJDZ81AgN/view?usp=sharing">Medical Physiology,11th Edition-Guyton</a></li>
+
+
+                        </ol>
+                        
+                        
+                       
+                        
+                        
+                        <div class="about-title center">
+                        <h4>HSC Books</h4>
+                        <div class="about-title-underline"></div>
+                        </div>
+                        
+                        
+                        
+                        
+                         <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/11fnXQTsW98p0p_i2sf16IXARIwt_o3Zw/view?usp=sharing">Physics 2nd Paper -Dr. Shahjahan Tapan </a></li>
+                            <li><a href="https://drive.google.com/file/d/1Y47Db74_t-HC_5EFxBv0zwb-X_sGNAve/view?usp=sharing">Statistics Book</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Yw4fTJyuE3Za4T3DKsJYUVr87LATJ3h3/view?usp=sharing">HSC-Information & Communication Technology Mujibur Rahaman</a></li>
+                            <li><a href="https://drive.google.com/file/d/1UZq-jVSHeAT42rd9n6AWJdmAwu7Tw9kC/view?usp=sharing">ICT for HSC by Okkhorpotro Prokashoni</a></li>
+                            <li><a href="https://drive.google.com/file/d/1GYKW4XJv_GIF1bbiZ9_MLkAw1P9lza3j/view?usp=sharing">Information Technology Book 2013</a></li>
+                            <li><a href="https://drive.google.com/file/d/1CgscTvqrOQTjxQWBoRydyw2s_nTbmAWl/view?usp=sharing">Biology 1st Paper Book</a></li>
+                            <li><a href="https://drive.google.com/file/d/1HW717qdr54D1DPrY5GxUjEvndAcRwNDW/view?usp=sharing">Intermediate Accounting Book 2013</a></li>
+                             <li><a href="https://drive.google.com/file/d/1-KTfzM6o1y8M3dq5556aRpz26iPLEL7A/view?usp=sharing">Chemistry 1st Part By Hajari & Nag</a></li>
+                            <li><a href="https://drive.google.com/file/d/1qu_mRfZT8AIJQAPvaGXLRJf9JpkdBNSV/view?usp=sharing">Chemistry 2nd Paper</a></li>
+                            <li><a href="https://drive.google.com/file/d/1gtzshALFRraNhfhtcgKMhNXMPVEuKNFv/view?usp=sharing">Chemistry 2nd Part Hajari & Nag</a></li>
+                        
+                        
+                        
+                        </ol>
+                        
+                        
+                        
+                        
+                        
+                        
+                             
+                             
+                             <div class="about-title center">
+                        <h4>SSC Books</h4>
+                        <div class="about-title-underline"></div>
+                        </div>
+                        
+                        
+                        
+                             
+                         <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/11fnXQTsW98p0p_i2sf16IXARIwt_o3Zw/view?usp=sharing">Biology</a></li>
+                            <li><a href="https://drive.google.com/file/d/1ZHFYJ0wwxM0YOfNg8JoFA7kFQXrzOG1b/view?usp=sharing">Chemistry</a></li>
+                            <li><a href="https://drive.google.com/file/d/1HSMPVKCNC6CXfjlE7SgfzExJMoWRx9vx/view?usp=sharing">General Mathematics Geometry</a></li>
+                            <li><a href="https://drive.google.com/file/d/1TyFf6SUl4uBXzSZwV_T6jV5HkpyBzNTm/view?usp=sharing">Higher Mathematics Algebra</a></li>
+                            <li><a href="https://drive.google.com/file/d/1u3Czt2vAsMvbySSXNlPtfHzY-4_cS0dI/view?usp=sharing">Physics</a></li>
+                            <li><a href="https://drive.google.com/file/d/1llVJdGyjuzrYS4VWblSovUqeJJUb-2UC/view?usp=sharing">Social Science</a></li>
+                            
+                             
+                             
+                             </ol>
+                             
+                             
+                           <div class="about-title center">
+                        <h4> আইন বিষয়ক বই</h4>
+                        <div class="about-title-underline"></div>
+                        </div>     
+                        
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=1mzKWlZNcS_e5wX8xniK6PhqS-Vb69W7I">যে কোন সমস্যার আইনী সমাধান - মোঃ শামীম পাটওয়ারী</a></li>
+                            <li><a href="https://drive.google.com/open?id=10j7T_M3fnA85GIaWOLuw85w3ZYu3zxkx">দণ্ডবিধি PENAL CODE - অধ্যক্ষ মোঃ আলতাফ হোসেন</a></li>
+                        </ol>
+                        <br>
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                        <div class="about-title center">
+                        <h4> Comics</h4>
+                        <div class="about-title-underline"></div>
+                        </div>     
+                        <div class="about-title">
+                            <h5>Tintin</h5>
+
+                        </div>
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=1xKcqBoErJPJfUfDCwmBBfW-xfwoLoEVy">যাদু হৃদের দৈত্য</a></li>
+                            <li><a href="https://drive.google.com/open?id=1vFnl7WuubbLyD0dtWH2rV_HhZIvH1nW7">ভীনগ্রহের আগুন্তক(হাই)</a></li>
+                            <li><a href="https://drive.google.com/open?id=1vkng7jc1YpDi7k4TXBLbUA3UeBOfJp_r">ভীনগ্রহের আগুন্তক(লো)</a></li>
+                            <li><a href="https://drive.google.com/open?id=1t5Lr85jpR4TUnqSGPr7fxfx6MqDOxj22">হাঙ্গর হৃদের বিভীষিকা</a></li>
+                            <li><a href="https://drive.google.com/open?id=1Rivah2eZFNm7pwDxCh6XMXJVjRg8R8Tj">বর্ণশিল্প রহস্য</a></li>
+                            <li><a href="https://drive.google.com/open?id=1Y8lZaqHlKLhsW1K8DkMWsiZ44g8LaVT0">বিপ্লবীদের দঙ্গলে</a></li>
+                            <li><a href="https://drive.google.com/open?id=1vexBQCwoaLNlUKN5MK1cMhn4s3N88gMY">ফ্লাইট ৭১৪</a></li>
+                            <li><a href="https://drive.google.com/open?id=1pM6H65HXtavEId_VEVarj6UoplATqh2S">পান্না কোথায়</a></li>
+                            <li><a href="https://drive.google.com/open?id=1_CwEljbhwKxtryF7-_T_LIHnScXWDlNs">তিব্বতে টিনটিন</a></li>
+                            <li><a href="https://drive.google.com/open?id=1kUIB1ZP_fLFaWUTsFTFyio7z7oVn3Vj6">লোহিত সাগরের হাঙ্গর</a></li>
+                            <li><a href="https://drive.google.com/open?id=174pNhIvffyWjvqYS6W1LQ9ws9VB6QPWL">ক্যালকুলাসের কান্ড</a></li>
+                            <li><a href="https://drive.google.com/open?id=1ZwLJ5KOs0YLwemGedMwVjc0FQeKwXdqQ">চাঁদে টিনটিন</a></li>
+                            <li><a href="https://drive.google.com/open?id=1hp3yYgASf1NPq-BGzguvsOOVwI6yPLct">চন্দ্রলোকে অভিযান</a></li>
+                            <li><a href="https://drive.google.com/open?id=1kCrR7oGdmR_AD_pFkzCpYo8niPoddDq0">কালো সোনার দেশে</a></li>
+                            <li><a href="https://drive.google.com/open?id=1eHn2s-Zix1PckeUpODCEDAVI1_OumObh">সূর্যদেবের বন্দি</a></li>
+                            <li><a href="https://drive.google.com/open?id=17EeL4ydTyjXBfKXuZVpRr-fpmqBDC29s">মমির অভিশাপ</a></li>
+                            <li><a href="https://drive.google.com/open?id=1qoKAYJ_9L7xvDe6Vz3Bhzt-Ev4zD89ef">লাল বোম্বেটের গুপ্তধন</a></li>
+                            <li><a href="https://drive.google.com/open?id=1dR5dM1PftdDiBUIQvRJsjsAGPHmfjkcj">বোম্বেটে জাহাজ</a></li>
+                            <li><a href="https://drive.google.com/open?id=1pfasm8f_w4ek-LFyVlb-FU2RtiaQI-f2">আশ্চর্য উল্কা</a></li>
+                            <li><a href="https://drive.google.com/open?id=1LCSoTqpvNb_TDgIhCyuJMX0luz_haY7d">কাকড়া রহস্য</a></li>
+                            <li><a href="https://drive.google.com/open?id=1ktJmqZ6QbcCpBDI27NKMqupNVVy-lW7-">ওটোকারের রাজদন্ড</a></li>
+                            <li><a href="https://drive.google.com/open?id=1HYsgrk_-Q0gNNt-3dBZZHHPnMCHc94Xp">কৃষ্ণদ্বীপের রহস্য</a></li>
+                            <li><a href="https://drive.google.com/open?id=1qyEZBca1dwgjaBQFuhMar60_uy74o071">কান ভাঙ্গা মূর্তি</a></li>
+                            <li><a href="https://drive.google.com/open?id=1EAcbTT-rL_NPZCK0iL7gjKx4-ebNzL7G">নীলকমল</a></li>
+                            <li><a href="https://drive.google.com/open?id=19GaMDPBlqpRnluHRD3NUcy7fl3bGcuIT">ফারাওয়ের চুরুট</a></li>
+                            <li><a href="https://drive.google.com/open?id=1kvghaZJ78Cu26HDWGJuYymE1oaujovUB">আমেরিকায় টিনটিন</a></li>
+                            <li><a href="https://drive.google.com/open?id=1SpUYy-SI0EopM4U-zreVOuzPID8_ArXB">কঙ্গোয় টিনটিন</a></li>
+                            <li><a href="https://drive.google.com/open?id=1L5ATo0wxGn59407y2AhDD_2Uy_cfs1D0">সোভিয়েত দেশে টিনটিন</a></li>
+                            <li><a href="https://drive.google.com/open?id=1uGXb3e90x4p8dNOzw-E9DplCTud-7zXQ">টিনটিনের প্রথম কমিকস</a></li>
+                           
+                        
+                            
+                        </ol>
+                        <br>
+                        <div class="about-title">
+                            <h5>বেসিক আলী</h5>
+
+                        </div>
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=1OnoMIMmP1WzY4hEubJUsb3_GGJ_eQnJw">বেসিক আলি - ০১</a></li>
+                            <li><a href="https://drive.google.com/open?id=1DJLmgZem9Mr8IKKc-Wu_LJCzFKzUukm2">বেসিক আলি - ০২</a></li>
+                            <li><a href="https://drive.google.com/open?id=1A7SJcsYtEFnUt7URCi63mjuR5RRiKlmL">বেসিক আলি - ০৪</a></li>
+                            <li><a href="https://drive.google.com/open?id=1HxZ_q3MmcaV5zHhSFVEhXOb-L9Fld7a6">বেসিক আলি - ০৫</a></li>
+                            <li><a href="https://drive.google.com/open?id=1zda64Fi56N0qZg9dDphSWC2b0IBwM6vV">বেসিক আলি - ০৬</a></li>
+                            <li><a href="https://drive.google.com/open?id=1KEEdq916UMH0SJw7LnCjfcW2w9qqRkAS">বেসিক আলি - ২০০৯</a></li>
+                            <li><a href="https://drive.google.com/open?id=1CpZUMkjmQyKT1hjZPyikGH0JugyTpIDb">বেসিক আলি - ২০১০</a></li>
+                            <li><a href="https://drive.google.com/open?id=1Dw_feeRMVvKLZn9HzRHqfO58O6j5czBA">বেসিক আলি - ২০১১</a></li>
+                            <li><a href="https://drive.google.com/open?id=1gxc2ttrAjIIr8b-1Bvqxu2k-UPMmEIG0">বেসিক আলি - ২০১৩</a></li>
+                            <li><a href="https://drive.google.com/open?id=1SDTcUWfprA8BBAgsF97_OjGL7hCKwke-">বেসিক আলি - ২০১৪</a></li>
+                            
+                        </ol>
+                        <br>
+                        
+                        <div class="about-title">
+                            <h5>Doraemon Short Series</h5>
+
+                        </div>
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=1qZizYTHZcfoltD9yVSyas0hsz6SIbOCD">Doraemon En.Vol.1</a></li>
+                            <li><a href="https://drive.google.com/open?id=19RuxCLLXnmngMv4l2ykwAPmpfakzqmf5">Doraemon En.Vol.2</a></li>
+                            <li><a href="https://drive.google.com/open?id=1zkkWAjh9F-DQDQxs049YShosuM1-IYQB">Doraemon En.Vol.3</a></li>
+                            <li><a href="https://drive.google.com/open?id=1etyeGXaSQlwquYqRek1vwr_sOYZcJShZ">Doraemon En.Vol.4</a></li>
+                            <li><a href="https://drive.google.com/open?id=1Dleq9dj8YSGtavWaUIidsNeJ4_KHwWj-">Doraemon En.Vol.5</a></li>
+                            <li><a href="https://drive.google.com/open?id=1p43xyBfmZpcDlSKV1x3XfOvboDaqRT5K">Doraemon En.Vol.6</a></li>
+                            <li><a href="https://drive.google.com/open?id=1NzYhf6bSI76l-K-7DqIibUVxZOpMYz8q">Doraemon En.Vol.7</a></li>
+                            <li><a href="https://drive.google.com/open?id=1UCqu4yWgBR7zkTfh3nZ_-ve95h-0AItR">Doraemon En.Vol.8</a></li>
+                            <li><a href="https://drive.google.com/open?id=1YBFnyKd0uPTDsaqYmZTeyrI34Kp3epuf">Doraemon En.Vol.9</a></li>
+                            <li><a href="https://drive.google.com/open?id=1UIU7cNQVR3C4tOEwZd9Ebcw_k-sgs_sd">Doraemon En.Vol.10</a></li>
+                            <li><a href="https://drive.google.com/open?id=1Bn7RzewzBJi3k5jUHy_FxAYaUjXSfB7L">Doraemon En.Vol.11</a></li>
+                            <li><a href="https://drive.google.com/open?id=1kX-JJ2kFNz5EyvEJJYAgpXWa6CMfSHna">Doraemon En.Vol.12</a></li>                            
+
+                        </ol>
+                        <br>
+                        
+                        <div class="about-title">
+                            <h5>Doraemon Long Series</h5>
+
+                        </div>
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=1zG8-AIxNAao4fbS_D8USh_0hZGfQiJqn">Doraemon Long En.Vol.01</a></li>
+                            <li><a href="https://drive.google.com/open?id=1X8qeXCe6Gq8s-mCI1_8T1u5reSFcdiF4">Doraemon Long En.Vol.02</a></li>
+                            <li><a href="https://drive.google.com/open?id=1cybRYJ8hFyhOKNjfZDGk3oaGwQrKj4Sb">Doraemon Long En.Vol.03</a></li>
+                            <li><a href="https://drive.google.com/open?id=1u7sl_DtdjFiPSNADQe0fUiRkz7Jwum0a">Doraemon Long En.Vol.08</a></li>
+                            <li><a href="https://drive.google.com/open?id=1zFGYha63BK1hOcYvF52TjIM5YxS1HIr7">Doraemon Long En.Vol.09</a></li>
+                            <li><a href="https://drive.google.com/open?id=1kjszTVr4I14oUsreq5g414maij6gf9rM">Doraemon Long En.Vol.17</a></li>
+                            <li><a href="https://drive.google.com/open?id=1OhtVgqsPyCBlqUqVy8mqsedfebcIeNix">Doraemon Long En.Vol.20</a></li>
+                            <li><a href="https://drive.google.com/open?id=1T01CDPnmtgkwhxb1WVBoDGFMCfoXW7og">Doraemon Long En.Vol.23</a></li>
+                            <li><a href="https://drive.google.com/open?id=1gTWoaIqe17vVUG3OP7KDLH644XWCTJFz">Doraemon Long En.Vol.24</a></li>
+                            
+
+                        </ol>
+                        <br>
+                        
+                        <div class="about-title">
+                            <h5>অ্যাসটেরিক্স</h5>
+
+                        </div>
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=1WRFX62-HHuUKKHp7O7BG9NB9FoOhc48J">ঢালের খোঁজে</a></li>
+                            <li><a href="https://drive.google.com/open?id=1peoQy1BDJlQTvJdk-mxlZ6ezvR8GS7-h">গ্লাডিয়েটর অ্যাসটেরিক্স</a></li>
+                            
+                            </ol>
+                        <br>
+                        <div class="about-title">
+                            <h5>উন্মাদ</h5>
+
+                        </div>
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=1loCaG0ircc3WcmEdfWkWQ7mLgIM7QtUB">উন্মাদ - জানু ১৭</a></li>
+                            
+                            
+                            </ol>
+                        <br>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="about-title center">
+                        <h4>Story Books</h4>
+                        <div class="about-title-underline"></div>
+                        </div>
+                        
+                        
+                         <div class="about-title">
+                            <h5>তিন গোয়েন্দা</h5>
+
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1AysQfC0_BCZeHCGOKplQaRCUYGE0z5c3/view?usp=sharing">Volume 1-2 </a></li>
+                            <li><a href="https://drive.google.com/file/d/1yCXdDg1hQxYtBczw_ypfQHKzg7upYKZF/view?usp=sharing">Volume 2-1</a></li>
+                            <li><a href="https://drive.google.com/file/d/1h7hIbX9QKoFFPOEdnpUewDaTj0PnvrVE/view?usp=sharing">Volume 3</a></li>
+                            <li><a href="https://drive.google.com/file/d/1mjMv8toYXK5dRO5pRFLtYC3PvX5KSflt/view?usp=sharing">Volume 4-1</a></li>
+                            <li><a href="https://drive.google.com/file/d/1oKMRq4Fvxg1vpnyQpuUQShqhcNzqfGYA/view?usp=sharing">Vol-5</a></li>
+                            <li><a href="https://drive.google.com/file/d/1QTHK22VmYA-PXIPWe7yDCWgN2IySCe5a/view?usp=sharing">Vol-6</a></li>
+                            <li><a href="https://drive.google.com/file/d/1USYol0Zw4yuRQ2BxyJH1AE8lcw9Obpyf/view?usp=sharing">Vol-8</a></li>
+                            <li><a href="https://drive.google.com/file/d/1sgAC0rS9m-fKxowbo5p4wMk-gOL5Um13/view?usp=sharing">Vol-9</a></li>
+                            <li><a href="https://drive.google.com/file/d/1sihqQfQn25EfQhH39INsi0z8eElOQpwd/view?usp=sharing">Vol-11</a></li>
+                            <li><a href="https://drive.google.com/file/d/1ipDwF3guRMkaS0QP5ySaQZZ70Er9D_l8/view?usp=sharing">Vol-12</a></li>
+                            <li><a href="https://drive.google.com/file/d/1wUW0E7bvDy5Mn8LKUTZ0-DU7XO1tOFyr/view?usp=sharing">Vol-14</a></li>
+                            <li><a href="https://drive.google.com/file/d/1faG7jwxgXgyMzTeYn3lfmwlFPdhmA9XD/view?usp=sharing">Vol-15</a></li>
+                            <li><a href="https://drive.google.com/file/d/124hUbBczFX3KYcZs2GlZeLxsMy36FbcZ/view?usp=sharing">Vol-17</a></li>
+                            <li><a href="https://drive.google.com/file/d/1PKHgHAaEtJyBhOqa4h3O0RPUWXjMUnEG/view?usp=sharing">Vol-18</a></li>
+                            <li><a href="https://drive.google.com/file/d/1FEFXrHdn9q1bE593XdomRKForZZrz_P4/view?usp=sharing">Vol-20</a></li>
+                            <li><a href="https://drive.google.com/file/d/1n2eEtFUPP0yTTOBbLenm8jmsd_R7xLv3/view?usp=sharing">Vol-21</a></li>
+                            <li><a href="https://drive.google.com/file/d/1_V3M1hFwMjhCewjgJj1zy33D-qUqg32g/view?usp=sharing">Vol-23</a></li>
+                            <li><a href="https://drive.google.com/file/d/1YE7HCa696rRIHpo7KfRPVPGgbVOqGi52/view?usp=sharing">Vol-24</a></li>
+                            <li><a href="https://drive.google.com/file/d/1uG5E6jx0uaovwoj-NSPmzQoEBwxJjWZc/view?usp=sharing">Vol-26</a></li>
+                            <li><a href="https://drive.google.com/file/d/1RIcMqCo4PHQN-rRXpuCi4-uaFYACTbcq/view?usp=sharing">Vol-27</a></li>
+                            <li><a href="https://drive.google.com/file/d/1b69WxUXQ_-hvOzLdEq1nfe5RbgwZ7hOE/view?usp=sharing">Vol-29</a></li>
+                            <li><a href="https://drive.google.com/file/d/1fF89FMgjujfnhDLFc-ir0fTeRjhHOgSr/view?usp=sharing">Vol-30</a></li>
+                            <li><a href="https://drive.google.com/file/d/1RakFLThyAq14CkJLpwwxjL5pq9LwLRwN/view?usp=sharing">Vol-32</a></li>
+                            <li><a href="https://drive.google.com/file/d/1POdiFuhVtShdpHaAWyIzY0kF6WGO1U-8/view?usp=sharing">Vol-33</a></li>
+                            <li><a href="https://drive.google.com/file/d/1hqxJrZRlvPeaAWC-mvOqBtMhRmxDWUhC/view?usp=sharing">Vol-35</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Epc9cihMfybNXf9gLFSfTLcqy83JRyJj/view?usp=sharing">Vol-36</a></li>
+                            <li><a href="https://drive.google.com/file/d/1yuT_nyb_nQYPC20LynLkb2sVqMNq30pP/view?usp=sharing">Vol-38</a></li>
+                            <li><a href="https://drive.google.com/file/d/16Kk-4isOm8vgftoh6xJvBZTyYaiElj8B/view?usp=sharing">Vol-39</a></li>
+                            <li><a href="https://drive.google.com/file/d/1ZfgnqbRzcS_CrD7sJojKa5wSJ19sFbu4/view?usp=sharing">Vol-41</a></li>
+                            <li><a href="https://drive.google.com/file/d/1uh5eEmNQd0fvgoV9bqfzIx84NARgs83D/view?usp=sharing">Vol-42</a></li>
+                            <li><a href="https://drive.google.com/file/d/1v5v-FTLcP7JaK-mtHBYp-zn86UegClae/view?usp=sharing">Vol-44</a></li>
+                            <li><a href="https://drive.google.com/file/d/1ctWgKxtna1-6rbKLIAMsrue2u-3cNu3u/view?usp=sharing">Vol-45</a></li>
+                            <li><a href="https://drive.google.com/file/d/1f6jhMWGNz_-kNHoDORHQAMFRSjlHd4_C/view?usp=sharing
+                                ">Vol-47</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Ycuq8bhgD9zCCLPx6qVvqc8UmXcaGnk_/view?usp=sharing">Vol-48</a></li>
+                            <li><a href="https://drive.google.com/file/d/1EFgvlU3_Tb0S6kNFlvkbpmtwbH77NuG1/view?usp=sharing">Vol-50</a></li>
+                            <li><a href="https://drive.google.com/file/d/1gXniimBRxpqxIR7xSiHg6gCj7Z-Wn_lq/view?usp=sharing">Vol-51</a></li>
+                            <li><a href="https://drive.google.com/file/d/1LHNtDD1gVh2ls1Uvyp_YGo11gt3a00M7/view?usp=sharing">Vol-53</a></li>
+                            <li><a href="https://drive.google.com/file/d/1RhyNkXLKcfHxZgfltv5_isBF5SDlQyOa/view?usp=sharing">Vol-54</a></li>
+                            <li><a href="https://drive.google.com/file/d/1UKTmUz9H0Pgb1i8EM3jh40x5UPyYZM4c/view?usp=sharing">Vol-56</a></li>
+                            <li><a href="https://drive.google.com/file/d/1fryssY6n3p9SRueYijvfvuLP0CcJx4LG/view?usp=sharing">Vol-57</a></li>
+                            <li><a href="https://drive.google.com/file/d/1IBkqeR8dFdecDhM4miBwr-3FEcEdY0G9/view?usp=sharing">Vol-59</a></li>
+                            <li><a href="https://drive.google.com/file/d/15qL7_bDnVVWD-VHSxmhhWZCry1MqAFGc/view?usp=sharing">Vol-60</a></li>
+                           
+
+                        </ol>
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5>হুমায়ুন সমগ্র</h5>
+                        </div>
+                            
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1IYHqldhhTZqyttsA_fBG99Nu56vKulgz/view?usp=sharing">Devi (The Goddess) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/11Yxfia09XhZUUV06Km3xk1caXo35x_Mf/view?usp=sharing">Nishithini (The Night Roamer) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1XKzRInTL2hihA5VY9Ua9oQr4OFXtEu7Z/view?usp=sharing">Nishad (Nishada - An indigenous tribe inhabiting ancient India, according to sources in Hindu mythology) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1tZZ952gnwMoYTiF8mexwdn1VKlqjG_Ld/view?usp=sharing">Anyobhubon (The Other World) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/11GyKPZIacRnipFhD7gMSyRygDJhAS3Ii/view?usp=sharing">Brihonnola (The Eunuch) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1UYyOBIS1fiZ7QbsBFf-QXaA83xxvSCzP/view?usp=sharing">Bhoy (Fear) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1yRBue5Qor4fXj4SyPK49HMuiyr4JjI7k/view?usp=sharing">Bipod (Danger) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1nBuWnUZxJHbz_xAOsklT-xY73-7RwbZ8/view?usp=sharing">Onish By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1fFQiFttg-8wV-cOqK5CYAqZktcwRcwp_/view?usp=sharing">Misir Alir Amimangsito Rahasya (The Unsolved Mystery of Misir Ali) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1zuBhnTg1Xn_sVBjX3b1d2mOHg1ZO0-wz/view?usp=sharing">Ami Ebong Amra (I and We) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/19GeSHDGx6hOAivvuXM304U_0KYvHXfvO/view?usp=sharing">Tondrabilash (Tondra = Slumber_ Bilash= Luxury) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/117yaUwmgthsMVW0ea9XKvLVK_zXYGQSq/view?usp=sharing">Ami-ee Misir Ali (I am Misir Ali) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1rE1fUpfutPi2NEr8U9JtqU9txrWGoNSb/view?usp=sharing">Bagh-Bondi Misir Ali (Tiger Trapped Misir Ali) By Humayum Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1jQCQSD4LyCR6ebjkaDKqQugWeHFlPv7H/view?usp=sharing">Kohen Kobi Kalidash (So Says the poet Kalidas) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/15-1cvDJErfgFegnePW0LtLDsQdyeZoIo/view?usp=sharing">Hartan Ishkapon (Hearts-Spades) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1g-1x0AiKnxXYtm3ZaEv8i3M0SNI4_v5x/view?usp=sharing">Misir Ali_r Choshma (Misir Ali_s Glasses) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1eLLPy3e83Qs_9QkGQGDvWMg180o0v5zL/view?usp=sharing">Misir Ali! Apni Kothai (Misir Ali! Where Are You) By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Ndo6ZHL0YYO1guQ-JO0QgrsWejJGKwH2/view?usp=sharing">Misir Ali Unsolved By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1FwIgvuJKZ4zNQhLGbyTm33T_nNb80g22/view?usp=sharing">Poofi By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Sv7Ry16NEptlHOwNmHnbngU6kNpmHObK/view?usp=sharing">Misir Ali Bishoyok Rochona Jokhon Namibe Adhar By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/open?id=1wGwWNd46D-7OuD6W0E7C-aNF13i1nOnP">অহক - হুমায়ুন আহমেদ</a></li>
+                        
+                            
+                        </ol>
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5> হিমু সিরিজ</h5>
+                        </div>
+                            
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=15LNbZV9w7Qir5fjtg15x1VnQUMoTwmJv">Moyurakkhi</a></li>
+                            <li><a href="https://drive.google.com/open?id=15y8ZSUD7pwtfGhyenh7J-8j7JOQu1CeL"> Dorjar Opashe </a></li>
+                            <li><a href="https://drive.google.com/open?id=1Lvv2bulFzFgbZTb0MsUDZzUPfqNBgyQa">Himu </a></li>
+                            <li><a href="https://drive.google.com/open?id=1aD54RDk8IU_n8WBi97_ZjUHuAlQJkuGu">Parapar </a></li>
+                            <li><a href="https://drive.google.com/open?id=18Jyued98kUI-UQAA_VKe7aJhpxRWYr1K">Ebong Himu</a></li>
+                            <li><a href="https://drive.google.com/open?id=1-j0CCjuJLCZ_51nYmYMg6TpVw4eoc5A5">Himur Hate Koyekti Neel Poddo </a></li>
+                            <li><a href="https://drive.google.com/open?id=11v-gtXPya8rr2nRq1NSjG_Bfwu-vVDX_">Himur Ditiyo Prohor</a></li>
+                            <li><a href="https://drive.google.com/open?id=16Xof6MAmy5-s1azmwnx5wLx5Ui35KfxO">Himur Rupali Ratri</a></li>
+                            <li><a href="https://drive.google.com/open?id=10koxiT8MBl9i1oBqVr_FhUAtab7ji_SF"> Ekjon Himu Koekti Jhin Jhin Poka </a></li>
+                            <li><a href="https://drive.google.com/open?id=1BIdV8r5P7Weo8lj9loelqnhHoMxArwRo">Tomader Ei Nogore</a></li>
+                            <li><a href="https://drive.google.com/open?id=1ryQHFbuUpxgOnS1Uw90uyWDuZ3zWSv-1">Se Ashe Dhire </a></li>
+                            <li><a href="https://drive.google.com/open?id=1BIdV8r5P7Weo8lj9loelqnhHoMxArwRo">Himu Mama</a></li>
+                            <li><a href="https://drive.google.com/open?id=1yOB8rX6xtPLOfIXcBONQfHuPPXZNBpG2">Angul Kata Jaglu </a></li>
+                            <li><a href="https://drive.google.com/open?id=1OMGK7-HKCETX3WEwZb8l3eYtjMSKBZto">Holud Himu Kalo RAB</a></li>
+                            <li><a href="https://drive.google.com/open?id=1onCrfNeSkRYpqJWyDGP6ZRADdavOR0Zv">Aaj Himur Biye </a></li>
+                            <li><a href="https://drive.google.com/open?id=1Mr4xgG6X62F6u2bBy6hWhvPss5-7F7Bs">Himu Remand-E </a></li>
+                            <li><a href="https://drive.google.com/open?id=15r6BF-krZU16LDMbBK4wlTON2Tx6I28z">Himur Ekanto Sakkhatkar</a></li>
+                            <li><a href="https://drive.google.com/open?id=1ypUxkrE2tfJKOcCv8nFYZU3YGlgPNbPb"> Himur Madhyadupur</a></li>
+                            <li><a href="https://drive.google.com/open?id=1SUYxnlI_9MZLYUx4hTgbIXQ-juXTbO4k"> Himur Babar Kothamala</a></li>
+                            <li><a href="https://drive.google.com/open?id=1uSOag4eBf-LafRAsy269caWmku9tUoq_"> Himur Neel Jochna </a></li>
+                            <li><a href="https://drive.google.com/open?id=1T2c-Er6n23avjoPH-5pNoRm_WomZWBR2">Himu Ebong Ekti Russian Pori </a></li>
+                            <li><a href="https://drive.google.com/open?id=1nM7L824e5W_zNW2qdg3V7oweCR8BNdeU">Himu Ebong Harvard Ph.D. Boltu Bhai </a></li>
+                        
+                            
+                        </ol>
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5>বিভূতি রচনাবলী</h5>
+                            
+                        </div>
+                            
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1giwbWXVdb_sDwmJWjvlBzYWQB20mYJUT/view?usp=sharing">বিভূতি রচনাবলী ১</a></li>
+                            <li><a href="https://drive.google.com/open?id=1_ii4W-LFMkMIfC1a6YWZBTGJ0Aa0cOdz">বিভূতি রচনাবলী ২</a></li>
+                            <li><a href="https://drive.google.com/open?id=183Vt1J3HqQMojbJtHVNToMM-sLVxU_w_">বিভূতি রচনাবলী ৩</a></li>
+                            <li><a href="https://drive.google.com/open?id=1GYPn3_yb1U1cVvHK8nIVTtPqgwIeUzau">বিভূতি রচনাবলী ৪</a></li>
+                            <li><a href="https://drive.google.com/open?id=1-SlbmiSlEiBDie_Z8AqJjRUo3Q7AuuFd">বিভূতি রচনাবলী ৫</a></li>
+                            <li><a href="https://drive.google.com/open?id=1ZiAWAUKYx4jBGHgXzowkaaopxm-AMQs4">বিভূতি রচনাবলী ৬</a></li>
+                            <li><a href="https://drive.google.com/open?id=12wgmTOojveAJDysThnaWE9KNdqG_aR1k">বিভূতি রচনাবলী ৭</a></li>
+                            <li><a href="https://drive.google.com/open?id=1wC5cksRLx5QuERDIbCE2xWfWPGsk1uD1">বিভূতি রচনাবলী ৮</a></li>
+                            <li><a href="https://drive.google.com/open?id=1d3BCADDl-YIfKyF99Dy0b6bEkZqFz_In">বিভূতি রচনাবলী ৯</a></li>
+                            <li><a href="https://drive.google.com/open?id=1gLWnFHLg9JaWLBnTfmtQq8lm6ecEk0cv">বিভূতি রচনাবলী ১০</a></li>
+                            <li><a href="https://drive.google.com/open?id=1ugeYs3gI9eLS7MhYlswLSIg2PMCWkGSd">বিভূতি রচনাবলী ১১</a></li>
+                            <li><a href="https://drive.google.com/open?id=16O4tnEYHhqbRv0eVZSoPWIaZHrxsmcvy">বিভূতি রচনাবলী ১২</a></li>
+                        
+                            
+                        </ol>
+                        <br>
+                        
+                        <div class="about-title">
+                            <h5>সৈয়দ শামসুল হক উপন্যাস সমগ্ৰ</h5>
+                            
+                        </div>
+                            
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=1n71bUCXI5fPNwPiEjVCuG6UA1HCSKpr1">সৈয়দ শামসুল হক উপন্যাস সমগ্র ১</a></li>
+                            <li><a href="https://drive.google.com/open?id=1769CLJvIQKfNL62qVOMmoX31C-lDgLVY">সৈয়দ শামসুল হক উপন্যাস সমগ্র ২</a></li>
+                            <li><a href="https://drive.google.com/open?id=1rZjRbhFv5Jukm6paQbOBZaetqk9AjmlN">সৈয়দ শামসুল হক উপন্যাস সমগ্র ৩</a></li>
+                            <li><a href="https://drive.google.com/open?id=1BHgCalCzZQfSb42vhCmTbITEv4xMYyf9">সৈয়দ শামসুল হক উপন্যাস সমগ্র ৪</a></li>
+                        
+                            
+                        </ol>
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5>আনিসুল হক রচনাবলী</h5>
+                            
+                        </div>
+                            
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=13eAeB-W3jtjqimVaUmk7s6FYwLHV6IQY">অশ্বডিম্ব</a></li>
+                            <li><a href="https://drive.google.com/open?id=17kqFC2Yl50YgIbMt__EmTD-buRHJvxE8">আবার তোরা কিপ্টে হ</a></li>
+                            <li><a href="https://drive.google.com/open?id=1gjpp9hxFrzZfgDnchKLgF0smTya6nwXS">আমারও একটা প্রেমকাহিনি আছে</a></li>
+                            <li><a href="https://drive.google.com/open?id=1Nvn2Lf0Dx2Lg4fXHdO8Gc3p_9b1xUrOG">উষাড় দুয়ারে</a></li>
+                            <li><a href="https://drive.google.com/open?id=1sd7jjyBDJhKToPs-U8TKSuBzIeZOOAXO">এই যন্ত্র লইয়া আমরা কী করিব</a></li>
+                            <li><a href="https://drive.google.com/open?id=1b5UA8fBJbchpnyVzjLTXoKzthZSBVxq8">একাত্তরে একদল দুষ্ট ছেলে</a></li>
+                            <li><a href="https://drive.google.com/open?id=1bihNhRn1bGuUi23jB3ZHgLsi16jwproS">এতদিন কথায় ছিলেন</a></li>
+                            <li><a href="https://drive.google.com/open?id=1Z3MEMNINGhOGNEi5HVUK7dtMx0kqMGEW">ওনাদের নিয়ে কৌতুক</a></li>
+                            <li><a href="https://drive.google.com/open?id=10VZOHbO0bgq13j-Po7nOr_phTkPup0k8">খেয়া</a></li>
+                            <li><a href="https://drive.google.com/open?id=1t3TM8rDi70-Mi5SwZYHzmxLab2TROAhT">গদ্যকার্টুন সমগ্র</a></li>
+                            <li><a href="https://drive.google.com/open?id=11MTZNRDFadjA47Zyzr2__GsGObIGcmKR">জেনারেল ও নারীরা</a></li>
+                            <li><a href="https://drive.google.com/open?id=1UJH-DPunPVip9AnzeFPJinCTXx46zV6L">না-মানুষি জমিন</a></li>
+                            <li><a href="https://drive.google.com/open?id=1-FOks4SfbPXMF0oMJn0t22Y6b0hgBk6w">পরশী যদি আমায় ছুতো</a></li>
+                            <li><a href="https://drive.google.com/open?id=18zjYEtefTl6jK7BpWsVkalwJgqHp21UM">ফাজিল</a></li>
+                            <li><a href="https://drive.google.com/open?id=1_iM0UlLPKdF5_Y5c4Ce4q2lXI2AfAmXa">ফাল্গুনের রাতের আঁধারে</a></li>
+                            <li><a href="https://drive.google.com/open?id=1ot7oMt4WylHGIfNzu98QzaBfg38lhYez">বিকেল বেলার গল্প</a></li>
+                            <li><a href="https://drive.google.com/open?id=1O2ftFJVXpNPNhGD00u7cSUv0fO-ZoQhk">বিহ্মোভের দিনগুলিতে প্রেম</a></li>
+                            <li><a href="https://drive.google.com/open?id=1A5Y1hx3KdaIxT-Ygv4BSz7fRPjB21K9X">ভালোবাসা মন্দবাসা</a></li>
+                            <li><a href="https://drive.google.com/open?id=1v4okcQE-DwMXLzixN43Yf_opVei8389v">ভালোবাসি আশ্চর্য মেঘদল</a></li>
+                            <li><a href="https://drive.google.com/open?id=1Bi9Pe8cmXL1-rFeMnWdhG_uMJBWEycsY">ভালোবাসো, বাঁচো</a></li>
+                            <li><a href="https://drive.google.com/open?id=1SuzlhXwHkS2f7SITooywZ5yxDfqR8PSy">মন+হৃদয়</a></li>
+                            <li><a href="https://drive.google.com/open?id=1GIE8vk8trGcQ17chhkb-9tbW2aIweJHB">মা</a></li>
+                            <li><a href="https://drive.google.com/open?id=1jAYL5T3uOXIwLbGP7MA0v5FQLI8DgaNf">মোটকু মামার গোয়েন্দা অভিযান</a></li>
+                            <li><a href="https://drive.google.com/open?id=1R0pFHdFHwCKS5WMGczLN5DfnEe8p9rqB">যখন আমি মোটকু ছিলাম</a></li>
+                            <li><a href="https://drive.google.com/open?id=1pcZKKi0ch60O8KYWYfjkjaW7Topmskjd">যারা ভোর এনেছিল</a></li>
+                            <li><a href="https://drive.google.com/open?id=1TvrerT5GguDxPInu74UO8ewemFQJlo2t">সেজুতী তোমার জন্য</a></li>
+                            <li><a href="https://drive.google.com/open?id=1QSPlSIumq9aEFYo-K7A3aZXtEOk73x9I">সেলাই</a></li>
+                            <li><a href="https://drive.google.com/open?id=15wqlUa_LYq_Wv1Az6vqR9daDZAv0E2e4">হৃদিতা</a></li>
+                        
+                            
+                        </ol>
+                        <br>
+                        
+                        
+                        
+                        <div class="about-title">
+                            <h5>ইমদাদুল হক মিলন রচনাবলী</h5>
+                            
+                        </div>
+                            
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=1WTCRsJOUpIB6t0WY7f6fBHDigHRhus6K">অনেক কথা বলার ছিল</a></li>
+                            <li><a href="https://drive.google.com/open?id=1eMUmbzuHxTAJY_t0G50dlsF8jP0rYSUu">উপনায়ক</a></li>
+                            <li><a href="https://drive.google.com/open?id=12LTqHVmYjjDBHh7eQhGDvZikFy15HH2K">একান্তে</a></li>
+                            <li><a href="https://drive.google.com/open?id=1wWyQpFrui_LTPx4qAkLjuuQlfctIUkGg">ও আমার চাঁদের আলোে</a></li>
+                            <li><a href="https://drive.google.com/open?id=1l1yQDJy_DCYeFCLUC4PT1Vbvocg3qliF">কিশোরী</a></li>
+                            <li><a href="https://drive.google.com/open?id=1v9tkkBjuwu7_X-e1HoBRRqid5bU0-dmb">দুই বাংলার দাম্পত্য কলহের শত কাহিনী</a></li>
+                            <li><a href="https://drive.google.com/open?id=1pgQb9izeWpCrtTKmGS5UC37lc1ITcBAe">দুই মুক্তিযোদ্ধা</a></li>
+                            <li><a href="https://drive.google.com/open?id=1vlGAFQ7S3OhSMo-nke5Qlwa1KAwsLC0D">দুজনে</a></li>
+                            <li><a href="https://drive.google.com/open?id=1Ogq--K09LgchuaNDGfIUJtzAlLIg432a">নির্বাচিত প্রেমের গল্প</a></li>
+                            <li><a href="https://drive.google.com/open?id=1y_ODfatltgEqWGDQANPBQmc73UaAVjTp">নূরজাহান - প্রথম পর্ব</a></li>
+                            <li><a href="https://drive.google.com/open?id=1bcZp_xrDarifZ360PJLbiYVQgeHO3NqQ">নূরজাহান - দ্বিতীয় পর্ব</a></li>
+                            <li><a href="https://drive.google.com/open?id=18nA4Jl7BXFuo8u1nOvMk4OW0QOhbhSHK">নূরজাহান - তৃতীয় পর্ব</a></li>
+                            <li><a href="https://drive.google.com/open?id=1DW55eZSVWSTS9pfFkjPGctHAUoVgGjau">পিতা এবং স্বামীর মৃত্যুর পর</a></li>
+                            <li><a href="https://drive.google.com/open?id=1dR7D_2MxV72HyW2o2nhNJWlbea7rNkjS">প্রিয় সহচর</a></li>
+                            <li><a href="https://drive.google.com/open?id=1UjDfAyVa7vFKZtoh1WasUnAYWulfFGnb">প্রিয় হুমায়ুন আহমেদ</a></li>
+                            <li><a href="https://drive.google.com/open?id=1nBy7iT3qoh1lmtwa3naRue5-DbOAYIKQ">ফার্স্ট বয় সেকেন্ড বয়</a></li>
+                            <li><a href="https://drive.google.com/open?id=1daVc5zEmE6T_PfnHyYJ6ZNdqg2Rg8QRv">ভূতগাছ</a></li>
+                            <li><a href="https://drive.google.com/open?id=1lwPxEOiIQ8IIyOBbTmKfY2B9mSieucDp">মন ছুঁয়ে যায় ভালবাসা</a></li>
+                            <li><a href="https://drive.google.com/open?id=1sI1-_82xzDRPO7Q1pxfUjT7u-kOQOrml">মিলন হবে কত দিনে</a></li>
+                            <li><a href="https://drive.google.com/open?id=1mNak9Au95cgJO69nDIGZToR70z5vpjZD">লিলিয়ান, তুমি এক অন্ধ বালিকা</a></li>
+                            <li><a href="https://drive.google.com/open?id=1hv8_SQ5HOaap7CJcUuPznh35q-5kE9Ba">শালিক পাখিটি উড়ছিল</a></li>
+                            <li><a href="https://drive.google.com/open?id=1VgZn8NybSCCAuMZa-nf8MO6dphDhEn1b">শ্রাবন সন্ধ্যাটুকু</a></li>
+                            <li><a href="https://drive.google.com/open?id=1emLZif-dw5rq0fWFkY-Wa9JtvQEcqEyf">সাতজনের দল</a></li>
+                        
+                            
+                        </ol>
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5>উপকথা</h5>
+                            
+                            
+                        </div>
+                            
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=1MqWczBCHsjLiPN1WyhzeBVIJLm7rl2qu">ঈশপের গল্পগুচ্ছ</a></li>
+                           
+                        
+                            
+                        </ol>
+                        <br>
+                        
+                        <div class="about-title">
+                            <h5>কিছু কালজয়ী বাংলা বই</h5>
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1bGAUFNwIGtiuNUqSmtYjNIiw_pnxUTm-/view?usp=sharing">উত্তরাধিকার</a></li>
+                            <li><a href="https://drive.google.com/open?id=1seymBkh1trczlXSsotx7X-DRhFP-KmKF">তিন কাহিনী - তারাশঙ্কর বন্দ্যোপাধ্যায়</a></li>
+                            <li><a href="https://drive.google.com/open?id=1q6E-ZzXIQo9b_b55DPRYmDi6N5FWDrlF">দশ পুতুল - তারাশঙ্কর বন্দ্যোপাধ্যায়</a></li>
+                            <li><a href="https://drive.google.com/open?id=1wsFb7gBVlPLG9HuOueBMTQE4eZPmGTDa">রূপ হতে অরূপে - মৃণালকান্তি দাশগুপ্ত</a></li>
+                            <li><a href="https://drive.google.com/open?id=147IOCbBD6J3aQ10EeEHJj8Xy5fQ0Ooc6">কালিদাস তাঁর কালে - সুকুমার সেন</a></li>
+                            <li><a href="https://drive.google.com/open?id=1yr4BdXh_Ag-7bYf9Kr73Ut5I7pby7Snz">লেখালেখি - ভানু বন্দ্যোপাধ্যায় </a></li>
+                            <li><a href="https://drive.google.com/file/d/1sGp3riun_837Khi7oieYCTsavHToCaFT/view?usp=sharing">সাতকাহন - ১ম পর্ব</a></li>
+                            <li><a href="https://drive.google.com/file/d/16QpskVqAvv-UX-s1Kog23xtHwi83oe03/view?usp=sharing">সাতকাহন - ২য় পর্ব</a></li>
+                            <li><a href="https://drive.google.com/file/d/1BQ9NylECUtUs9ueKOB5fKy0gl0i2IL5k/view?usp=sharing">গল্পগুচ্ছ</a></li>
+                            <li><a href="https://drive.google.com/file/d/1I1F3fcaCimFtCJKCAUCphJj8YXf_MHD3/view?usp=sharing">ফেলুদা সমগ্র - ১</a>
+                        </ol>
+                        <br>
+                        
+                        <div class="about-title">
+                            <h5>ভ্রমণ কাহিনী</h5>
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/open?id=1yoeWwWY_dVng1XziUmiaQQfKzUhG8Pi9">ইবনে বতুতার সফরনামা</a></li>
+                            
+                        </ol>
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5>মুক্তিযুদ্ধের বই</h5>
+                        </div>
+
+                        <ol type="1">
+                            <br>
+                            <li><a href="https://drive.google.com/file/d/1h4Vq36Tvl0LP0rfETm44jAeEUevbTHYo/view?usp=sharing">মা</a></li>
+                            <li><a href="https://drive.google.com/file/d/1A6FJNFXA4o0mp01mRkYH-nmO_DakAJn4/view?usp=sharing">বাংলাদেশের স্বাধীনতা যুদ্ধের দলিলপত্র - ১৫ খন্ড একত্রে</a></li>
+                            <li><a href="https://drive.google.com/file/d/1iGosCWBrp06rBA1NOm9jZv1_iJXkZKuX/view?usp=sharing">আমার বাবা মুক্তিযোদ্ধা, সুশান্ত মজুমদার</a></li>
+                            <li><a href="https://drive.google.com/file/d/1URDAIdcfBQpMU04z-0UDoQYUd53g2qMu/view?usp=sharing">আত্মকথা ১৯৭১ ।। নির্মলেন্দু গুণ</a></li>
+                            <li><a href="https://drive.google.com/file/d/1rNuTtMNdAn-EWUoa9vM68xvLGgLiC0lw/view?usp=sharing">Vanquished Generals</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Q-Qh3ey3tc_esQJg0t7OwAx7zOEPfRoT/view?usp=sharing">Utopia An Ideal Condition About Liberation War</a></li>
+                            <li><a href="https://drive.google.com/file/d/1w1lEN-qIf2aL0bzCwdxKart386pkCKpM/view?usp=sharing">The_Vanguard_of_the Islamic</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Ji7dB-LhJ9P32SHIkNi5uFVyFQwfN6uj/view?usp=sharing">THE RAPE OF BANGLADESH - SIRAJUL ISLAM</a></li>
+                            <li><a href="https://drive.google.com/file/d/14d9-BlW7BaPUsRkKuKxmgVpkeZ4COlnt/view?usp=sharing">Onil Bagchir Ekdin by Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1R0mSh0_mkFR41ADrY6tkRcbCHIhFmcDJ/view?usp=sharing">Muldhara 71 by Maidul Hasan</a></li>
+                            <li><a href="https://drive.google.com/file/d/1vrgMsXf7v6a7xpw0xm9BlIehfU54Yw5m/view?usp=sharing">Muktijudher Uponnayas Samagra - Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1jEsqyGAHXt_j0p9DI5igcqGPN72PdMqo/view?usp=sharing">Muktijuddher Itihas by Md. Jafar Iqbal</a></li>
+                            <li><a href="https://drive.google.com/file/d/1xTeYccV3z9ubJVvJyXgt2tMUn1EyLrG2/view?usp=sharing">Mujib_killing_case_investigation_verdict</a></li>
+                            <li><a href="https://drive.google.com/file/d/19mBRx2tedRKFyRwANGk4FLJK3KFizSUL/view?usp=sharing">Kach Somudro By Muhammed Zafar Iqbal</a></li>
+                            <li><a href="https://drive.google.com/file/d/1GfKF-CRAUhozF2KU59KpCWyJIx-dmY-Z/view?usp=sharing">Jochna O Jononir Golpo By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1-BHY5YGSLSF4FL9HZZqWG-Vim3d-Id8x/view?usp=sharing">Gramer Nam Kakondubi by Muhammed zafar Iqbal</a></li>
+                            <li><a href="https://drive.google.com/file/d/1PR2rwyP3ewPkD0_anKtdHlrsk7gceMLO/view?usp=sharing">একাত্তরের চিঠি</a></li>
+                            <li><a href="https://drive.google.com/file/d/1CivUKiPHt_lQ9mEP9W3BNGs5BIIppK3p/view?usp=sharing">EKATTORER DINGULI </a></li>
+                            <li><a href="https://drive.google.com/file/d/1yEvLJSVE4AbfT6CnArdcCM0Mo631e9j3/view?usp=sharing">Ekattorer Dairy</a></li>
+                            <li><a href="https://drive.google.com/file/d/1YztkBzbdqau0ZAvIxy_FDu6-QeJAExJq/view?usp=sharing">Ekattor Ebong Amar Baba - Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1of-FWhde_7o48NbErOZZ0QTwGaccMDZo/view?usp=sharing">DUI PURUSH</a></li>
+                            <li><a href="https://drive.google.com/file/d/1cjzHjndVemdP3nhUHVwLbUg0vyOadr5y/view?usp=sharing">Deyal By Humayun Ahmed 2013</a></li>
+                            <li><a href="https://drive.google.com/file/d/1MCzhht1Fv9qF0ZXMUNL-vXd5DIAMO9Vo/view?usp=sharing">Charompatra by M. R. Akhtar Mukul</a></li>
+                            <li><a href="https://drive.google.com/file/d/1_fT7iMOTdKydf2zS4A3MTXq3-zPAP6D0/view?usp=sharing">Camp By Muhammed Zafar Iqbal</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Lc5G0ovpzp0hQrSENh1IGB3KiKcxIkZL/view?usp=sharing">Bangladesher Jonmo (The Birth of Bangladesh) - Rao Forman Ali Khan </a></li>
+                            <li><a href="https://drive.google.com/file/d/1SePcVwE-ghLOyMX7s1ai9eMyr67UP-Qj/view?usp=sharing">Ami_nari_ami_muktijuddha</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Xzibz424GxyViQtIqID0NTnOzaFzDpBC/view?usp=sharing">AMI BIRANGONA BOLSI </a></li>
+                            <li><a href="https://drive.google.com/file/d/14rnImKfDwT4JCC5Wwg8t7Q1otBJph02d/view?usp=sharing">Ami Bijoy Dekhechi By M. R. Akhtar Mukul</a></li>
+                            <li><a href="https://drive.google.com/file/d/1mfZYB1ihxzfoJewCA5mN2mivvPFUq8vt/view?usp=sharing">Amar Bandhu Rashed by Md.Jafar Iqbal</a></li>
+                            <li><a href="https://drive.google.com/file/d/1jlJrodxBYtxRSej09d4CV0UJsNmRPtuH/view?usp=sharing">Albadar-muntasir-mamun.</a></li>
+                            <li><a href="https://drive.google.com/file/d/17yBfp1oGHg1me-WMYFEbGQ0OKg5Eib_V/view?usp=sharing">Aguner Poroshmoni By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1n1YrEhEZNwCtHWHDO7BKsLlUcYLL6Q7S/view?usp=sharing">1971-voyaboho-oviggota</a></li>
+                            <li><a href="https://drive.google.com/file/d/13z3QB7uN3LzoNRirvP0JD6uJFvA9tORl/view?usp=sharing">1971 Vetore Baire by A K Khandakar</a></li>
+                            <li><a href="https://drive.google.com/file/d/1wFcIK4Jc9RLlyf8dW07vUAGgCXxbb2c3/view?usp=sharing">1971 By Humayun Ahmed</a></li>
+                            <li><a href="https://drive.google.com/file/d/1bEJYELpMwp-mu4sjyQTwN5Wp8cuoZQQ2/view?usp=sharing"> নিষিদ্ধ লোবান - সৈয়দ শামসুল হক</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Vw2Gew3BCUHGLRcwbbo76jACuGmt4Tdx/view?usp=sharing">অলাতচক্র - আহমদ ছফা</a></li>
+                            <li><a href="https://drive.google.com/file/d/126gZ_sHlF0YeKcT4nEKyYbPEHcaBeCju/view?usp=sharing">Rifle, Roti, Aurat- Anwar Pasha</a></li>
+                            <li><a href="https://drive.google.com/file/d/1I0Us9Vnim2-7AuAjjEKeqbQFbjDMFPAY/view?usp=sharing">7thmarch speech</a></li>
+                            
+                        </ol>
+                        <br>
+                        
+                        
+                        
+                        
+                        
+                        
+                         <div class="about-title">
+                            <h5>Harry Potter</h5>
+
+                        </div>
+                        <br>
+                        <ol type="1">
+                            <li><a href="https://drive.google.com/file/d/109uUyrFAhevPQc4KoSFA1bHT62ZKkExR/view?usp=sharing">Harry Potter And The Philosophers Stone </a></li>
+                            <li><a href="https://drive.google.com/file/d/1EiWtMmPBuTBme_n95_SfTbvdMTU1pJg_/view?usp=sharing">Harry Potter And The Chamber Of Secrets</a></li>
+                            <li><a href="https://drive.google.com/file/d/1DQBgIAcWj-K8GfsmuEc0JkfB2fiQ2XCe/view?usp=sharing">Harry Potter and the Goblet of Fire</a></li>
+                            <li><a href="https://drive.google.com/file/d/1gLiOzPT6Y0UpgZyaMrtwwtfToDGKYdKk/view?usp=sharing">Harry Potter and the Order of the Phoenix </a></li>
+                            <li><a href="https://drive.google.com/file/d/1ZfrrN0zLcKX69N2pqWyOHWv1D11qwELq/view?usp=sharing">Harry Potter and the Prisoner of Azkaban</a></li>
+                            <li><a href="https://drive.google.com/file/d/1QsAp60RDnpXK8x1I4Hq2Na74qh_3iEeY/view?usp=sharing">Harry Potter and the Half-Blood Prince</a></li>
+                            <li><a href="https://drive.google.com/file/d/1pudKL3TwRJ5QgV7o0yFsNDKHFZEcAwUt/view?usp=sharing">Harry Potter and the Deathly Hallows </a></li>
+                            <li><a href="https://drive.google.com/file/d/1cZIYX7uiXxg-H_48QwVQh5GNUGIXVSXh/view?usp=sharing">Harry Potter and The Cursed Child</a></li>
+                            <li><a href="https://drive.google.com/file/d/1HTBovrcX7YtlQjL2vhXn24ix0LUQ3tJr/view?usp=sharing">FantasticBeasts  Where to Find Them</a></li>
+                            <li><a href="https://drive.google.com/file/d/1KNPiraSp7i_9AUw313JsyXklRlM1fK9a/view?usp=sharing">J.K Rowling Quidditch Through The Ages</a></li>
+                            <li><a href="https://drive.google.com/file/d/1MBYgQQwzX55cmtYuKc6jV1V053IEYrYh/view?usp=sharing">Tales of Beedle the Bard</a></li>
+                            <li><a href="https://drive.google.com/file/d/12bQaONsPflMlp1ClAj7LRlvsy2It4oCT/view?usp=sharing">J.K. Rowling - Harry Potter Short Prequel</a></li>
+                        
+                        
+                        </ol>
+                        
+                        <br>
+                        
+                        <div class="about-title">
+                            <h5>William Shakespeare</h5>
+
+                        </div>
+                        <br>
+                        <ol type="1">
+                            <li><a href="https://drive.google.com/open?id=1S75QrVSR8CvdnVJF3TnydqrC4qgoj2Se">ওথেলো - নাটক</a></li>
+                            <li><a href="https://drive.google.com/open?id=1MGHG8Uaf8OcOnai9lJrCr2TJdMKH3xpy">কমেডী অমনিবাস</a></li>
+                            <li><a href="https://drive.google.com/open?id=1_vSkJxa9FotVQocu1isxxYlz9fdUBWgj">টিমন অফ এথেন্স সেক্সপীয়র অবলম্বনে - আশোক গুহ</a></li>
+                            <li><a href="https://drive.google.com/open?id=1x7E9Rn1T_92nksKI9UaN4ea8AabQZNun">টুয়েলফ্‌থ নাইট সেক্সপীয়র অবলম্বনে - আশোক গুহ</a></li>
+                            <li><a href="https://drive.google.com/open?id=1rU75VBlaxFp619zaX8JvGwUCN7lShcnh">টেম্পেস্ট</a></li>
+                            <li><a href="https://drive.google.com/open?id=1hVAv3gm-aX2eSBdQ8yN8uE5VZOoth5Cd">দি টেম্পেষ্ট - আশোক গুহ</a></li>
+                            <li><a href="https://drive.google.com/open?id=1aSRFofq_j-NoDe8nZZcULgQAKAvMSfMg">ম্যাকবেথ </a></li>
+                            <li><a href="https://drive.google.com/open?id=1O7zUIS7yMNNcblfcDUvpTXxnvpOlSdNi">ম্যাক্‌বেথ্‌, অনুবাদঃ উপেন্দ্রকুমার কর</a></li>
+                            <li><a href="https://drive.google.com/open?id=1jcjWc4DDXXoD0f0Ke6drIHhANAIQF8iP">রোমিও এন্ড জুলিয়েট</a></li>
+                            <li><a href="https://drive.google.com/open?id=1UC7T5o-rBqIkzG3tp_VoDVOytmve8eEe">শেকসপীয়ার রচনাবলী অনুবাদঃ সুধাংশুরঞ্জন ঘোষ</a></li>
+                            <li><a href="https://drive.google.com/open?id=1jBP3p8SgGXX1SBCksSL4FSZsAYridpg2">শেকস্‌পীয়র রচনাবলী</a></li>
+                            <li><a href="https://drive.google.com/open?id=1Yu5TC6gdUMjfvb0eCYf9h71-HX0IXwP2">শেক্সপিয়র - শ্রীহারানচন্দ্র রক্ষিত</a></li>
+                            <li><a href="https://drive.google.com/open?id=1NBctLCF630lb2BSI1elIc8O6TSSu_Ht4">শেক্সপিয়রের গল্প - শ্রীশিশিরকুমার নিয়োগী</a></li>
+                            <li><a href="https://drive.google.com/open?id=1SbBd6I4ZP-7ViBR2gmZfJoE18ngo1l2A">শেক্সপিয়ার রচনা সমগ্র - অজয় দাশগুপ্ত ও অরবিন্দ চক্রবর্তী</a></li>
+                            <li><a href="https://drive.google.com/open?id=1ag3F7TFiIF97ol2W0n5yP45sr3BVYEX5">শেক্সপিয়ার রচনা সমগ্র অখণ্ড- ভাষান্তরঃ শুভদেব চক্রবর্তী</a></li>
+                            <li><a href="https://drive.google.com/open?id=13ZjuD6Qf118iZN-kztiaN6BHpeAS4er1">শেক্সপিয়ারের অনুবাদ ও অনুবাদ সমস্যা - রীণা ঘোষ</a></li>
+                            <li><a href="https://drive.google.com/open?id=1qcZfcX_ovvQdTRpt6v1TbqGjnSaSlsSd">শেক্সপীয়র ও বাঙলা নাটক - সনৎকুমার মিত্র</a></li>
+                            <li><a href="https://drive.google.com/open?id=12sI9kqnZlk5hOdAixqmbCW7oaK9Yq9b6">শেক্সপীয়র রচনাবলী- পৃথ্বীরাজ সেন</a></li>
+                            <li><a href="https://drive.google.com/open?id=1OMjHNci06mA61ARD8axFqC3o3SStFquT">শেক্‌স্‌পিয়ারের সমাজ চেতনা - উৎপল দত্ত</a></li>
+                            <li><a href="https://drive.google.com/open?id=1MGnD1wRsvOBIqamltSAckZvXT0YEO5j2">শেক্‌স্‌পীয়র মার্ডার মিস্ট্রি - বীরু চট্টোপাধ্যায়</a></li>
+                            <li><a href="https://drive.google.com/open?id=10h1JENYwp-tXpMHUse4qOEefAPMTHZXo">শেক্স্‌পীয়ারের গল্প - শ্রীবিমল দত্ত</a></li>
+                            
+                        
+                        
+                        </ol>
+                        
+                        <br>
+                        
+                        
+                        
+                        <div class="about-title">
+                            <h5>Game Of Thrones</h5>
+
+                        </div>
+                        <br>
+                        <ol type="1">
+                            <li><a href="https://drive.google.com/drive/folders/1C3iOa1SH0Qr269EqnB_9sM_SzdWiSKLM?usp=sharing">Game Of Thrones</a></li>
+                        </ol>
+                        
+                        <div class="about-title">
+                            <h5>Robert Langdon series</h5>
+                            
+
+                        </div>
+                        <br>
+                        <ol type="1">
+                            <li><a href="https://drive.google.com/file/d/1N9104LjPDs8ksN6J-tkN1EHo8Csuw92H/view?usp=sharing">Angels and demons </a></li>
+                            <li><a href="https://drive.google.com/file/d/1oO5LDyjU3rkINsUAXuxkO85bOE3rNuOg/view?usp=sharing">Inferno</a></li>
+                            <li><a href="https://drive.google.com/file/d/1NeA1aoJkvAikuJNe4CFc-ns7V8PJQECE/view?usp=sharing">Origin</a></li>
+                            <li><a href="https://drive.google.com/file/d/1KSBMdGsealuNiC8Bed27njlZtV54w3wb/view?usp=sharing">The Vinci Code</a></li>
+                            <li><a href="https://drive.google.com/file/d/1hXDVDli9VS0n1Dipnz1BN9vBdKxbBfwb/view?usp=sharing">The Lost Symbol</a></li>
+                            <li><a href="https://drive.google.com/file/d/1JfDROPvTDQNNm08ARsMRwLsap5ThROtO/view?usp=sharing">Digital Fortress</a></li>
+                            <li><a href="https://drive.google.com/file/d/1TEWZrb0nrhyxWRN6_rfi2rDsWmBzJ0ot/view?usp=sharing">Deception Point</a></li>
+                            
+                        </ol>
+                        <br>
+                        
+                        <div class="about-title">
+                            <h5>The Hedge Night</h5>
+                            
+
+                        </div>
+                        <br>
+                        <ol type="1">
+                            <li><a href="https://drive.google.com/file/d/11Sybf1Ff7r8zxUQE7KKB0YM-Zi5s01A9/view?usp=sharing">The Hedge Night - 1</a></li>
+                            <li><a href="https://drive.google.com/file/d/1N-hlfPDOLrmay4JiYD6LTk0q8WGobDGx/view?usp=sharing">The Hedge Night - 2</a></li>
+                            <li><a href="https://drive.google.com/file/d/1NdACEIcV-UKXgn1z_RO3kvjyWDpqh0TX/view?usp=sharing">The Hedge Night - 3</a></li>
+                        </ol>
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5>Some Best Sellers</h5>
+
+                        </div>
+                        <br>
+                        <ol type="1">
+                            <li><a href="https://drive.google.com/file/d/15xEQYPsNd2ttIWauHXuVBOBhcLGRzSIG/view?usp=sharing">Dale Carnegie - How To Win Friends And Influence People</a></li>
+                            <li><a href="https://drive.google.com/file/d/1-XQToOhGd1Nu-s4DimeHRTq7Lc3Ibm3N/view?usp=sharing">Growth Hacker Marketing - Ryan Holiday</a></li>
+                            <li><a href="https://drive.google.com/file/d/1RFjvloEliApC9nCAsvPtlxZ0fsq-AT2X/view?usp=sharing">Neurone Onuronon </a></li>
+                            <li><a href="https://drive.google.com/file/d/1z8ROLzvgjzXZ_OgIVW6w0b3gBtYzEv3N/view?usp=sharing">Simon Sinek - Find Your Why</a></li>
+                            <li><a href="https://drive.google.com/file/d/12KyNZY6HDTr6dO4TNNV8Tqlj1Cg6Z3zG/view?usp=sharing">Simon Sinek - Leaders Eat Last</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Z45Nu9kMbIgPNmyLTQPprCSaf_B10Zjo/view?usp=sharing">Simon Sinek - Start With Why</a></li>
+                            <li><a href="https://drive.google.com/file/d/1lhNVO0zwzEqJYCeTAtxa70pjS5oUrmEG/view?usp=sharing">The 10X Rule</a></li>
+                            <li><a href="https://drive.google.com/file/d/1VBkOYUxtLTaE55E5Qsj9dd4QAV1ftNT5/view?usp=sharing">The Theory of Everything</a></li>
+                            <li><a href="https://drive.google.com/file/d/1wsQOmjiIAQ6C6kptFcWgKk0GR5ciD208/view?usp=sharing">The Wolf Of Wall Street - Jordan Belfort</a></li>
+                            <li><a href="https://drive.google.com/file/d/14M140_Y_5nD0iYix1L_T_Ab9oE6tY1fC/view?usp=sharing">Unshakeable - Tony Robbins</a></li>
+                            <li><a href="https://drive.google.com/file/d/1ERhi8GDLl660kTU31rQ5zhKkDRgq9Bo5/view?usp=sharing">Masterminds</a></li>
+                            <li><a href="https://drive.google.com/file/d/1VQRZaiJOIW_T9jtTU9gytzxEZH8u8kV8/view?usp=sharing">THE TEN SCROLLS </a></li>
+                            <li><a href="https://drive.google.com/file/d/1Dx6ug-KT-rHkvU0G1fsAwb9xNOg9URPO/view?usp=sharing">Rich Dad Poor Dad</a></li>
+                            <li><a href="https://drive.google.com/file/d/1uLpguA9u7hIfpF0dof2O0R8SjJMN8eHB/view?usp=sharing">EMOTIONAL INTELLIGENCE by DANIEL GOLEMAN</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Lj3WqH8eybRXQmnu7Gw3v8cZpeDMX66c/view?usp=sharing">Art Of War</a></li>
+                            <li><a href="https://drive.google.com/file/d/1BXaiHe22hhD7KnHhQTfvDF2T_yqTtOel/view?usp=sharing">The-Odyssey</a></li>
+                            <li><a href="https://drive.google.com/file/d/1D6W62SUNBuMKp05rUkebenhiz4xkB_mu/view?usp=sharing">James Joyce-Ulysses (Cliffs Notes) (1981)</a></li>
+                            <li><a href="https://drive.google.com/file/d/1HWEaJuh1zPofys0Q-G0vf7LVN4YkVaXn/view?usp=sharing">In time of lost time</a></li>
+                            <li><a href="https://drive.google.com/file/d/1-wCCRKK598dx_jzrYNES1R2qTJQ00Kub/view?usp=sharing">Hamelet</a></li>
+                            <li><a href="https://drive.google.com/file/d/1yTsaWv2k0693pV0zZxHabKBROD0sm5YI/view?usp=sharing">Dante-longfellow</a></li>
+                            <li><a href="https://drive.google.com/file/d/1h6BfusoFrx-_DvkTzEwmm0360-AcCZ6Y/view?usp=sharing">(Illustrated Classics) Herman Melville-Moby Dick-Saddleback Educational Publishing (2007)</a></li>
+                            <li><a href="https://drive.google.com/file/d/1hzlbj6hvTK5F2fPvoEY9p4mA84wmQfoh/view?usp=sharing">The-Clash-of-Civilizations-and-the-Remaking-of-World-Order_2</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Uh8GAbIwEWsgmtOHt2OhYspjiiZN1JwF/view?usp=sharing">Issues-of-Our-Time-Amartya-Sen-Identity-and-Violence_-The-Illusion-of-Destiny-W.-W.-Norton-2006</a></li>
+                        </ol>
+                        
+                        <br>
+                        
+                        
+                        <div class="about-title">
+                            <h5>You May Find interest in</h5>
+
+                        </div>
+                        <br>
+                        <ol type="1">
+                            <li><a href="https://drive.google.com/file/d/1rRQe23jcQSKAdiqalya2U1f3gLZBtWaz/view?usp=sharing">Cypherpunks</a></li>
+                            <li><a href="https://drive.google.com/file/d/1wbv5y3lYoaUOh6s9aWKx_Fg5ZGppng7b/view?usp=sharing">How I Lost by Hillary Clinton</a></li>
+                            <li><a href="https://drive.google.com/file/d/17dT8Lg8mmOcLOvMkLpZVcPdPwhSgFOPB/view?usp=sharing">Supernerds Conversations with heroes</a></li>
+                            <li><a href="https://drive.google.com/file/d/1bvIV3SiEMAspt59nCZ_wEmcWei5fq7XZ/view?usp=sharing">The Snowden Files</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Hj3vsC0cfug8gP-YYDZLJjBdRfdvQafM/view?usp=sharing">Who Moved My Cheese - Dr Spencer Johnson</a></li>
+                            <li><a href="https://drive.google.com/file/d/1EhYkZPF-mOVyOaImWd4YpJcuEw_5Mbsr/view?usp=sharing">Start with Why _ How Great Leaders Inspire Everyone to Take Action</a></li>
+                            <li><a href="https://drive.google.com/file/d/1X7GlApga_yliwZx0xE8atB0nSdtf1Yq7/view?usp=sharing">Press Release Think Positive</a></li>
+                            <li><a href="https://drive.google.com/file/d/1Lj3WqH8eybRXQmnu7Gw3v8cZpeDMX66c/view?usp=sharing">Eat,Pray,Love </a></li>
+                            <li><a href="https://drive.google.com/file/d/1AuzBjG03Gb7kh8KKw7lXSTRNazBazBfq/view?usp=sharing">Eat The Frog</a></li>
+                            <li><a href="https://drive.google.com/file/d/1ZUxCw7De3Ivt1WXlAM-6GP-odgUN_PmF/view?usp=sharing">Eat The Frog!</a></li>
+                            
+                        </ol>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+            </ul>
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <footer>
+        <div id="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="join-us">
+                            <p>
+                                <img src="v1/webus.jpg" class="img-responsive"> ONLINE SOHOPATHI<br><br> Keep Asking, Enjoy Learning</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="visit-us">
+                            <p> Connect with us </p>
+
+                            <ul>
+
+                                <li>
+                                    <a href="http://www.onlinesohopathi.com/privacypolicy.html" role="button">Privacy Policy</a>
+
+                                </li>
+
+
+                                <li>
+                                    <a href="http://www.onlinesohopathi.com/aboutus.html" role="button">Meet Our Team</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgrGl6IF-JC6CBlwlGoZNCTNEaBayz9b5KUDJhtn7a1WocvQ/viewform" role="button">Join Our Team</a>
+
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/groups/566012513741654/" role="button">Facebook Group</a>
+                                </li>
+
+                                <!--not working-->
+
+                                <li>
+                                    <a href="https://www.facebook.com/onlinesohopathi/" role="button">Facebook Page</a>
+                                </li>
+
+                                <li>
+                                    <a href="https://www.linkedin.com/in/online-sohopathi-354708157/" role="button">LinkedIn page</a>
+                                </li>
+                            </ul>
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+
+    <div class="modal fade col s12" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <section>
+                        <h4 class="text-center" id="gouf">Ask a Question</h4>
+                        <div class="row">
+                            <form class="col s12 l6">
+                                <div class="">
+                                    <div class="input-field col s12">
+                                        <textarea id="input_text" type="text" class="materialize-textarea" data-length="120"></textarea>
+                                        <label for="input_text">Title</label>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="input-field col s12">
+                                        <textarea id="textarea1" class="materialize-textarea" data-length="500"></textarea>
+                                        <label for="textarea1">Describe your Question...</label>
+                                    </div>
+                                </div>
+                                <!--    </form>
+    </div> -->
+
+                                <!-- Dropdown Trigger -->
+                                <select class="btn" name="demo-category" id="category-sel">
+                            <option value="None" style="color: black; background: rgba(255,255,255, 255);">- Category </option>
+                            <option value="Physics" style="color: black; background: rgba(255,255,255, 255);">Physics</option>
+                            <option value="Chemistry" style="color: black; background: rgba(255,255,255, 255);">Chemistry</option>
+                            <option value="Math" style="color: black; background: rgba(255,255,255, 255);">Math</option>
+                            <option value="Biology" style="color: black; background: rgba(255,255,255, 255);">Biology</option>
+                            <option value="ICT" style="background: rgba(255,255,255, 255); color: black;">ICT</option>
+                            <option value="Others" style="color: black; background: rgba(255,255,255, 255);">Others</option>
+                        </select>
+
+                                <!-- Dropdown Structure -->
+
+
+
+
+                                <!-- <div class="chips"></div>
+  <div class="chips chips-initial"></div>
+  <div class="chips chips-placeholder"></div> -->
+                                <div id="alltags" class="chips chips-placeholder chips-autocompleter">
+
+                                    <div class="chip">
+                                        Tag
+
+                                        <i class="close material-icons">close</i>
+
+                                    </div>
+                                </div>
+
+                                <div class="Send-Notifications">
+                                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                                    <label for="filled-in-box">Send Notifications</label>
+                                </div>
+                                <div class="preview" id="img-grid" style="display: inline-block;">
+                                    <!-- <img src="" id="image-preview" > -->
+                                </div>
+                                <div class="submit-box">
+                                    <ul class="actions">
+                                        <li>
+                                            <button onclick="return document.getElementById('image-picker').click();" type="button" class="btn"><i class="material-icons">publish</i>Image<input type="file" id="image-picker" name="question"  accept="image/*" style="visibility: hidden; display:none;"  multiple>
+          	    </button>
+                                        </li>
+                                        <li><button href="#" onclick=" window.location.reload()" type="reset" value="Reset" data-dismiss="modal" class="btn">Cancel</button></li>
+                                        <li><button id="git" class="btn" onclick="checklog()" type="button">Submit</button></li>
+                                    </ul>
+                                </div>
+
+                            </form>
+                    </section>
+
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body" style="height: 400px; width: 300px;">
+                        <!-- <button class="btn">Facebook</button> -->
+                        <div class="fb-login-button" data-max-rows="1" data-size="large" onlogin="checkFacebookLogin(document.getElementById('myModals'))" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModalss" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body" style="height: 400px; width: 300px;">
+                        <!-- <button class="btn">Facebook</button> -->
+                        <div class="fb-login-button" data-max-rows="1" data-size="large" onlogin="checkFacebookLogin(document.getElementById('myModalss'))" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+
+
+        <!-- Plugin JavaScript -->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+        <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="vendor/materialize/js/materialize.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="js/main.js"></script>
+        <script src="js/postanswer.js"></script>
+        <script src="js/onequefront.js"></script>
+        <script src="js/onequeback.js"></script>
+
+
+
+</body>
+
+</html>

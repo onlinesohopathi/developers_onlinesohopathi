@@ -2,6 +2,19 @@
 <html>
 <head>
 
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112046710-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112046710-1');
+</script>
+    <title>"যাদের জন্য সময় নষ্ট করছো তারা আর তোমার দিকে ‘আগের চোখে’ তাকাবে না"</title>
+	<meta name="description" content=" আমার জীবনের কেন্দ্রবিন্দুতে আমি দাঁড়ানো। আমাকে গোল গোল হয়ে ঘুরে চারপাশটা দেখতে হয় বৃত্তের পরিধিতে আমার সামাজিকতা,বন্ধুত্ব,সম্পর্কসহ সবকিছু সাজানো।
+" >
+
 	<meta charset="UTF-8">
 	<meta name="fragment" content="!">
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
@@ -9,8 +22,8 @@
     <meta name="theme-color" content="#004d40">
 	<meta property="og:title" content="যাদের জন্য সময় নষ্ট করছো তারা আর তোমার দিকে ‘আগের চোখে’ তাকাবে না"/>
 	<meta property="og:type" content="website"/>
-	<meta property="og:url" content="http://www.onlinesohopathi.com/blog19.html"/>
-	<meta property="og:image" content="http://www.onlinesohopathi.com/v1/blog19.jpg">
+	<meta property="og:url" content="https://www.onlinesohopathi.com/blog19.html"/>
+	<meta property="og:image" content="https://www.onlinesohopathi.com/v1/blog19.jpg">
 	<meta property="og:site_name" content="Online Sohopathi"/>
 	<meta property="fb:app_id" content="179014802653918"/>
 	<meta property="og:email" content="hello@mywebaddress.com"/>
@@ -45,10 +58,11 @@
 
     <!-- Custom styles for this template -->
     <link href="css/styles.css" rel="stylesheet">
-
+    <link href="css/aboutus.css" rel="stylesheet">
 
 </head>
 <body>
+<script src="js/redirect.js?v=1001"></script>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -70,7 +84,8 @@
             uid = response.authResponse.userID;
 			quesd="none";
 			queslid="none";
-      console.log(uid);
+			console.log(uid);
+	        notificationCount(uid);
             var accessToken = response.authResponse.accessToken;
         } else if (response.status === 'not_authorized') {
             uid="hiru";
@@ -103,73 +118,46 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
     
-  <nav>
-    <div class="nav-wrapper">
-      <form>
-        <div class="input-field">
-          <input id="search" placeholder="Search" style="color: #78909c; font-size: 24px;" type="search" autocomplete="off" required>
-          <label class="label-icon" for="search" style="top: -0.6rem;"><i class="material-icons large">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
-  </nav>
+  
 
 
 <!-- Section heading -->
 
-<!-- Section navbar -->
 <nav class="nav-extended">
-    <div class="nav-wrapper">
-      <a href="http://www.onlinesohopathi.com" class="brand-logo" style="text-decoration:none; margin-left: 10px;">  Online Sohopathi</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+    <div class="nav-wrapper" >
+      <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;">  অনলাইন সহপাঠী</a>
+      <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+      </a>-->
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" onclick="checkuser()" style="margin-left: 5px;">
+        Ask
       </a>
-      <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" data-toggle="modal" data-target="#myModal">
-        <i class="material-icons">lightbulb_outline</i>
-      </a>
- -->
-</nav>    
+
 
  <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
 	</div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
-        <li class="tab"><a class="active" href="#Home" onclick="redirectnow()" style="text-decoration:none;">Home</a></li>
+        <li class="tab"><a class="active" href="#Home" onclick="loadhome()" style="color: white; text-decoration:none;">Home</a></li>
         
-        <li class="tab"><a href="#FAQ" style="text-decoration:none;">FAQ</a></li>
-      </ul>
-       
+        <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
+		<li class="tab"><a href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Questions</a></li>
+        <li class="tab"><a href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
+		
+        <li class="tab"><a href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
+	    <li class="tab"><a href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li> 
+	  </ul>
+
+
+
+
     </div>
-	
-  
- <!--  <div class="fixed-action-btn toolbar">
-    <a class="btn-floating btn-large teal darken-4">
-      <i class="large material-icons">filter_list</i>
-    </a>
-    <ul>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">edit</i>English</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">format_quote</i>Physics</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">insert_chart</i>Chemistry</a></li>
-      <li class="waves-effect waves-light"><a href="#!">
-      	<i class="material-icons">attach_file</i>Math</a></li>
-	<li class="waves-effect waves-light">
-		<a href="#!"><i class="material-icons">attach_file</i>Biology</a></li>
-    </ul>
-  </div>
- -->    
+  </nav>
     
 <div class="container" style="margin-top: 30px;">
   
 
-<!-- <div id="Home" >
-	
-	<ul class="collapsible popout" id="CollapseBody" data-collapsible="accordion">
-     </ul>
-  </div>
- -->
+
   <div class="row">
     <div class="col s12 m8 l5">
     <section id="one" class="wrapper style1">
@@ -184,7 +172,7 @@
         
       </div>
 	  
-	  <div class="fb-share-button" data-href="http://www.onlinesohopathi.com/blog19.html?filter=19" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.onlinesohopathi.com%2Foneblog.html%3Ffilter%3D17&amp;src=sdkpreparse">Share</a></div>
+	  <div class="fb-share-button" data-href="https://www.onlinesohopathi.com/blog19.html?filter=19" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.onlinesohopathi.com%2Foneblog.html%3Ffilter%3D17&amp;src=sdkpreparse">Share</a></div>
     </section>
 
     <section id="Comments">
@@ -196,98 +184,72 @@
  </div>
 </div>
 	  
-<!-- <div class="modal fade col s12" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
 
-      <div class="modal-body">
 
-          <section>
-              <h4 class="text-center" id="gouf" >Ask a Question</h4>
-      <div class="row">
-      <form class="col s12 l6">
-        <div class="">
-          <div class="input-field col s12">
-            <textarea id="input_text" type="text" class="materialize-textarea" data-length="120"></textarea>
-            <label for="input_text">Title</label>
-          </div>
-        </div>
-        <div class="">
-          <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea" data-length="500"></textarea>
-            <label for="textarea1">Describe your Question...</label>
-          </div>
-        </div>
-     </form>
-    </div> 
-
-  <select class="btn" name="demo-category" id="category-sel">
-                            <option value="None" style="color: black; background: rgba(255,255,255, 255);">- Category </option>
-                            <option value="Physics" style="color: black; background: rgba(255,255,255, 255);">Physics</option>
-                            <option value="Chemistry" style="color: black; background: rgba(255,255,255, 255);">Chemistry</option>
-                            <option value="Math" style="color: black; background: rgba(255,255,255, 255);">Math</option>
-                            <option value="Biology" style="color: black; background: rgba(255,255,255, 255);">Biology</option>
-                            <option value="ICT" style="background: rgba(255,255,255, 255); color: black;">ICT</option>
-                            <option value="Others" style="color: black; background: rgba(255,255,255, 255);">Others</option>
-                        </select>
-
-  
-
-  
-  <div class="chips"></div>
-  <div class="chips chips-initial"></div>
-  <div class="chips chips-placeholder"></div> 
-  <div id="alltags" class="chips chips-placeholder chips-autocompleter">
-     
-    <div class="chip">
-    Tag
-	
-    <i class="close material-icons">close</i>
-	
-  </div>
-  </div>
+<footer>
+        <div id="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="join-us">
+                            <p>
+                            <img src="v1/webus.jpg" class="img-responsive">
+                                ONLINE SOHOPATHI<br><br>
+                            
+                            Keep Asking, Enjoy Learning</p>
+                            
+                        </div>
+                    </div>
                     
-    <div class="Send-Notifications">
-    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-		      <label for="filled-in-box">Send Notifications</label>
-		</div>
-      <div class="preview" id="img-grid"  style="display: inline-block;">
-        <img src="" id="image-preview" >
-      </div>
-          <div class="submit-box" >
-            <ul class="actions">
-              <li>
-              	<button onclick="return document.getElementById('image-picker').click();" type="button"  class="btn"><i class="material-icons">publish</i>Image<input type="file" id="image-picker" name="question"  accept="image/*" style="visibility: hidden; display:none;"  multiple>
-          	    </button>
-              </li>
-              <li><button href="#" onclick=" window.location.reload()" type="reset"  value="Reset" data-dismiss="modal" class="btn">Cancel</button></li>
-              <li><button id="git" class="btn" onclick="checklog()"   type="button" >Submit</li>
-            </ul>
-          </div>
-
-          </form>
-      </section>
-
-      </div>
-      <div class="modal-footer"> 
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade"  id="myModals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body" style="height: 400px; width: 300px;">
-          <div class="fb-login-button" 
-   data-max-rows="1" data-size="large" onlogin="checkFacebookLogin(document.getElementById('myModals'))"  data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
-
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>-->
+                    <div class="col-md-6">
+                        <div class="visit-us">
+                        <p> Connect with us </p>
+                        
+                            <ul>
+							
+							    <li>
+                                    <a href="https://www.onlinesohopathi.com/privacypolicy.html" role="button">Privacy Policy</a>
+                                
+                                </li>
+								
+								
+								<li>
+                                    <a href="https://www.onlinesohopathi.com/aboutus.html" role="button">Meet Our Team</a>
+                                
+                                </li>
+                               
+                                <li>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgrGl6IF-JC6CBlwlGoZNCTNEaBayz9b5KUDJhtn7a1WocvQ/viewform" role="button">Join Our Team</a>
+                                
+                                </li>
+                                 <li>
+                            <a href="https://www.facebook.com/groups/566012513741654/" role="button">Facebook Group</a>
+                                </li>
+                            
+                            <!--not working-->
+                                
+                                <li>
+                            <a href="https://www.facebook.com/onlinesohopathi/" role="button">Facebook Page</a>
+                                    </li>
+                                
+                                <li>
+                            <a href="https://www.linkedin.com/in/online-sohopathi-354708157/" role="button">LinkedIn page</a>
+                                    </li>
+                                </ul>
+                            
+                            
+                            
+                        
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    
+    </footer>
 
 <div class="modal fade"  id="myModalss" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -317,8 +279,9 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom scripts for this template -->
+
 <script src="js/main.js"></script>
-<script src="js/oneblogfront.js"></script>
+<script src="js/oneblogfront.js?v=1001"></script>
 <script src="js/oneblogback.js"></script>
 
 

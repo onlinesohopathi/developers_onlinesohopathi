@@ -36,110 +36,12 @@
     <link href="css/styles.css" rel="stylesheet">
 
 
-<style>
-    
-.login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-}
-.form {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-.form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4CAF50;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-.form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
-}
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.form .message a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-.form .register-form {
-  display: none;
-}
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-.container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
-}
-.container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #000000;
-  text-decoration: none;
-}
-.container .info span .fa {
-  color: #EF3B3A;
-}
-    
-form span {
-  display: block;
-  background: #94af65;
-  padding: 2px 5px;
-  color: #666;
-}
-    
-
-</style>
-    
 </head>
-<body style=" background-image:url('/img/fblogin_back1.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;height: 100%;">
-<script>
+<body onload="loadBlogsNEWfile()">  
+
+
+<script src="js/redirect.js?v=1003"></script>
+    <script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '179014802653918',
@@ -192,18 +94,14 @@ form span {
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-
-  phnid="hiru";
-  loginname="hiru";
 </script>
 
 
+    <!-- Section heading -->
 
-<!-- Section heading -->
-
-<!-- Section navbar -->
-<nav class="nav-extended">
-    <div class="nav-wrapper" >
+    <!-- Section navbar -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper" >
       <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;">  অনলাইন সহপাঠী</a>
       <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
       </a>-->
@@ -214,44 +112,30 @@ form span {
 
  <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
 	</div>
-	
-	<div class="nav-content">
-      <ul class="tabs tabs-transparent">
-        <li class="tab"><a class="active" href="index.html" onclick="redirectnow()" style="text-decoration:none;">Home</a></li>
-        
-        <li class="tab"><a href="#FAQ" style="text-decoration:none;">FAQ</a></li>
-      </ul>
-      <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" data-toggle="modal" data-target="#myModal">
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a  href="index.html" onclick="redirectnow()" style="color: white; text-decoration:none;">Home</a></li>
+                <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
+		<li class="tab"><a class="active" href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Questions</a></li>
+        <li class="tab"><a  href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
+		
+        <li class="tab"><a  href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
+	    <li class="tab"><a href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li
+            </ul>
+            <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" data-toggle="modal" data-target="#myModal">
         <i class="material-icons">lightbulb_outline</i>
       </a> -->
-    </div>
-	
-	
-</nav>
+        </div>
+    </nav>
 
 
-<div  id="Homes" >
-    
-
-        <div class="fb-login-button" style="display: flex;align-items: center; margin-top: 30px; justify-content: center;" data-max-rows="1" data-size="large" onlogin="checkFacebook()"  data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
-
-    
-    <div class="login-page">
-     <div class="form">
-    <form class="login-form">
-      <input type="text" placeholder="Phone Number" id="loginphnnumber"/>
-      <input type="password" placeholder="password" id="loginpassword"/>
-      <span style="display: none" id="spanlogin"> Invalid Phone Number or Password</span>
-      <button  type="button" id="loginbutton" onclick="Logincheck()">login</button>
-      <p class="message">Not registered?  <a data-target="signup.html" href="#">Create an account</a></p>
-    </form>
-     </div>
-  </div>
+<div  id="blogsCollapseBody3">
+ 
     
 </div>
 
 
-    
 <script src="vendor/jquery/jquery.min.js"></script>
 
 
@@ -271,7 +155,8 @@ form span {
 <!-- Custom scripts for this template -->
 <script src="js/main.js"></script>
 <script src="js/Frontend.js"></script>
-<script src="js/signupinfo.js"></script>
+<script src="js/backend.js?v=1001"></script>
+
 
 
 

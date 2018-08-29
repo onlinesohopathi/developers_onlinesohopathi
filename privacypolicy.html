@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112046710-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112046710-1');
+</script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#004d40">
+    <meta property="og:url" content="http://www.onlinesohopathi.com/privacypolicy.html" />
+    <meta property="og:image" content="http://www.onlinesohopathi.com/v1/team.PNG">
+
+
+
+    <title id="title">Privacy Policy</title>
+
+    <!-- Manifest -->
+    <!-- <link rel="manifest"  href="manifest.json"> -->
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="vendor/materialize/css/materialize.min.css" rel="stylesheet">
+    <link href="vendor/flexbin/flexbin.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/materialize-stepper/materialize-stepper.min.css">
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/aboutus.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+<script src="js/redirect.js?v=1003"></script>
+    
+
+
+<script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '179014802653918',
+                cookie: true,
+                xfbml: true,
+                version: 'v2.8'
+            });
+
+            FB.AppEvents.logPageView();
+
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    // the user is logged in and has authenticated your
+                    // app, and response.authResponse supplies
+                    // the user's ID, a valid access token, a signed
+                    // request, and the time the access token
+                    // and signed request each expire
+                    uid = response.authResponse.userID;
+                    quesd = "none";
+                    queslid = "none";
+                    console.log(uid);
+                    var accessToken = response.authResponse.accessToken;
+                } else if (response.status === 'not_authorized') {
+                    uid = "hiru";
+                    quesd = "none";
+                    queslid = "none";
+                    // the user is logged in to Facebook,
+                    // but has not authenticated your app
+                } else {
+                    uid = "hiru";
+                    quesd = "none";
+                    queslid = "none";
+                    console.log("hiru");
+                    //setTimeout(function(){
+                    //window.location.reload(1);
+                    //}, 5000);
+                    // the user isn't logged in to Facebook.
+                }
+            });
+
+
+
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+
+
+
+
+    <!-- Section heading -->
+
+    <!-- Section navbar -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper" >
+      <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;">  অনলাইন সহপাঠী</a>
+      <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+      </a>-->
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" onclick="checkuser()" style="margin-left: 5px;">
+        Ask
+      </a>
+
+
+ <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
+	</div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a  href="index.html" onclick="redirectnow()" style="color: white; text-decoration:none;"">Home</a></li>
+                <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
+		<li class="tab"><a href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Questions</a></li>
+        <li class="tab"><a href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
+		
+        <li class="tab"><a href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
+	    <li class="tab"><a class="active" href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li
+            </ul>
+            <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" data-toggle="modal" data-target="#myModal">
+        <i class="material-icons">lightbulb_outline</i>
+      </a> -->
+        </div>
+    </nav>
+    
+
+
+    <div class="row">
+
+
+        <div id="Home">
+            <!-- Section Question Answer -->
+
+            <ul class="collapsible popout" id="CollapseBody" data-collapsible="accordion">
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    
+    <div id="ABOUTUS" class="col s8" >
+  <div class="col s12 m8 l9">
+    
+
+<ul class="collapsible popout" id="CollapseBody1" data-collapsible="accordion">
+    
+    <div class ="teammember">
+        
+        <div class="about-title">
+            <h3>Privacy Policy</h3>
+            <div class="about-title-underline"></div>
+        </div>
+        <div class="container">
+            
+ <p>Dear Visitors, <br>
+For your kind information, this privacy policy is effective as of December 21, 2017.
+
+Welcome to our website "Online Sohopathi". This privacy policy describes what personal information we collect and how we use it.<br><br></p>
+
+
+<h5>Online Sohopathi’s Principles:<br></h5>
+
+<p>We built our site to help all academic students of Bangladesh. But if you have any question or personal comment or idea, you can email us on onlinesohopathi@gmail.com with your personal details, or message us in our Facebook page. So, we believe that, you may not want everyone in the world to access your personal information; that is why there is an option of keeping your identity secret while asking any question.
+
+"Online Sohopathi" does not share information with other users or visitors except any kinds of security forces.<br><br></p>
+
+
+<h5>Information Collection:<br></h5>
+
+<p>All web servers track basic information about their visitors. Google analytics and Facebook Developers servers also tracks basic information about their visitors, such as: browser details, tags, referring pages, country, timestamps etc. None of this information can personally identify specific visitors to this site. The information is tracked for routine administration and maintenance purposes, and lets us know what pages and information are useful and helpful to visitors.
+
+Besides this, any advertiser can track your cookies and web beacons for their business but it is mentioned that, it will not be harmful for any visitors.<br><br></p>
+
+
+<h5>Cookies and Web Beacons:<br></h5>
+
+<p>Where necessary, this site uses cookies to store information about a visitor's preferences and history in order to better serve the visitor and/or present the visitor with customized content.
+
+Advertising partners and other third parties may also use cookies, scripts and/or web beacons to track visitors to our site in order to display advertisements and other useful information. Such tracking is done directly by the third parties through their own servers and is subject to their own privacy policies.<br><br></p>
+
+
+<h5>Controlling Your Privacy:<br></h5>
+
+<p> You can change your browser settings to disable cookies if you must have privacy concerns. Disabling cookies for all sites is not recommended as it may interfere with your use of some sites. The best option is to disable or enable cookies on a per-site basis. Consult your browser documentation for instructions on how to block cookies and other tracking mechanisms.<br><br></p>
+
+
+<h5>Special Note About Google Advertising:<br></h5> 
+
+<p>Any advertisements served by Google Inc., and affiliated companies may be controlled using cookies. These cookies allow Google to display ads based on your visits to this site and other sites that use Google advertising services. Learn how to opt out of Google's cookie usage. As mentioned above, any tracking done by Google through cookies and other mechanisms is subject to Google's own privacy policies.
+
+The Double Click DART cookie is used by Google in the ads served on publisher websites displaying AdSense for content ads. When users visit an AdSense publisher’s website and either view or click on an ad, a cookie may be dropped on that end user’s browser. The data gathered from these cookies will be used to help AdSense publishers better serve and manage the ads on their site(s) and across the web. Users may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy.
+
+Some third-party advertisers used by Google may use a different cookie. You may opt out of most third-party advertising cookies by <a href="https://optout.aboutads.info"> following this link. </a><br><br></p> 
+
+
+<h5>Contacting the Web Site:<br></h5> 
+
+<p>If you have any questions about this privacy policy, please contact us through our  email, onlinesohopathi@gmail.com.<br><br></p>
+            
+        </div>
+             </div>
+  
+  
+  
+  
+  </div>
+
+
+
+    <footer>
+        <div id="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="join-us">
+                            <p>
+                            <img src="v1/webus.jpg" class="img-responsive">
+                                ONLINE SOHOPATHI<br><br>
+                            
+                            Keep Asking, Enjoy Learning</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="visit-us">
+                        <p> Connect with us </p>
+                        
+                            <ul>
+							
+							   <li>
+                            <a href="http://www.onlinesohopathi.com/aboutus.html" role="button">Meet our Team</a>
+                                </li>
+                               
+                                <li>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgrGl6IF-JC6CBlwlGoZNCTNEaBayz9b5KUDJhtn7a1WocvQ/viewform" role="button">Join Our Team</a>
+                                
+                                </li>
+                                 <li>
+                            <a href="https://www.facebook.com/groups/566012513741654/" role="button">Facebook Group</a>
+                                </li>
+                            
+                            <!--not working-->
+                                
+                                <li>
+                            <a  href="https://www.facebook.com/onlinesohopathi/" role="button">Facebook Page</a>
+                                    </li>
+                                
+                                <li>
+                            <a  href="https://www.linkedin.com/in/online-sohopathi-354708157/" role="button">LinkedIn page</a>
+                                    </li>
+                                </ul>
+                            
+                            
+                            
+                        
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    
+    </footer>
+
+
+    <div class="modal fade col s12" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <section>
+                        <h4 class="text-center" id="gouf">Ask a Question</h4>
+                        <div class="row">
+                            <form class="col s12 l6">
+                                <div class="">
+                                    <div class="input-field col s12">
+                                        <textarea id="input_text" type="text" class="materialize-textarea" data-length="120"></textarea>
+                                        <label for="input_text">Title</label>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="input-field col s12">
+                                        <textarea id="textarea1" class="materialize-textarea" data-length="500"></textarea>
+                                        <label for="textarea1">Describe your Question...</label>
+                                    </div>
+                                </div>
+                                <!--    </form>
+    </div> -->
+
+                                <!-- Dropdown Trigger -->
+                                <select class="btn" name="demo-category" id="category-sel">
+                            <option value="None" style="color: black; background: rgba(255,255,255, 255);">- Category </option>
+                            <option value="Physics" style="color: black; background: rgba(255,255,255, 255);">Physics</option>
+                            <option value="Chemistry" style="color: black; background: rgba(255,255,255, 255);">Chemistry</option>
+                            <option value="Math" style="color: black; background: rgba(255,255,255, 255);">Math</option>
+                            <option value="Biology" style="color: black; background: rgba(255,255,255, 255);">Biology</option>
+                            <option value="ICT" style="background: rgba(255,255,255, 255); color: black;">ICT</option>
+                            <option value="Others" style="color: black; background: rgba(255,255,255, 255);">Others</option>
+                        </select>
+
+                                <!-- Dropdown Structure -->
+
+
+
+
+                                <!-- <div class="chips"></div>
+  <div class="chips chips-initial"></div>
+  <div class="chips chips-placeholder"></div> -->
+                                <div id="alltags" class="chips chips-placeholder chips-autocompleter">
+
+                                    <div class="chip">
+                                        Tag
+
+                                        <i class="close material-icons">close</i>
+
+                                    </div>
+                                </div>
+
+                                <div class="Send-Notifications">
+                                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                                    <label for="filled-in-box">Send Notifications</label>
+                                </div>
+                                <div class="preview" id="img-grid" style="display: inline-block;">
+                                    <!-- <img src="" id="image-preview" > -->
+                                </div>
+                                <div class="submit-box">
+                                    <ul class="actions">
+                                        <li>
+                                            <button onclick="return document.getElementById('image-picker').click();" type="button" class="btn"><i class="material-icons">publish</i>Image<input type="file" id="image-picker" name="question"  accept="image/*" style="visibility: hidden; display:none;"  multiple>
+          	    </button>
+                                        </li>
+                                        <li><button href="#" onclick=" window.location.reload()" type="reset" value="Reset" data-dismiss="modal" class="btn">Cancel</button></li>
+                                        <li><button id="git" class="btn" onclick="checklog()" type="button">Submit</button></li>
+            </ul>
+          </div>
+
+          </form>
+      </section>
+
+      </div>
+      <div class="modal-footer"> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade"  id="myModals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body" style="height: 400px; width: 300px;">
+          <!-- <button class="btn">Facebook</button> -->
+                                            <div class="fb-login-button" data-max-rows="1" data-size="large" onlogin="checkFacebookLogin(document.getElementById('myModals'))" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+                                </div>
+                                <div class="modal-footer">
+                                </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="myModalss" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body" style="height: 400px; width: 300px;">
+                            <!-- <button class="btn">Facebook</button> -->
+                            <div class="fb-login-button" data-max-rows="1" data-size="large" onlogin="checkFacebookLogin(document.getElementById('myModalss'))" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Bootstrap core JavaScript -->
+            <script src="vendor/jquery/jquery.min.js"></script>
+
+
+            <!-- Plugin JavaScript -->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+            <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+            <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+            <script src="vendor/materialize/js/materialize.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Custom scripts for this template -->
+            <script src="js/main.js"></script>
+            <script src="js/postanswer.js"></script>
+            <script src="js/onequefront.js"></script>
+            <script src="js/onequeback.js"></script>
+
+
+
+</body>
+
+</html>

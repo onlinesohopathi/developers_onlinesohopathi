@@ -3,16 +3,25 @@
 
 <head>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112046710-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112046710-1');
+</script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#004d40">
-    <meta property="og:url" content="http://www.onlinesohopathi.com/onequestion.html" />
-    <meta property="og:image" content="http://www.onlinesohopathi.com/v1/questionpic.png">
+    <meta property="og:url" content="http://www.onlinesohopathi.com/aboutus.html" />
+    <meta property="og:image" content="http://www.onlinesohopathi.com/v1/team.PNG">
 
 
 
-    <title id="title">Online Sohopathi</title>
+    <title id="title">Meet Our Team</title>
 
     <!-- Manifest -->
     <!-- <link rel="manifest"  href="manifest.json"> -->
@@ -46,84 +55,88 @@
 </head>
 
 <body>
+<script src="js/redirect.js?v=1003"></script>
     <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId: '179014802653918',
-                cookie: true,
-                xfbml: true,
-                version: 'v2.8'
-            });
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '179014802653918',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token
+            // and signed request each expire
+            uid = response.authResponse.userID;
+			quesd="none";
+			queslid="none";
+			console.log(uid);
+	        notificationCount(uid);
+            var accessToken = response.authResponse.accessToken;
+        } else if (response.status === 'not_authorized') {
+            uid="hiru";
+			quesd="none";
+			queslid="none";
+      // the user is logged in to Facebook,
+            // but has not authenticated your app
+        } else {
+		   uid="hiru";
+		   quesd="none";
+		   queslid="none";
+            console.log("hiru");
+      //setTimeout(function(){
+            //window.location.reload(1);
+            //}, 5000);
+            // the user isn't logged in to Facebook.
+        }
+    });
+  
+  
+  
+  };
 
-            FB.AppEvents.logPageView();
-
-            FB.getLoginStatus(function(response) {
-                if (response.status === 'connected') {
-                    // the user is logged in and has authenticated your
-                    // app, and response.authResponse supplies
-                    // the user's ID, a valid access token, a signed
-                    // request, and the time the access token
-                    // and signed request each expire
-                    uid = response.authResponse.userID;
-                    quesd = "none";
-                    queslid = "none";
-                    console.log(uid);
-                    var accessToken = response.authResponse.accessToken;
-                } else if (response.status === 'not_authorized') {
-                    uid = "hiru";
-                    quesd = "none";
-                    queslid = "none";
-                    // the user is logged in to Facebook,
-                    // but has not authenticated your app
-                } else {
-                    uid = "hiru";
-                    quesd = "none";
-                    queslid = "none";
-                    console.log("hiru");
-                    //setTimeout(function(){
-                    //window.location.reload(1);
-                    //}, 5000);
-                    // the user isn't logged in to Facebook.
-                }
-            });
-
-
-
-        };
-
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
-    </script>
-
-
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 
     <!-- Section heading -->
 
     <!-- Section navbar -->
     <nav class="nav-extended">
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;"> Online Sohopathi</a>
-            <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+        <div class="nav-wrapper" >
+      <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;">  অনলাইন সহপাঠী</a>
+      <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
       </a>-->
-            
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" onclick="checkuser()" style="margin-left: 5px;">
+        Ask
+      </a>
 
 
-            <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
-        </div>
+ <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
+	</div>
         <div class="nav-content">
             <ul class="tabs tabs-transparent">
-                <li class="tab"><a class="active" href="index.html" onclick="redirectnow()" style="text-decoration:none;">Home</a></li>
-
+                <li class="tab"><a  href="index.html" onclick="redirectnow()" style="color: white; text-decoration:none;">Home</a></li>
+                <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
+		<li class="tab"><a href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Questions</a></li>
+        <li class="tab"><a href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
+		
+        <li class="tab"><a href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
+	    <li class="tab"><a class="active" href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li
             </ul>
             <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" data-toggle="modal" data-target="#myModal">
         <i class="material-icons">lightbulb_outline</i>
@@ -187,10 +200,12 @@
                     <div class="about-spacing">
                     <img src="img/Presentation1/TeamMembers/shadman%20majid.JPG" class="img-responsive">
                     <div class="about-name">Shadman Majid</div>
+                    <div class="about-designation text-center">CEO</div>
                     <div class="about-details text-center">
                         <p>
-                            Department Of CSE,BUET<br>
+                            
                             <i class="fa fa-envelope fa-1.5x"> shadmanai068@gmail.com</i>
+                        
                         </p>
                         <a class="btn-lg btn-general-black btn-black" href="https://www.facebook.com/shadman.majid?fref=gm&dti=751303778393564&hc_location=group" role="button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     </div>
@@ -201,10 +216,12 @@
                     <div class="about-spacing">
                     <img src="img/Presentation1/TeamMembers/Ragib%20Md%20Rownak%20Islam.JPG" class="img-responsive">
                     <div class="about-name">Ragib Md Rownak Islam</div>
+                    <div class="about-designation text-center">COO</div>
                     <div class="about-details text-center">
                         <p>
-                            Department Of CSE,BUET<br>
+                            
                             <i class="fa fa-envelope fa-1.5x"> rownakbrac@gmail.com </i>
+                            
                         </p>
                         <a class="btn-lg btn-general-black btn-black" href="https://www.facebook.com/profile.php?id=100010894203591&fref=gm&dti=751303778393564&hc_location=group" role="button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     </div>
@@ -214,9 +231,10 @@
                     <div class="about-spacing">
                     <img src="img/Presentation1/TeamMembers/FarhanSadikSium.JPG" class="img-responsive">
                     <div class="about-name">Farhan Sadik Sium</div>
+                    <div class="about-designation text-center">CTO</div>
                     <div class="about-details text-center">
                         <p>
-                            Department Of CSE,BUET<br>
+                            
                             <i class="fa fa-envelope fa-1.5x"> sdx66666@gmail.com </i>
                         </p>
                         <a class="btn-lg btn-general-black btn-black" href="https://www.facebook.com/farhan.s.seam?fref=gm&dti=751303778393564&hc_location=group" role="button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -226,10 +244,12 @@
                 <div class="col-md-4">
                     <div class="about-spacing">
                     <img src="img/Presentation1/TeamMembers/Raashid%20Mahdi.JPG" class="img-responsive">
-                    <div class="about-name">Raashid Mahdi</div>
+                    <div class="about-name">Raashid Mahdi </div>
+                    <div class="about-designation text-center"> Head Of HR</div>
+                    
                     <div class="about-details text-center">
                         <p>
-                            Department Of CSE,BUET<br>
+                            
                             <i class="fa fa-envelope fa-1.5x"> raashidmahdi19@gmail.com </i>
                         </p>
                         <a class="btn-lg btn-general-black btn-black" href="https://www.facebook.com/raashid.mahdi?fref=gm&dti=751303778393564&hc_location=group" role="button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -240,10 +260,12 @@
                     <div class="about-spacing">
                     <img src="img/Presentation1/TeamMembers/Awsaf%20Alam%20Anindo.JPG" class="img-responsive">
                     <div class="about-name">Awsaf Alam Anindo</div>
+                        <div class="about-designation text-center">Head Of Front End Development</div>
                     <div class="about-details text-center">
                         <p>
-                            Department Of CSE,BUET<br>
+                            
                             <i class="fa fa-envelope fa-1.5x"> awsafalam@gmail.com </i>
+                            
                         </p>
                         <a class="btn-lg btn-general-black btn-black" href="https://www.facebook.com/awsaf.anindo?fref=gm&dti=751303778393564&hc_location=group" role="button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     </div>
@@ -253,10 +275,12 @@
                     <div class="about-spacing">
                     <img src="img/Presentation1/TeamMembers/Sadia%20Afroz%20Faiza.JPG" class="img-responsive">
                     <div class="about-name">Sadia Afroz Faiza</div>
+                 <div class="about-designation text-center">Head Of Research</div>
                     <div class="about-details text-center">
                         <p>
-                            Department Of CSE,BUET<br>
+                           
                             <i class="fa fa-envelope fa-1.5x"> sadiafaiza30@gmail.com </i>
+                            
                         </p>
                         <a class="btn-lg btn-general-black btn-black" href="https://www.facebook.com/profile.php?id=100011092592663&fref=gm&dti=751303778393564&hc_location=group" role="button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     </div>
@@ -267,10 +291,12 @@
                     
                     <img src="img/Presentation1/TeamMembers/Mahmud%20Mushfique.JPG" class="img-responsive">
                     <div class="about-name">Mahmud Mushfique</div>
+                        <div class="about-designation text-center">Head Of Operation</div>
                     <div class="about-details text-center">
                         <p>
-                            Department Of CSE,BUET<br>
+                            
                             <i class="fa fa-envelope fa-1.5x"> mahmud.mushfique@gmail.com </i>
+                        
                         </p>
                         <a class="btn-lg btn-general-black btn-black" href="https://www.facebook.com/mahmud.mushfique?fref=gm&dti=751303778393564&hc_location=group" role="button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     </div>
@@ -281,9 +307,10 @@
                     
                     <img src="img/Presentation1/TeamMembers/Nadia%20Anjum%20Antara.JPG" class="img-responsive">
                     <div class="about-name">Nadia Anjum Antara</div>
+                        <div class="about-designation text-center">Head Of Marketing</div>
                     <div class="about-details text-center">
                         <p>
-                            Department Of CSE,BUET<br>
+                            
                             <i class="fa fa-envelope fa-1.5x"> nadia4anjum421@gmail.com </i>
                         </p>
                         <a class="btn-lg btn-general-black btn-black" href="https://www.facebook.com/profile.php?id=100010526231723&fref=gm&dti=751303778393564&hc_location=group" role="button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -294,10 +321,12 @@
                     <div class="about-spacing">
                     <img src="img/Presentation1/TeamMembers/Latif%20Siddiq%20Sunny.JPG" class="img-responsive">
                     <div class="about-name">Latif Siddiq Sunny</div>
+                        <div class="about-designation text-center">Editor In Chief</div>
                     <div class="about-details text-center">
                         <p>
-                            Department Of CSE,BUET<br>
+                            
                             <i class="fa fa-envelope fa-1.5x"> lsiddiqsunny@gmail.com </i>
+                            
                         </p>
                         <a class="btn-lg btn-general-black btn-black" href="https://www.facebook.com/lsiddiqsunny?fref=gm&dti=751303778393564&hc_location=group" role="button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     </div>
@@ -307,10 +336,12 @@
                     <div class="about-spacing">
                     <img src="img/Presentation1/TeamMembers/Raihanul%20Alam%20Hridoy.JPG" class="img-responsive">
                     <div class="about-name">Raihanul Alam Hridoy</div>
+                        <div class="about-designation text-center">Head Of Backend Development</div>
                     <div class="about-details text-center">
                         <p>
-                            Department Of CSE,BUET<br>
+                            
                             <i class="fa fa-envelope fa-1.5x"> raihanul.hridoy100@gmail.com </i>
+                            
                         </p>
                         <a class="btn-lg btn-general-black btn-black" href="https://www.facebook.com/hridoy100?fref=gm&dti=751303778393564&hc_location=group" role="button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                     </div>
@@ -320,9 +351,10 @@
                     <div class="about-spacing">
                     <img src="img/Presentation1/TeamMembers/Sharmin%20Akther%20Purabi.JPG" class="img-responsive">
                     <div class="about-name">Sharmin Akther Purabi</div>
+                        <div class="about-designation text-center">Chief Analyst</div>
                     <div class="about-details text-center">
                         <p>
-                            Department Of CSE,BUET<br>
+                            
                             <i class="fa fa-envelope fa-1.5x"> sharminakhtarpurabi3@gmail.com </i>
                         </p>
                         <a class="btn-lg btn-general-black btn-black" href="https://www.facebook.com/profile.php?id=100010924208060&fref=gm&dti=751303778393564&hc_location=group" role="button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -353,7 +385,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="about-spacing">
-                    <img src="img/Presentation1/Volunteers/Ataf%20Fazledin%20Ahamed.JPG" class="img-responsive">
+                    <img src="img/Presentation1/Volunteers/ataf.jpg" class="img-responsive">
                     <div class="about-name">Ataf Fazledin Ahamed</div>
                     <div class="about-details text-center">
                         <p>

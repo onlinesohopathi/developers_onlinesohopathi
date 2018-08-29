@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112046710-1"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>-->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112046710-1');
+</script>
+    <title>"General Knowledge-01 পরীক্ষার  ফলাফল"</title>
+	<meta name="description" content="General Knowledge-01 পরীক্ষার সম্পূর্ণ ফলাফল" >
+			  
+
+	<meta charset="UTF-8">
+	<meta name="fragment" content="!">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#004d40">
+	<meta property="og:title" content="General Knowledge-01 পরীক্ষার  ফলাফল"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="https://www.onlinesohopathi.com/general_knowledge_01_leaderboard.html"/>
+	<meta property="og:image" content="https://www.onlinesohopathi.com/v1/online_exam1.jpg"/>
+	<meta property="og:site_name" content="Online Sohopathi"/>
+	<meta property="fb:app_id" content="179014802653918"/>
+	<meta property="og:email" content="hello@mywebaddress.com"/>
+	<meta property="og:description" content=" General Knowledge-01 পরীক্ষার সম্পূর্ণ ফলাফল"/>
+	
+
+	<style>
+table, th, tr, td {
+  text-align:left;
+  padding:0;
+  border-spacing:0; 
+}
+</style>
+
+	<!-- Manifest -->
+	<!-- <link rel="manifest"  href="manifest.json"> -->
+
+	<!-- Bootstrap core CSS -->
+	
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="vendor/materialize/css/materialize.min.css" rel="stylesheet">
+    <link href="vendor/flexbin/flexbin.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/materialize-stepper/materialize-stepper.min.css">
+    <link rel="prerender" href="js/oneblogfront.js"> 
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+	<link href="css/aboutus.css" rel="stylesheet">
+	
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+
+</head>
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '179014802653918',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            
+            uid = response.authResponse.userID;
+			quesd="none";
+			queslid="none";
+      console.log(uid);
+            var accessToken = response.authResponse.accessToken;
+        } else if (response.status === 'not_authorized') {
+            uid="hiru";
+			quesd="none";
+			queslid="none";
+     
+           
+        } else {
+		   uid="hiru";
+		   quesd="none";
+		   queslid="none";
+            console.log("hiru");
+      
+        }
+    });
+  
+  
+  
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+    function gohome()
+    {   
+      location.href="https://www.onlinesohopathi.com"; 
+	}
+</script>
+
+<script>
+		function viewresult()
+{		var contentsall=document.getElementById("contents");
+        while(contentsall.firstChild)
+		   {
+		     contentsall.removeChild(contentsall.firstChild);
+		   }
+			console.log("robi");
+			
+			var url = "https://spreadsheets.google.com/feeds/cells/1gcJt1a0zvHtmZnH8Xa6qtxYTcunkX6RLtzJWlCCF3aA/default/public/basic?alt=json";
+$.ajax({
+    url:url,
+    dataType:"jsonp",
+    success:function(data) {
+	     console.log(data.feed.entry.length);
+		 var newtable=document.createElement("table");
+		 
+		newtable.style.cssText="width:90%;margin-right:auto;margin-left:-20px;";
+		 var contents=document.getElementById("contents");
+		 var counter=1;
+		 var truth=0;
+		 for(var i=1;i<data.feed.entry.length;i=i+6)
+		 {
+		   
+		   var tablerow=document.createElement("tr");
+		   if(i==1)
+		   {
+		   var tablehead1=document.createElement("th");
+		   var tablehead2=document.createElement("th");
+		   var tablehead3=document.createElement("th");
+		   var tablehead4=document.createElement("th");
+		   tablehead1.textContent="Merit";
+		   tablehead2.textContent=(data.feed.entry[i+2].content.$t);
+		   tablehead3.textContent=(data.feed.entry[i+3].content.$t);
+		   tablehead4.textContent="Marks";
+		   
+		   
+		   tablerow.appendChild(tablehead1);
+		   tablerow.appendChild(tablehead2);
+		   tablerow.appendChild(tablehead3);
+		   tablerow.appendChild(tablehead4);
+		   newtable.appendChild(tablerow);
+		   
+		   }
+		   else
+		   {
+		      var emails=document.getElementById("emailid").value;
+			  var temp=data.feed.entry[i].content.$t.split("@");
+			  console.log(temp);
+	          
+			  var cdom=temp[1].split(".");
+			  var emailr=emails.split("@");
+			  dom=emailr[1].split(".");
+			  
+			  console.log(emailr[0]);
+			  
+	          if(temp[0].toLowerCase()==emailr[0].toLowerCase() && dom[0].toLowerCase()==cdom[0].toLowerCase())
+			    {   
+		   
+		   var tablehead1=document.createElement("th");
+		   var tablehead2=document.createElement("th");
+		   var tablehead3=document.createElement("th");
+		   var tablehead4=document.createElement("th");
+		   truth=1;
+		   
+		   tablehead1.textContent=counter;
+		   var marks=data.feed.entry[i+1].content.$t.split("/");
+		   tablehead2.textContent=(data.feed.entry[i+2].content.$t);
+		   tablehead3.textContent=(data.feed.entry[i+3].content.$t);
+		   tablehead4.textContent=(marks[0]);
+		   
+		   tablerow.appendChild(tablehead1);
+		   tablerow.appendChild(tablehead2);
+		   tablerow.appendChild(tablehead3);
+		   tablerow.appendChild(tablehead4);
+		   newtable.appendChild(tablerow);
+		   
+		   break;
+		   
+		   }
+		   counter++;
+		    
+		   
+		   }
+		 
+		 }
+		 if(truth==0)
+		 {
+		   alert("Result Not Found.");
+		 }
+		 else
+		 {
+		 var results=document.createElement("h5");
+		 results.textContent="আমার ফলাফল:";
+		 results.style.cssText="text-align:center;";
+		 
+		 contents.appendChild(results);
+		 var lbr=document.createElement("br");
+		 
+		 contents.appendChild(newtable);
+		 contents.appendChild(lbr);
+		 contents.appendChild(lbr);
+		 
+		 
+		 
+		 var newtable=document.createElement("table");
+		 newtable.style.cssText="width:90%;margin-right:auto;margin-left:-20px;";
+		 var contents=document.getElementById("contents");
+		 var counter=1;
+		 for(var i=1;i<data.feed.entry.length;i=i+6)
+		 {
+		   
+		   var tablerow=document.createElement("tr");
+		   if(i==1)
+		   {
+		   var tablehead1=document.createElement("th");
+		   var tablehead2=document.createElement("th");
+		   var tablehead3=document.createElement("th");
+		   var tablehead4=document.createElement("th");
+		   
+		   tablehead1.textContent="Merit";
+		   tablehead2.textContent=(data.feed.entry[i+2].content.$t);
+		   tablehead3.textContent=(data.feed.entry[i+3].content.$t);
+		   tablehead4.textContent="Marks";
+		   
+		   
+		   tablerow.appendChild(tablehead1);
+		   tablerow.appendChild(tablehead2);
+		   tablerow.appendChild(tablehead3);
+		   tablerow.appendChild(tablehead4);
+		   newtable.appendChild(tablerow);
+		   
+		   }
+		   else
+		   {
+		      
+	             
+		   
+		   var tablehead1=document.createElement("th");
+		   var tablehead2=document.createElement("th");
+		   var tablehead3=document.createElement("th");
+		   var tablehead4=document.createElement("th");
+		   
+		   tablehead1.textContent=counter;
+		   var marks=data.feed.entry[i+1].content.$t.split("/");
+		   tablehead2.textContent=(data.feed.entry[i+2].content.$t);
+		   tablehead3.textContent=(data.feed.entry[i+3].content.$t);
+		   tablehead4.textContent=(marks[0]);
+		   counter++;
+		   tablerow.appendChild(tablehead1);
+		   tablerow.appendChild(tablehead2);
+		   tablerow.appendChild(tablehead3);
+		   tablerow.appendChild(tablehead4); 
+		   newtable.appendChild(tablerow);
+		   
+		   
+		    
+		   
+		   }
+		    if(counter>10)break;
+		 }
+		 var results=document.createElement("h5");
+		 results.textContent="সেরা ১০ সহপাঠীর তালিকা:";
+		 results.style.cssText="text-align:center;";
+		
+		 contents.appendChild(results);
+		 contents.appendChild(newtable);
+		 
+		 }
+		 
+		 
+		 
+		 
+    },
+});
+			
+ }
+		 
+		 
+		 
+</script>
+
+ 
+
+<!-- Section heading -->
+
+<!-- Section navbar -->
+<nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="https://www.onlinesohopathi.com" class="brand-logo" style="text-decoration:none; margin-left: 10px;">  অনলাইন সহপাঠী</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+      </a>
+      <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" data-toggle="modal" data-target="#myModal">
+        <i class="material-icons">lightbulb_outline</i>
+      </a>
+ -->
+</nav>    
+
+ <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
+	</div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a class="active" href="#Home" onclick="gohome()" style="text-decoration:none;">Home</a></li>
+        
+        <li class="tab"><a href="#FAQ" style="text-decoration:none;">FAQ</a></li>
+      </ul>
+       
+    </div>
+	
+  
+ 
+    
+<div class="container" style="margin-top: 30px;">
+  
+
+<!-- <div id="Home" >
+	
+	<ul class="collapsible popout" id="CollapseBody" data-collapsible="accordion">
+     </ul>
+  </div>
+ -->
+  <div class="row">
+    <div class="col s12 m8 l5">
+    <section id="one" class="wrapper style1">
+
+     
+      
+         
+      <h3 class="special"  id="special" style="text-align: center; margin-bottom: 20px;">
+	    General Knowledge-01 পরীক্ষার ফলাফল<br><br>
+	  </h3>
+	  <header class="special" id="special" style=" margin-bottom: 20px;">
+	                    নীচের ঘরে তোমার ই-মেইল অ্যাড্রেস টি লিখে ( যে ই-মেইল অ্যাড্রেস দিয়ে পরীক্ষা দিয়েছো) তোমার ফলাফল দেখ।
+	  </header>
+	  <input type="textarea" style="width: 100%;" id="emailid" >
+		 <br><br>
+	  <input type="submit" value="Submit" onclick="viewresult()">	 
+      <div class="content" id="contents" style="padding: 40px;">
+	    
+  
+	     
+		   
+  <!--<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  </table>-->
+        
+      </div>
+	  
+	 <!-- <div class="fb-share-button" data-href="https://www.onlinesohopathi.com/blog36.html?filter=36" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.onlinesohopathi.com%2Foneblog.html%3Ffilter%3D17&amp;src=sdkpreparse">Share</a></div>
+    </section>
+
+    <section id="Comments">
+      <ul class="collapsible popout" id="CollapseBody" data-collapsible="accordion">
+
+     </ul>
+    </section> -->
+  </div>
+ </div>
+</div>
+	  
+
+
+<footer>
+        <div id="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="join-us">
+                            <p>
+                            <img src="v1/webus.jpg" class="img-responsive">
+                                ONLINE SOHOPATHI<br><br>
+                            
+                            Keep Asking, Enjoy Learning</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="visit-us">
+                        <p> Connect with us </p>
+                        
+                            <ul>
+							
+							    <li>
+                                    <a href="https://www.onlinesohopathi.com/privacypolicy.html" role="button">Privacy Policy</a>
+                                
+                                </li>
+								
+								
+								<li>
+                                    <a href="https://www.onlinesohopathi.com/aboutus.html" role="button">Meet Our Team</a>
+                                
+                                </li>
+                               
+                                <li>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgrGl6IF-JC6CBlwlGoZNCTNEaBayz9b5KUDJhtn7a1WocvQ/viewform" role="button">Join Our Team</a>
+                                
+                                </li>
+                                 <li>
+                            <a href="https://www.facebook.com/groups/566012513741654/" role="button">Facebook Group</a>
+                                </li>
+                            
+                            <!--not working-->
+                                
+                                <li>
+                            <a href="https://www.facebook.com/onlinesohopathi/" role="button">Facebook Page</a>
+                                    </li>
+                                
+                                <li>
+                            <a href="https://www.linkedin.com/in/online-sohopathi-354708157/" role="button">LinkedIn page</a>
+                                    </li>
+                                </ul>
+                            
+                            
+                            
+                        
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    
+    </footer>
+
+<div class="modal fade"  id="myModalss" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body" style="height: 400px; width: 300px;">
+          <div class="fb-login-button" 
+   data-max-rows="1" data-size="large" onlogin="checkFacebookLogin(document.getElementById('myModalss'))"  data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>	  	  
+
+   
+
+<!-- Bootstrap core JavaScript -->
+
+
+
+<!-- Plugin JavaScript -->
+
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="vendor/materialize/js/materialize.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/main.js"></script>
+
+
+
+
+</body>
+</html>
+    
+    
+    
