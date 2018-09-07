@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112046710-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112046710-1');
+</script>
+    <title>"Admission Final Model Test-01(2018 Batch, Science Unit)"</title>
+	<meta name="description" content=" Admission Model Test for all Hsc candidates of 2018 batch from Science Group. " >
+			  
+
+	<meta charset="UTF-8">
+	<meta name="fragment" content="!">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#004d40">
+	<meta property="og:title" content="Online Sohopathi Admission Model Test-2018"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="https://www.onlinesohopathi.com/science_final_model_test_01_2018.html"/>
+	<meta property="og:image" content="https://www.onlinesohopathi.com/v1/final_model_test_science_2018.jpg"/>
+	<meta property="og:site_name" content="Online Sohopathi"/>
+	<meta property="fb:app_id" content="179014802653918"/>
+	<meta property="og:email" content="hello@mywebaddress.com"/>
+	<meta property="og:description" content=" Admission Model Test for all Hsc candidates of 2018 batch from Science Group. "/>
+	
+
+	<script>
+	 
+	 </script>
+
+	<!-- Manifest -->
+	<!-- <link rel="manifest"  href="manifest.json"> -->
+
+	<!-- Bootstrap core CSS -->
+	
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="vendor/materialize/css/materialize.min.css" rel="stylesheet">
+    <link href="vendor/flexbin/flexbin.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/materialize-stepper/materialize-stepper.min.css">
+    <link rel="prerender" href="js/oneblogfront.js"> 
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+	<link href="css/aboutus.css" rel="stylesheet">
+
+
+</head>
+<body>
+<script src="js/redirect.js?v=1002"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '179014802653918',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token
+            // and signed request each expire
+            uid = response.authResponse.userID;
+			quesd="none";
+			queslid="none";
+      console.log(uid);
+            var accessToken = response.authResponse.accessToken;
+        } else if (response.status === 'not_authorized') {
+            uid="hiru";
+			quesd="none";
+			queslid="none";
+      // the user is logged in to Facebook,
+            // but has not authenticated your app
+        } else {
+		   uid="hiru";
+		   quesd="none";
+		   queslid="none";
+            console.log("hiru");
+      //setTimeout(function(){
+            //window.location.reload(1);
+            //}, 5000);
+            // the user isn't logged in to Facebook.
+        }
+    });
+  
+  
+  
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+    function gohome()
+    {   
+      location.href="https://www.onlinesohopathi.com"; 
+	}
+</script>
+    
+ <script>
+    	function loadexamform()
+    {   
+     console.log(document.getElementById("hscroll").value);
+	 
+	 
+	 
+	 
+    var url = "https://spreadsheets.google.com/feeds/cells/1oBeMzVxHTWbupZuR5uQuEzbkWwcSWH4Q5DK0xeQIvQo/default/public/basic?alt=json";
+    
+   var lines ;
+   var c=0;
+    var rawFile = new XMLHttpRequest();
+    
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {   var roll=document.getElementById("hscroll").value;
+				
+                var allText = rawFile.responseText;
+				lines= allText.split('\n');
+				
+				for(var line=0;line<lines.length;line++)
+	{         
+	          var temp=lines[line].split("https");
+			  var temp0=temp[0];
+			  var tempstring=temp0.slice(0, -1);
+			 console.log(tempstring.length);
+			 console.log(roll.length);
+			  
+			  console.log(tempstring);
+			  if(roll==tempstring)
+			    {   console.log(temp[1]);
+				   location.href=("https"+temp[1]);
+				   c=1;
+                    break;				   
+				}
+	 
+	}
+	if(c==0)
+	 alert("You are not registered. Please register for the exam and try again. ");
+                
+            }
+        }
+    };
+	rawFile.open("GET", "examregister/science_final_model_test_01_2018.txt", true);
+    rawFile.send(null);
+	
+	
+ 
+	
+	//window.location.replace(str);
+      
+	}
+ </script>
+
+<!-- Section heading -->
+
+<!-- Section navbar -->
+<nav class="nav-extended">
+        <div class="nav-wrapper" >
+      <a href="#" class="brand-logo" style="text-decoration:none; margin-left: 5px;">  অনলাইন সহপাঠী</a>
+      <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i>
+      </a>-->
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light ask teal" onclick="checkuser()" style="margin-left: 5px;">
+        Ask
+      </a>
+
+
+ <!--  <a class="waves-effect waves-light btn"><i class="material-icons right">lightbulb_outline</i>Ask Quesstion</a> -->
+	</div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a  href="index.html" onclick="loadhome()" style="color: white; text-decoration:none;">Home</a></li>
+                <li class="tab" ><a href="notification.html" onclick="loadNotificationNEWhtml()" id="Nott" style="color: white; text-decoration:none;">Notifications</a></li>
+		<li class="tab"><a href="blogload.html" onclick="loadblogsNEWhtml()" style="color: white; text-decoration:none;">Blogs</a></li>
+		<li class="tab"><a href="myquestionsload.html" onclick="loadMyquestionNEWhtml()" style="color: white; text-decoration:none;">My Questions</a></li>
+        <li class="tab"><a class="active" href="library.html" onclick="loadlibrary()"  style="color: white; text-decoration:none;">Library</a></li>
+		
+        <li class="tab"><a  href="video.html" onclick="loadvideo()"  style="color: white; text-decoration:none;">Videos</a></li>
+	    <li class="tab"><a href="aboutus.html" onclick="loadus()"  style="color: white; text-decoration:none;">About Us</a></li
+            </ul>
+            <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" data-toggle="modal" data-target="#myModal">
+        <i class="material-icons">lightbulb_outline</i>
+      </a> -->
+        </div>
+    </nav>
+	
+  
+ 
+    
+<div class="container" style="margin-top: 30px;">
+  
+
+<!-- <div id="Home" >
+	
+	<ul class="collapsible popout" id="CollapseBody" data-collapsible="accordion">
+     </ul>
+  </div>
+ -->
+  <div class="row">
+    <div class="col s12 m8 l5">
+    <section id="one" class="wrapper style1">
+
+     <div class="image fit flush">
+        <img id="blgpic" src="https://www.onlinesohopathi.com/v1/final_model_test_science_2018.jpg"  class="materialboxed" style="width: 100%;" alt="" />
+      </div>
+      
+         
+		 <h2 class="special" id="special" style="text-align: center; margin-bottom: 20px;">
+	     Admission Final Model Test-01(2018 Batch, Science Unit)
+	  </h2>
+		 
+       <header class="special" id="special" style=" margin-bottom: 20px;">
+	    
+		১. <b>সবচেয়ে গুরুত্বপূর্ণ কথা, পরীক্ষার জন্য নির্ধারিত সময় শেষ হবার পূর্বেই অবশ্যই <em style="color:green"> প্রশ্নের একদম নীচের "SUBMIT" বাটনে ক্লিক করতে হবে। </em> যদি "SUBMIT" বাটনে  ক্লিক না করো, তাহলে তোমার উত্তরপত্র আমাদের কাছে জমা হবে না!!</b><br>
+		
+		২. পরীক্ষার সময় -  90 Minutes<br>
+		৩. MCQ – 120 Questions। প্রতিটি প্রশ্নের নম্বর ১। প্রতিটি ভুল উত্তরের জন্য ০.২৫ করে নম্বর কাটা যাবে। <br>
+		৪. পরীক্ষা শুরু করার সাথে সাথে টাইমার অন হয়ে যাবে। 90 মিনিট পর পরীক্ষা শেষ হবে। তাই ক্যালকুলেটর খাতা কলম নিয়ে পরীক্ষায় বসতে হবে।<br>
+		৫. তোমার এইচএসসি পরীক্ষা রোল নাম্বারটি লিখে পরীক্ষা দেওয়া শুরু করতে হবে।<br>
+		৬. রেজিস্ট্রেশন ছাড়া পরীক্ষা দেয়া যাবে না।<br>
+		৭. একজন একবার ই পরীক্ষা দিতে পারবে।<br>
+		৮. সারাদিন যে কোন সময় পরীক্ষা দেয়া যাবে।<br>
+		৯.  ২৪ ঘন্টা পর লিংক অফ হয়ে যাবে।<br>		
+		১০. ও আচ্ছা চাইলে বই, গাইড, নোট খুলেও পরীক্ষা দিতে পারো, বিশ্বাস করো শেষ করতে পারবা না, এখানে ফার্স্ট হয়ে তোমার লাভ নাই কোন। নিজের কাছে নিজেই ঠকবা। 
+		তো আর দেরি কেন!!! সবাইকে শুভকামনা।<br>
+         <br>
+		 <br>
+		
+			
+		<b>বি দ্রঃ আবারও তোমাদের মনে করিয়ে দিচ্ছি, পরীক্ষার শুরু তেই টাইমার অন হয়ে যাবে। পরীক্ষার জন্য নির্ধারিত সময় শেষ হবার পূর্বেই অবশ্যই <em style="color:green"> প্রশ্নের একদম নীচের "SUBMIT" বাটনে ক্লিক করতে হবে। </em>
+		যদি "SUBMIT" বাটনে  ক্লিক না করো, তাহলে যতগুলো প্রশ্নেরই উত্তর দাও না কেন, উত্তরপত্র আমাদের হাতে আসবে না। <br><br>
+		তোমাদের সবার বোঝার সুবিধার জন্য আমরা প্রশ্নপত্রের একদম নীচের অংশের একটা ছবি তুলে দেখিয়ে দিয়েছি নীচে। ভাল করে খেয়াল করে নাও পরীক্ষা দেওয়ার আগেই।
+		<img id="blgpic" src="https://www.onlinesohopathi.com/v1/examinstruction.png"  class="materialboxed" style="width: 60%;" alt="" />
+		
+		</b><br><br>
+		
+		
+		
+		
+		
+		
+	  </header>
+      <div  id="contents" style="padding: 40px;">
+	     তোমার  এইচএসসি পরীক্ষা রোল নাম্বারটি লিখে পরীক্ষা দেওয়া শুরু কর।<br>
+	     <input type="textarea" style="width: 100%;" id="hscroll" >
+		 <br><br>
+  <input type="submit" value="Start My Exam!!" onclick="loadexamform()">
+        
+      </div>
+	  
+	 <!-- <div class="fb-share-button" data-href="https://www.onlinesohopathi.com/blog36.html?filter=36" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.onlinesohopathi.com%2Foneblog.html%3Ffilter%3D17&amp;src=sdkpreparse">Share</a></div>
+    </section>
+
+    <section id="Comments">
+      <ul class="collapsible popout" id="CollapseBody" data-collapsible="accordion">
+
+     </ul>
+    </section> -->
+  </div>
+ </div>
+</div>
+	  
+
+
+<footer>
+        <div id="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="join-us">
+                            <p>
+                            <img src="v1/webus.jpg" class="img-responsive">
+                                ONLINE SOHOPATHI<br><br>
+                            
+                            Keep Asking, Enjoy Learning</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="visit-us">
+                        <p> Connect with us </p>
+                        
+                            <ul>
+							
+							    <li>
+                                    <a href="https://www.onlinesohopathi.com/privacypolicy.html" role="button">Privacy Policy</a>
+                                
+                                </li>
+								
+								
+								<li>
+                                    <a href="https://www.onlinesohopathi.com/aboutus.html" role="button">Meet Our Team</a>
+                                
+                                </li>
+                               
+                                <li>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgrGl6IF-JC6CBlwlGoZNCTNEaBayz9b5KUDJhtn7a1WocvQ/viewform" role="button">Join Our Team</a>
+                                
+                                </li>
+                                 <li>
+                            <a href="https://www.facebook.com/groups/566012513741654/" role="button">Facebook Group</a>
+                                </li>
+                            
+                            <!--not working-->
+                                
+                                <li>
+                            <a href="https://www.facebook.com/onlinesohopathi/" role="button">Facebook Page</a>
+                                    </li>
+                                
+                                <li>
+                            <a href="https://www.linkedin.com/in/online-sohopathi-354708157/" role="button">LinkedIn page</a>
+                                    </li>
+                                </ul>
+                            
+                            
+                            
+                        
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    
+    </footer>
+
+<div class="modal fade"  id="myModalss" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body" style="height: 400px; width: 300px;">
+          <div class="fb-login-button" 
+   data-max-rows="1" data-size="large" onlogin="checkFacebookLogin(document.getElementById('myModalss'))"  data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>	  	  
+
+   
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="vendor/materialize/js/materialize.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/main.js"></script>
+
+
+
+
+
+</body>
+</html>
+    
+    
+    
